@@ -82,7 +82,7 @@
     "@types/three": "^0.186.0",
     "@vitest/coverage-v8": "^5.0.5",
     "embedded-postgres": "16.14.0-beta.17",
-    "eslint": "^9.39.5",
+    "eslint": "^10.14.0",
     "eslint-config-next": "^16.4.3",
     "eslint-plugin-i18next": "^6.1.5",
     "prettier": "^3.9.10",
