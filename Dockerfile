@@ -2,7 +2,7 @@
 # Accession Book — multi-stage build, non-root runtime, Next.js standalone output.
 
 # ── deps: install with the lockfile only (cache-friendly) ───────────────────
-FROM node:22-slim AS deps
+FROM node:26-slim AS deps
 WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
     && rm -rf /var/lib/apt/lists/*
@@ -12,7 +12,7 @@ COPY prisma.config.ts ./
 RUN npm ci --no-audit --no-fund
 
 # ── build ───────────────────────────────────────────────────────────────────
-FROM node:22-slim AS build
+FROM node:26-slim AS build
 WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN apt-get update && apt-get install -y --no-install-recommends openssl \
@@ -22,7 +22,7 @@ COPY . .
 RUN npm run build
 
 # ── runtime ─────────────────────────────────────────────────────────────────
-FROM node:22-slim AS runtime
+FROM node:26-slim AS runtime
 WORKDIR /app
 ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1 \
