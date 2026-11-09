@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "title": "Every lineage, on the record.",
+    "description": "Accession Book is the system of record for genetic material: lineage, custody, quality holds, recall and inspection-ready reporting for laboratories, breeders and licensed producers."
+  },
+  "og": {
+    "tagline": "Every lineage, on the record."
+  },
+  "header": {
+    "home": "Accession Book home",
+    "signIn": "Sign in",
+    "openWorkspace": "Open workspace",
+    "navLabel": "Sections of this page",
+    "platform": "Platform",
+    "industries": "Industries",
+    "lifecycle": "Lifecycle",
+    "compliance": "Compliance",
+    "insight": "Reporting",
+    "menu": "Open menu",
+    "menuTitle": "Menu",
+    "menuDescription": "Jump to a section of the page, or change language and theme.",
+    "preferences": "Language and theme"
+  },
+  "hero": {
+    "kicker": "Traceability & compliance",
+    "titleLead": "Every lineage.",
+    "titleTail": "On the record.",
+    "lead": "Accession Book is the system of record for genetic material. Lineage, custody, quality holds and recall live in the data model, so an inspection is a report you run, not a week you lose.",
+    "primarySignedIn": "Continue to the dashboard",
+    "learnMore": "See how it works",
+    "trust": {
+      "returns": "Inspection-ready returns",
+      "destruction": "Destruction register",
+      "audit": "Append-only audit log",
+      "access": "Role-scoped access"
+    },
+    "scroll": "Scroll",
+    "callouts": {
+      "lineage": {
+        "label": "Lineage",
+        "body": "Every unit links to its parent. Trace a clone, a seed lot or a cell line back to its source in one query."
+      },
+      "custody": {
+        "label": "Custody",
+        "body": "Scan-confirmed transfers between rooms, with who moved what, and when."
+      },
+      "audit": {
+        "label": "Audit",
+        "body": "Append-only history. Every change keeps its author, its reason, and its before and after."
+      }
+    },
+    "badge": "Genetics"
+  },
+  "demo": {
+    "label": "Illustration of the Accession Book interface: an experiment with 25 tracked units, one on hold, and a feed of recent activity. The figures are examples.",
+    "address": "accessionbook.com/overview",
+    "experimentCode": "EXP-2026-03",
+    "active": "Active",
+    "experimentName": "Stability screening, line A",
+    "experimentMeta": "25 units tracked · 4 members · started January 2026",
+    "segments": {
+      "process": "In process",
+      "conditioning": "Conditioning",
+      "culture": "Culture"
+    },
+    "stats": {
+      "units": "Active units",
+      "rooms": "Rooms",
+      "hold": "On hold"
+    },
+    "feedTitle": "Recent activity",
+    "feed": {
+      "move": "Transferred SMP-1042 to Cold Room B",
+      "hold": "Quality hold placed on SMP-1039",
+      "stage": "Stage change: in process to conditioning",
+      "derive": "Registered derived batch from EXP-2026-03",
+      "scan": "Barcode scan confirmed at cold storage"
+    },
+    "ago": {
+      "minutes": "{count, number} min ago",
+      "hours": "{count, number} h ago"
+    },
+    "room": "Cold Room B · 14 units"
+  },
+  "platform": {
+    "kicker": "01 · Platform",
+    "title": "Three things a compliance system has to get right",
+    "intro": "Most inventory tools record what you typed. These are the guarantees that hold up when a regulator, a recall or a quality hold arrives.",
+    "listLabel": "Platform guarantees",
+    "pillars": {
+      "lineage": {
+        "title": "Lineage that survives the question",
+        "body": "Every unit is a chain of states with a real parent link, not a note in a comment field. Ask where a gram came from and the answer is a query, not an afternoon.",
+        "caption": "One source lot. Three derived units. The parent link is the record.",
+        "scene": "A source lot splitting into three derived units"
+      },
+      "holds": {
+        "title": "Holds that actually hold",
+        "body": "A quality hold freezes the unit on the spot. It cannot be moved, split or destroyed until someone with authority releases it, and the release is signed.",
+        "caption": "Who placed it, why, and who released it: all on the record.",
+        "scene": "A unit placed on quality hold, with its reason and who placed it"
+      },
+      "recall": {
+        "title": "Recall in a single pass",
+        "body": "Trace backward to the source and forward to every derived child, then pull remaining related inventory and linked shipments in the same result.",
+        "caption": "Backward to the source, forward to what is still on hand and what already left.",
+        "scene": "A recall from a source unit to stock on hand and a shipment"
+      }
+    },
+    "scenes": {
+      "sourceLot": "Source lot",
+      "culture": "Culture",
+      "split": "Split",
+      "source": "Source",
+      "shipped": "Shipped",
+      "coldRoomB": "Cold Room B",
+      "vault": "Vault",
+      "inProcess": "In process",
+      "held": "Held",
+      "blocked": "Move, split and destroy blocked",
+      "holdTitle": "Quality hold",
+      "holdKind": "Kind",
+      "holdKindValue": "Hold",
+      "holdBy": "Placed by",
+      "holdReason": "Reason",
+      "holdReasonValue": "Suspected mould, awaiting inspection"
+    }
+  },
+  "industries": {
+    "kicker": "02 · Industries",
+    "title": "One core. Any regulated material.",
+    "intro": "The record is the same whatever you track: a unit, where it came from, who touched it, what it tested at, and where it went. What changes by industry is the vocabulary and the statutory return, so those live in a pack on top of the core.",
+    "coreTitle": "Platform core",
+    "coreNote": "Included in every subscription.",
+    "core": {
+      "history": "Units with full state history",
+      "lineage": "Parent and child derivation lineage",
+      "custody": "Barcode custody and transfers",
+      "quality": "Quality results, holds and incidents",
+      "recall": "Reverse and forward recall",
+      "audit": "Field-level audit trail",
+      "teams": "Projects, teams and role scoping",
+      "reporting": "Printable and CSV reporting"
+    },
+    "packsTitle": "Industry packs",
+    "packsNote": "The lifecycle vocabulary and the statutory return that sit on top of the core.",
+    "packsLabel": "Industry packs",
+    "live": "Available",
+    "planned": "Planned",
+    "packs": {
+      "cannabis": {
+        "name": "Cannabis, Canada",
+        "detail": "Cultivation lifecycle, CTLS monthly inventory returns and a destruction register, using the vocabulary of Canadian cannabis regulation.",
+        "points": {
+          "one": "Cultivation lifecycle on every unit",
+          "two": "CTLS monthly inventory return",
+          "three": "Destruction register with reasons"
+        }
+      },
+      "plants": {
+        "name": "Plant genetics and agriculture",
+        "detail": "Propagation, mother lines and seed lots. Runs on the core today; no statutory return is bundled yet.",
+        "points": {
+          "one": "Propagation and mother lines",
+          "two": "Seed lots linked to the source catalogue",
+          "three": "Core traceability, no statutory return bundled"
+        }
+      },
+      "biotech": {
+        "name": "Pharmaceutical and biotech labs",
+        "detail": "GxP-aligned records, cell-line lineage and electronic signatures.",
+        "points": {
+          "one": "GxP-aligned records",
+          "two": "Cell-line lineage",
+          "three": "Electronic signatures"
+        }
+      },
+      "food": {
+        "name": "Food and supply-chain traceability",
+        "detail": "Lot genealogy, supplier attestation and one-up, one-down recall.",
+        "points": {
+          "one": "Lot genealogy",
+          "two": "Supplier attestation",
+          "three": "One-up, one-down recall"
+        }
+      }
+    }
+  },
+  "lifecycle": {
+    "kicker": "04 · Lifecycle",
+    "title": "From source to disposition, on one chain",
+    "intro": "Material enters once and keeps the same identity all the way through. Packaging, transfer and sale extend that chain rather than starting a new one, so growth never means migrating to a second system.",
+    "liveCount": "{count, plural, one {# stage available today} other {# stages available today}}",
+    "plannedCount": "{count, plural, one {# stage on the roadmap} other {# stages on the roadmap}}",
+    "planned": "Planned",
+    "phases": {
+      "catalogue": {
+        "label": "Source catalogue",
+        "detail": "Your reference library of genetics, strains, varieties or cell lines, linked to every unit you hold."
+      },
+      "intake": {
+        "label": "Intake and derivation",
+        "detail": "Register incoming material, then split, clone or subculture it with the parent link kept intact."
+      },
+      "process": {
+        "label": "In-process tracking",
+        "detail": "Stage changes over time, with per-stage durations and the operator who reported each one."
+      },
+      "custody": {
+        "label": "Custody and movement",
+        "detail": "Barcode-confirmed transfers between rooms, with a full location history per unit."
+      },
+      "testing": {
+        "label": "Testing and quality",
+        "detail": "Lab results on record for every unit, with quality holds that freeze movement."
+      },
+      "disposition": {
+        "label": "Disposition",
+        "detail": "Destruction registers and period returns in the format your regulator expects."
+      },
+      "packaging": {
+        "label": "Packaging and lots",
+        "detail": "Transformation, formulation and finished-lot build with input-to-output reconciliation."
+      },
+      "sale": {
+        "label": "Transfer and sale",
+        "detail": "Wholesale allocation and point of sale, extending the same chain."
+      }
+    },
+    "scrollHint": "Keep scrolling to follow the chain"
+  },
+  "capabilities": {
+    "kicker": "05 · System",
+    "title": "What is in the box",
+    "items": {
+      "units": {
+        "title": "Tracked units",
+        "body": "Any countable or weighable material, with full state history per unit."
+      },
+      "derivation": {
+        "title": "Derivation chains",
+        "body": "Splits, clones and subcultures recorded as events, back to the source."
+      },
+      "custody": {
+        "title": "Barcode custody",
+        "body": "Room-to-room transfers confirmed by scan, with per-unit location history."
+      },
+      "quality": {
+        "title": "Quality and holds",
+        "body": "Lab results on record, with quality holds that freeze movement."
+      },
+      "reporting": {
+        "title": "Regulatory reporting",
+        "body": "Period returns, destruction registers and exports, printable and as CSV."
+      },
+      "audit": {
+        "title": "Field-level audit trail",
+        "body": "Who changed what, and when, with before and after values on every write."
+      },
+      "inventory": {
+        "title": "Inventory accountability",
+        "body": "Opening balance, additions, reductions and closing balance per period."
+      },
+      "workspace": {
+        "title": "Your own workspace",
+        "body": "Your users, locations, catalogue and data, kept apart from everyone else."
+      }
+    }
+  },
+  "compliance": {
+    "kicker": "Records",
+    "title": "Built to be",
+    "titleAccent": "inspected.",
+    "p1": "Records are written once and never quietly rewritten. Corrections are appended with an author and a reason, destructions are recorded by an administrator with the reason, and every report links back to the source rows it was built from.",
+    "p2": "Nothing is inferred to make a number balance. If a value was never captured, the report says so instead of inventing one.",
+    "ledgerLabel": "Illustrative compliance records",
+    "ledgerName": "records",
+    "appendOnly": "Append-only",
+    "lines": {
+      "inventory": {
+        "title": "Period inventory return",
+        "detail": "Opening, additions, reductions, closing, per category, from the source rows."
+      },
+      "destruction": {
+        "title": "Destruction register",
+        "detail": "Date, reason and who recorded it, written once and never quietly rewritten."
+      },
+      "custody": {
+        "title": "Chain of custody",
+        "detail": "Barcode-confirmed transfer, with the operator and the timestamp on the scan."
+      },
+      "audit": {
+        "title": "Member activity audit",
+        "detail": "Field-level before and after on every write, attributed to a person."
+      }
+    },
+    "codes": {
+      "inventory": "INV",
+      "destruction": "DST",
+      "custody": "CUS",
+      "audit": "AUD"
+    }
+  },
+  "cta": {
+    "title": "Start with an empty",
+    "titleAccent": "workspace",
+    "body": "Your organization gets its own users, locations, catalogue and records. Bring your material, and the chain starts from the first unit you register.",
+    "kicker": "Begin",
+    "book": "Book"
+  },
+  "footer": {
+    "subtitle": "Traceability and compliance platform",
+    "copyright": "© {year} Accession Book. All rights reserved.",
+    "contactPrompt": "Prefer to message?",
+    "whatsapp": "WhatsApp",
+    "opensNewTab": "opens in a new tab"
+  },
+  "marquee": {
+    "label": "What the platform covers"
+  },
+  "insight": {
+    "kicker": "02 · Reporting",
+    "title": "See the whole chain without opening a spreadsheet",
+    "intro": "Custody, stage, quality and audit figures come from the same records as the units themselves, so every number on the page can be traced to its source rows.",
+    "caption": "Illustrative figures, not customer data",
+    "range": {
+      "label": "Time range",
+      "six": "6 months",
+      "twelve": "12 months"
+    },
+    "custody": {
+      "title": "Units under custody",
+      "unit": "Units, month end",
+      "summary": "Area chart: units under custody grew from {from} to {to} over the period."
+    },
+    "stages": {
+      "title": "Inventory by stage",
+      "unit": "Share of units",
+      "total": "Units",
+      "process": "In process",
+      "conditioning": "Conditioning",
+      "culture": "Culture",
+      "storage": "Cold storage",
+      "summary": "Donut chart: {top} is the largest stage at {share} of units."
+    },
+    "results": {
+      "title": "Quality holds",
+      "held": "Held",
+      "summary": "Stacked bars: in the latest month {free} units were free to move and {held} were held.",
+      "free": "Free to move"
+    },
+    "kpis": {
+      "units": "Units tracked",
+      "transfers": "Custody transfers confirmed",
+      "events": "Audit events recorded",
+      "holds": "Open quality holds"
+    }
+  },
+  "statement": {
+    "text": "Most systems record what you typed. Accession Book records what happened: who handled each unit, what it tested at and where it went, in an order nobody can quietly rewrite."
+  },
+  "video": {
+    "titleAccent": "Overview"
+  },
+  "gallery": {
+    "label": "Project photos",
+    "items": {
+      "one": {
+        "tag": "Category",
+        "title": "Photo title",
+        "text": "Add a short description of this photo here: what it shows and why it matters."
+      },
+      "two": {
+        "tag": "Category",
+        "title": "Photo title",
+        "text": "Add a short description of this photo here: what it shows and why it matters."
+      },
+      "three": {
+        "tag": "Category",
+        "title": "Photo title",
+        "text": "Add a short description of this photo here: what it shows and why it matters."
+      }
+    },
+    "title": "Our work,",
+    "titleAccent": "in focus.",
+    "intro": "Add a short introduction to this section here. Describe the photos below and why they matter."
+  }
+}

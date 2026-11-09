@@ -1,0 +1,18 @@
+{
+  "open": "Label PDF",
+  "openAll": "Location labels",
+  "title": "Print labels",
+  "description": "A PDF sized for the label stock. Print it at actual size (100 %), not “fit to page”.",
+  "stock": "Label stock",
+  "skip": "Start at label",
+  "skipHint": "On a part-used sheet: the first free label, counting across from the top left. {perPage} labels to a sheet.",
+  "copies": "Copies",
+  "download": "Download labels",
+  "templates": {
+    "avery-5160": "Avery 5160 · 2⅝ × 1 in · 30 to a sheet",
+    "avery-5163": "Avery 5163 · 4 × 2 in · 10 to a sheet",
+    "avery-5167": "Avery 5167 · 1¾ × ½ in · 80 to a sheet (tubes)",
+    "zebra-4x2": "Zebra roll · 4 × 2 in",
+    "zebra-2x1": "Zebra roll · 2 × 1 in"
+  }
+}

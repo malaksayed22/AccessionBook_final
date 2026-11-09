@@ -1,0 +1,27 @@
+{
+  "skipToContent": "Skip to content",
+  "loading": "Loading…",
+  "optional": "optional",
+  "required": "required",
+  "yes": "Yes",
+  "no": "No",
+  "none": "None",
+  "all": "All",
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back",
+    "continue": "Continue",
+    "confirm": "Confirm",
+    "retry": "Try again",
+    "search": "Search",
+    "clear": "Clear",
+    "edit": "Edit",
+    "create": "Create"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français"
+  }
+}

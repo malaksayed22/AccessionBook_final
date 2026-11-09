@@ -1,0 +1,227 @@
+/* ---------------------------------------------------------------------
+   Design tokens
+
+   One semantic palette, two themes. Light is the base. Dark applies when the
+   OS asks for it (unless the user chose light) or when the user chose dark.
+   The `ab_theme` cookie is read on the server and written to <html data-theme>,
+   so there is no flash and no inline script; "system" leaves the attribute off.
+
+   The palette is deep navy with navy ink with a near-white primary control and a
+   periwinkle-silver accent for text and rules, the same family as the
+   TrustOps console. The `series-*` hues are for charts and illustration only.
+
+   Keep every text/surface pairing at WCAG 2.2 AA (4.5:1 for text, 3:1 for
+   control borders and focus rings) in both themes. Never use a raw hex in
+   components.
+   ------------------------------------------------------------------- */
+@theme static {
+  --color-bg: #eff3fc;
+  --color-sidebar: #ffffff;
+  --color-surface: #ffffff;
+  --color-raised: #ffffff;
+  --color-sunken: #e6ecfa;
+  --color-hover: #e6ecfa;
+  --color-border: #d3dbf0;
+  --color-border-strong: #bcc7e6;
+  /* Boundary of inputs and other controls: 3:1 against any surface (WCAG 1.4.11). */
+  --color-border-input: #6a7596;
+
+  --color-fg: #0a1226;
+  --color-fg-secondary: #424c6b;
+  --color-fg-tertiary: #535d7c;
+  --color-on-accent: #ffffff;
+
+  --color-accent: #2447c4;
+  --color-accent-hover: #1a37a3;
+  --color-accent-text: #1f3fb0;
+  --color-accent-soft: #e4ebfd;
+  --color-accent-soft-border: #b6c7f4;
+
+  /* Chart and illustration series. Decorative: never used for text. */
+  --color-series-1: #3f5fd0;
+  --color-series-2: #9aa8c8;
+  --color-series-3: #2a9d8f;
+  --color-series-4: #7a63d0;
+  --color-series-5: #d79a2b;
+  --color-series-6: #4aa3df;
+  --color-series-7: #d3567c;
+
+  --color-success: #166534;
+  --color-success-soft: #e4f6ee;
+  --color-success-soft-border: #b5e2cd;
+  --color-success-solid: #16a34a;
+
+  --color-warning: #8a5000;
+  --color-warning-soft: #fdf1dc;
+  --color-warning-soft-border: #f1d59d;
+  --color-warning-solid: #d97706;
+
+  --color-danger: #b4232e;
+  --color-danger-soft: #fce9ea;
+  --color-danger-soft-border: #f0bdc0;
+  --color-danger-solid: #dc2626;
+
+  --color-info: #1a5fc4;
+  --color-info-soft: #e5eefb;
+  --color-info-soft-border: #bcd3f2;
+
+  --color-neutral-soft: #e6ecfa;
+  --color-neutral-soft-border: #d3dbf0;
+
+  --color-focus: #2447c4;
+  --color-overlay: rgba(10, 18, 38, 0.5);
+
+  /* Data visualisation. Categorical slots 1-4 are fixed in order (4 only for adjacent-slice forms such as a donut) and never cycled (validated with the
+     dataviz palette checker against these surfaces: adjacent CVD separation, lightness band, 3:1
+     contrast). Slot 3 sits just under 3:1 on the light surface, so every chart ships a legend and a
+     table view. The accent is the single-series colour. Text never wears these colours. */
+  --color-chart-accent: #3a56c8;
+  --color-chart-1: #3a56c8;
+  --color-chart-2: #2a9d8f;
+  --color-chart-3: #7a63d0;
+  --color-chart-4: #d79a2b;
+  --color-chart-grid: #dde4f5;
+
+  --shadow-sm: 0 1px 2px rgba(15, 30, 55, 0.05), 0 2px 6px -2px rgba(15, 30, 55, 0.06);
+  --shadow-md: 0 2px 4px rgba(15, 30, 55, 0.04), 0 10px 24px -8px rgba(15, 30, 55, 0.12);
+  --shadow-lg: 0 24px 56px -12px rgba(15, 30, 55, 0.24);
+
+  /* Layout */
+  --sidebar-width: 16.5rem;
+  --content-max: 82rem;
+
+  --transition-fast: 140ms cubic-bezier(0.2, 0, 0, 1);
+  --transition-base: 220ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Dark values, shared by "system says dark" and "user chose dark". */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: #04070f;
+    --color-sidebar: #060a17;
+    --color-surface: #0d1429;
+    --color-raised: #141d3b;
+    --color-sunken: #070c1b;
+    --color-hover: #1a2548;
+    --color-border: #243059;
+    --color-border-strong: #33427a;
+    --color-border-input: #6674a3;
+
+    --color-fg: #eceff8;
+    --color-fg-secondary: #a4aecb;
+    --color-fg-tertiary: #8591b3;
+
+    --color-on-accent: #0a1226;
+    --color-accent: #93adf8;
+    --color-accent-hover: #b6c8fb;
+    --color-accent-text: #a9bdf8;
+    --color-accent-soft: rgba(110, 140, 245, 0.15);
+    --color-accent-soft-border: rgba(130, 160, 250, 0.34);
+
+    --color-success: #4ade9a;
+    --color-success-soft: rgba(74, 222, 154, 0.12);
+    --color-success-soft-border: rgba(74, 222, 154, 0.3);
+    --color-success-solid: #22c55e;
+    --color-warning: #f5b942;
+    --color-warning-soft: rgba(245, 185, 66, 0.12);
+    --color-warning-soft-border: rgba(245, 185, 66, 0.3);
+    --color-warning-solid: #f59e0b;
+    --color-danger: #ff8f8f;
+    --color-danger-soft: rgba(255, 107, 107, 0.12);
+    --color-danger-soft-border: rgba(255, 107, 107, 0.32);
+    --color-danger-solid: #ef4444;
+    --color-info: #6cb4ff;
+    --color-info-soft: rgba(108, 180, 255, 0.12);
+    --color-info-soft-border: rgba(108, 180, 255, 0.3);
+
+    --color-neutral-soft: #141d3b;
+    --color-neutral-soft-border: #243059;
+
+    --color-focus: #a9bdf8;
+    --color-overlay: rgba(2, 4, 12, 0.72);
+
+    --color-chart-accent: #8fa9f7;
+    --color-chart-1: #7e9bf5;
+    --color-chart-2: #3fc1b0;
+    --color-chart-3: #a28df0;
+    --color-chart-4: #e3ad4c;
+    --color-chart-grid: #1c2547;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* `.scope-dark` paints one region (the sign-in artwork) in the dark palette whatever the theme is. */
+:root[data-theme="dark"],
+.scope-dark {
+  color-scheme: dark;
+  --color-bg: #04070f;
+  --color-sidebar: #060a17;
+  --color-surface: #0d1429;
+  --color-raised: #141d3b;
+  --color-sunken: #070c1b;
+  --color-hover: #1a2548;
+  --color-border: #243059;
+  --color-border-strong: #33427a;
+  --color-border-input: #6674a3;
+
+  --color-fg: #eceff8;
+  --color-fg-secondary: #a4aecb;
+  --color-fg-tertiary: #8591b3;
+
+  --color-on-accent: #0a1226;
+  --color-accent: #93adf8;
+  --color-accent-hover: #b6c8fb;
+  --color-accent-text: #a9bdf8;
+  --color-accent-soft: rgba(110, 140, 245, 0.15);
+  --color-accent-soft-border: rgba(130, 160, 250, 0.34);
+
+  --color-success: #4ade9a;
+  --color-success-soft: rgba(74, 222, 154, 0.12);
+  --color-success-soft-border: rgba(74, 222, 154, 0.3);
+  --color-success-solid: #22c55e;
+  --color-warning: #f5b942;
+  --color-warning-soft: rgba(245, 185, 66, 0.12);
+  --color-warning-soft-border: rgba(245, 185, 66, 0.3);
+  --color-warning-solid: #f59e0b;
+  --color-danger: #ff8f8f;
+  --color-danger-soft: rgba(255, 107, 107, 0.12);
+  --color-danger-soft-border: rgba(255, 107, 107, 0.32);
+  --color-danger-solid: #ef4444;
+  --color-info: #6cb4ff;
+  --color-info-soft: rgba(108, 180, 255, 0.12);
+  --color-info-soft-border: rgba(108, 180, 255, 0.3);
+
+  --color-neutral-soft: #141d3b;
+  --color-neutral-soft-border: #243059;
+
+  --color-focus: #a9bdf8;
+  --color-overlay: rgba(2, 4, 12, 0.72);
+
+  --color-chart-accent: #8fa9f7;
+  --color-chart-1: #7e9bf5;
+  --color-chart-2: #3fc1b0;
+  --color-chart-3: #a28df0;
+  --color-chart-4: #e3ad4c;
+  --color-chart-grid: #1c2547;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.6);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Higher-contrast preference: stronger borders, tertiary text as strong as secondary. */
+@media (prefers-contrast: more) {
+  :root {
+    --color-border: var(--color-border-input);
+    --color-border-strong: var(--color-border-input);
+    --color-fg-tertiary: var(--color-fg-secondary);
+  }
+}

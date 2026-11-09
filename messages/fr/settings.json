@@ -1,0 +1,26 @@
+{
+  "pageTitle": "Paramètres",
+  "title": "Paramètres du laboratoire",
+  "description": "La licence sur chaque dossier et rapport CTLS, jusqu’où les événements peuvent être antidatés, et le début des codes d’expérience.",
+  "lockedTitle": "Réservé aux administrateurs",
+  "lockedBody": "Demandez à un administrateur de modifier les paramètres du laboratoire.",
+  "lockedAction": "Retour au tableau de bord",
+  "form": {
+    "licence": "Licence",
+    "licenceNumber": "Numéro de licence",
+    "licenceNumberHint": "Imprimé sur chaque dossier et sur le rapport CTLS.",
+    "licenceClass": "Catégorie de licence",
+    "licenceClassNone": "Non définie",
+    "licenceHolder": "Titulaire de la licence",
+    "siteAddress": "Adresse du site",
+    "records": "Dossiers",
+    "backdateLimit": "Antidatage maximal des événements (jours)",
+    "backdateLimitHint": "Laissez vide pour aucune limite. Une saisie tardive plus ancienne est refusée.",
+    "backdateLimitInvalid": "Un nombre entier de jours, de 1 à 3650.",
+    "codePrefix": "Préfixe des codes d’expérience",
+    "codePrefixHint": "Les nouvelles expériences ont des codes comme {example}. Les codes existants restent.",
+    "codePrefixInvalid": "De deux à six lettres.",
+    "save": "Enregistrer",
+    "saved": "Paramètres enregistrés"
+  }
+}

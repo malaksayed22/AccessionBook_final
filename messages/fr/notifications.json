@@ -1,0 +1,30 @@
+{
+  "bell": {
+    "label": "Notifications",
+    "labelUnread": "Notifications, {count, plural, one {# non lue} other {# non lues}}",
+    "title": "Notifications",
+    "empty": "Rien de nouveau. Les changements et les tâches qui vous sont confiées apparaîtront ici.",
+    "markAll": "Tout marquer comme lu",
+    "viewAll": "Voir toutes les notifications",
+    "loadFailed": "Les notifications n’ont pas pu être chargées."
+  },
+  "page": {
+    "pageTitle": "Notifications",
+    "title": "Notifications",
+    "descriptionAdmin": "Chaque changement enregistré par l’équipe, et les tâches qui vous sont confiées.",
+    "descriptionMember": "Les tâches qui vous sont confiées.",
+    "unreadOnly": "Non lues seulement",
+    "all": "Toutes",
+    "markAll": "Tout marquer comme lu",
+    "emptyTitle": "Aucune notification",
+    "emptyBody": "Quand quelqu’un enregistre un changement ou vous confie une tâche, cela apparaît ici.",
+    "emptyUnreadTitle": "Vous êtes à jour",
+    "emptyUnreadBody": "Toutes les notifications ont été lues.",
+    "unread": "Non lue"
+  },
+  "item": {
+    "taskAssigned": "{actor} vous a confié une tâche : {code} {title}",
+    "activity": "{actor} · {action} · {type} {label}",
+    "someone": "Quelqu’un"
+  }
+}

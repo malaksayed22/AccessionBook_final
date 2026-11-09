@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "label": "Main navigation",
+    "sectionsLabel": "{hub} sections",
+    "hubs": {
+      "dashboard": {
+        "label": "Dashboard",
+        "hint": "Live lab overview"
+      },
+      "inventory": {
+        "label": "Inventory",
+        "hint": "Units, experiments and shipments"
+      },
+      "quality": {
+        "label": "Quality",
+        "hint": "Holds, incidents and recall"
+      },
+      "records": {
+        "label": "Records",
+        "hint": "Cultivars, locations, partners and people"
+      },
+      "compliance": {
+        "label": "Compliance",
+        "hint": "Regulatory status, reports and audit trail"
+      }
+    },
+    "tabs": {
+      "units": {
+        "label": "Units",
+        "hint": "Every unit, by status"
+      },
+      "experiments": {
+        "label": "Experiments",
+        "hint": "Studies and intake"
+      },
+      "materials": {
+        "label": "Shipments",
+        "hint": "Shipments and receipts"
+      },
+      "destroyed": {
+        "label": "Destroyed",
+        "hint": "What was destroyed, when and why"
+      },
+      "holds": {
+        "label": "Holds & incidents",
+        "hint": "Holds and incidents"
+      },
+      "recall": {
+        "label": "Recall trace",
+        "hint": "Trace forward and back"
+      },
+      "cultivars": {
+        "label": "Cultivars",
+        "hint": "Genetic library"
+      },
+      "locations": {
+        "label": "Locations",
+        "hint": "Rooms and capacity"
+      },
+      "organizations": {
+        "label": "Organizations",
+        "hint": "Suppliers, labs and partners"
+      },
+      "members": {
+        "label": "Members",
+        "hint": "People and invitations"
+      },
+      "reports": {
+        "label": "Reports",
+        "hint": "CTLS and ledgers"
+      },
+      "audit": {
+        "label": "Audit trail",
+        "hint": "Who did what, and when"
+      },
+      "settings": {
+        "label": "Settings",
+        "hint": "Licence, back-dating, codes"
+      },
+      "tasks": {
+        "label": "Tasks",
+        "hint": "Work by day, and a calendar"
+      },
+      "sops": {
+        "label": "Procedures",
+        "hint": "SOPs, versions and sign-off"
+      }
+    }
+  },
+  "sidebar": {
+    "label": "Sidebar"
+  },
+  "topbar": {
+    "openNavigation": "Open navigation",
+    "closeNavigation": "Close navigation",
+    "mobileNavigationTitle": "Navigation",
+    "mobileNavigationDescription": "Pages and tools of the application"
+  },
+  "palette": {
+    "open": "Search or jump to…",
+    "title": "Command palette",
+    "placeholder": "Type a page or a search…",
+    "pages": "Pages",
+    "searchFor": "Search everything for “{query}”",
+    "noResults": "Nothing matches “{query}”",
+    "hint": "↑ ↓ to move, Enter to open, Esc to close",
+    "searching": "Searching records…",
+    "groups": {
+      "pages": "Pages",
+      "units": "Units",
+      "experiments": "Experiments",
+      "cultivars": "Cultivars",
+      "search": "Search"
+    }
+  },
+  "user": {
+    "profile": "Profile and security",
+    "signOut": "Sign out",
+    "signedInAs": "Signed in as",
+    "roleAdmin": "Administrator",
+    "roleMember": "Lab member",
+    "openProfile": "Open the profile of {name}"
+  },
+  "theme": {
+    "label": "Colour theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark",
+    "switchTo": "Theme: switch to {mode}"
+  },
+  "locale": {
+    "label": "Language",
+    "switchTo": "Switch language to {language}"
+  },
+  "breadcrumbs": {
+    "label": "Breadcrumb",
+    "home": "Home",
+    "new": "New",
+    "details": "Details",
+    "labels": "Labels",
+    "log": "Log"
+  },
+  "footer": {
+    "tagline": "Records are kept in Canada."
+  }
+}

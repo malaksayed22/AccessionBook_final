@@ -1,0 +1,165 @@
+{
+  "list": {
+    "pageTitle": "Members",
+    "title": "Members",
+    "description": "{count, plural, one {# member} other {# members}} matching the current filters",
+    "searchLabel": "Search members",
+    "searchPlaceholder": "Name",
+    "searchPlaceholderAdmin": "Name or e-mail address",
+    "statusLabel": "Status",
+    "accessLabel": "Role",
+    "caption": "Members",
+    "columns": {
+      "code": "Code",
+      "name": "Member",
+      "access": "Role",
+      "status": "Status",
+      "experiments": "Experiments",
+      "actions": "Actions"
+    },
+    "inviteExpired": "Invitation expired",
+    "more": "+{count} more",
+    "pseudonym": "Former member {number}",
+    "emptyTitle": "No members yet",
+    "emptyBody": "Invite the people who work in the laboratory. Each gets a one-time link to choose a password.",
+    "noMatchTitle": "No members match these filters",
+    "noMatchBody": "Try a different search, or clear the filters to see everyone.",
+    "clearFilters": "Clear filters"
+  },
+  "invite": {
+    "button": "Invite member",
+    "title": "Invite a member",
+    "description": "They receive a one-time link to choose a password. There is no public sign-up.",
+    "readyTitle": "Invitation ready",
+    "readyDescription": "Share the link below. It is shown only once.",
+    "done": "Done",
+    "name": "Username",
+    "nameHint": "How they will sign in. 2 to 40 letters, numbers, spaces, dots, dashes or underscores.",
+    "nameInvalid": "Use 2 to 40 letters, numbers, spaces, dots, dashes or underscores.",
+    "email": "E-mail address",
+    "emailInvalid": "Enter a valid e-mail address.",
+    "role": "Role",
+    "roleMember": "Laboratory member",
+    "roleAdmin": "Administrator",
+    "roleMemberHint": "Works on the experiments they are assigned to.",
+    "roleAdminHint": "Full access: members, organizations, locations, shipments, holds and reports. Two-step verification is required.",
+    "cancel": "Cancel",
+    "submit": "Create invitation",
+    "roleHints": {
+      "REGULAR": "Works on the experiments they are assigned to, and sees only those.",
+      "QA": "Sees the whole laboratory. Places and releases holds, records lab results and incidents, and reads the reports and audit trail. Does not move or change units.",
+      "INVENTORY": "Sees the whole laboratory. Moves, weighs and works on every unit, and manages locations. Cannot ship, destroy or release holds.",
+      "INSPECTOR": "Read-only, for an inspection: sees the whole laboratory, the reports, the audit trail and every record, and changes nothing.",
+      "ADMIN": "Full access: members, organizations, locations, shipments, holds and reports. Two-step verification is required."
+    }
+  },
+  "link": {
+    "intro": "Share this link with {name}. It can be used once and expires on {expires}. It is not shown again, but you can issue a new link at any time.",
+    "fieldLabel": "Invitation link",
+    "fieldHint": "Anyone with this link can set the password for this account.",
+    "copy": "Copy link",
+    "copied": "Copied",
+    "copiedAnnouncement": "Invitation link copied to the clipboard.",
+    "copyFailed": "The link could not be copied automatically. Select the text in the field and copy it.",
+    "email": "E-mail it to {email}",
+    "mailSubject": "Your Accession Book invitation",
+    "mailBody": "Hello {name},\n\nYou have been invited to Accession Book. Use this link to choose your password (valid until {expires}):\n\n{link}\n"
+  },
+  "actions": {
+    "button": "Actions",
+    "menu": "Actions for {name}",
+    "reasonHint": "At least 10 characters. The reason is kept in the audit trail.",
+    "done": "Done",
+    "export": {
+      "menu": "Export personal data"
+    },
+    "reissue": {
+      "menu": "Issue a new link",
+      "title": "Issue a new link for {name}?",
+      "body": "The previous link stops working. The new link is shown once.",
+      "confirm": "Issue new link",
+      "done": "New link issued for {name}",
+      "linkTitle": "New invitation link",
+      "linkDescription": "Share the link below. The previous one no longer works."
+    },
+    "revoke": {
+      "menu": "Revoke invitation",
+      "title": "Revoke the invitation for {name}?",
+      "body": "The link stops working and the pending account is removed. The revocation is recorded in the audit trail.",
+      "confirm": "Revoke invitation",
+      "done": "Invitation for {name} revoked"
+    },
+    "deactivate": {
+      "menu": "Deactivate",
+      "title": "Deactivate {name}?",
+      "body": "They are signed out everywhere and can no longer sign in. Their records and audit history are kept, and you can reactivate them later.",
+      "confirm": "Deactivate member",
+      "done": "{name} deactivated"
+    },
+    "reactivate": {
+      "menu": "Reactivate",
+      "title": "Reactivate {name}?",
+      "body": "They can sign in again with their existing password.",
+      "confirm": "Reactivate member",
+      "done": "{name} reactivated"
+    },
+    "reset-mfa": {
+      "menu": "Reset two-step verification",
+      "title": "Reset two-step verification for {name}?",
+      "body": "Their authenticator and recovery codes are removed and they are signed out. They set up a new authenticator at next sign-in.",
+      "confirm": "Reset two-step verification",
+      "done": "Two-step verification reset for {name}"
+    },
+    "pseudonymise": {
+      "menu": "Erase personal data",
+      "title": "Erase the personal data of {name}?",
+      "body": "The e-mail address, password, two-step verification, sessions and name are removed from the account, which becomes a numbered former member. Audit entries and regulated records keep the name as it was written at the time. This cannot be undone.",
+      "typeLabel": "Type {name} to confirm",
+      "confirm": "Erase personal data",
+      "done": "Personal data erased for {name}"
+    },
+    "role": {
+      "menu": "Change role",
+      "title": "Change the role of {name}",
+      "body": "The new role applies from their next sign-in: their open sessions end now.",
+      "label": "New role",
+      "confirm": "Change role",
+      "done": "Role of {name} changed",
+      "reason": "Reason"
+    }
+  },
+  "detail": {
+    "pageTitle": "Member {id}",
+    "description": "{role}",
+    "profile": {
+      "title": "Profile",
+      "role": "Role",
+      "status": "Status",
+      "erased": "Personal data erased",
+      "email": "E-mail address",
+      "created": "Account created",
+      "inviteExpires": "Invitation expires"
+    },
+    "experiments": {
+      "title": "{count, plural, one {# experiment} other {# experiments}}",
+      "caption": "Experiments this member belongs to",
+      "columns": {
+        "code": "Code",
+        "name": "Experiment",
+        "role": "Role",
+        "status": "Status",
+        "units": "Units"
+      },
+      "emptyTitle": "Not assigned to any experiment",
+      "emptyBody": "Add this member from an experiment's page.",
+      "recent": "Showing the {shown} most recent of {total}.",
+      "seeAll": "See all their experiments"
+    },
+    "activity": {
+      "title": "Recent activity",
+      "description": "The latest recorded actions by this member, from the audit trail.",
+      "none": "No activity has been recorded."
+    },
+    "assignTask": "Assign a task"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "list": {
+    "pageTitle": "Membres",
+    "title": "Membres",
+    "description": "{count, plural, one {# membre correspond} other {# membres correspondent}} aux filtres actuels",
+    "searchLabel": "Rechercher des membres",
+    "searchPlaceholder": "Nom",
+    "searchPlaceholderAdmin": "Nom ou adresse courriel",
+    "statusLabel": "Statut",
+    "accessLabel": "Rôle",
+    "caption": "Membres",
+    "columns": {
+      "code": "Code",
+      "name": "Membre",
+      "access": "Rôle",
+      "status": "Statut",
+      "experiments": "Expériences",
+      "actions": "Actions"
+    },
+    "inviteExpired": "Invitation expirée",
+    "more": "+{count} de plus",
+    "pseudonym": "Ancien membre {number}",
+    "emptyTitle": "Aucun membre pour l’instant",
+    "emptyBody": "Invitez les personnes qui travaillent au laboratoire. Chacune reçoit un lien à usage unique pour choisir un mot de passe.",
+    "noMatchTitle": "Aucun membre ne correspond à ces filtres",
+    "noMatchBody": "Essayez une autre recherche, ou effacez les filtres pour voir tout le monde.",
+    "clearFilters": "Effacer les filtres"
+  },
+  "invite": {
+    "button": "Inviter un membre",
+    "title": "Inviter un membre",
+    "description": "La personne reçoit un lien à usage unique pour choisir un mot de passe. Il n’y a pas d’inscription publique.",
+    "readyTitle": "Invitation prête",
+    "readyDescription": "Transmettez le lien ci-dessous. Il n’est affiché qu’une seule fois.",
+    "done": "Terminé",
+    "name": "Nom d’utilisateur",
+    "nameHint": "Le nom avec lequel la personne se connectera. De 2 à 40 lettres, chiffres, espaces, points, traits d’union ou tirets bas.",
+    "nameInvalid": "Utilisez de 2 à 40 lettres, chiffres, espaces, points, traits d’union ou tirets bas.",
+    "email": "Adresse courriel",
+    "emailInvalid": "Saisissez une adresse courriel valide.",
+    "role": "Rôle",
+    "roleMember": "Membre du laboratoire",
+    "roleAdmin": "Administrateur",
+    "roleMemberHint": "Travaille sur les expériences auxquelles elle est affectée.",
+    "roleAdminHint": "Accès complet : membres, organisations, emplacements, expéditions, retenues et rapports. La vérification en deux étapes est obligatoire.",
+    "cancel": "Annuler",
+    "submit": "Créer l’invitation",
+    "roleHints": {
+      "REGULAR": "Travaille sur les expériences qui lui sont confiées, et ne voit que celles-ci.",
+      "QA": "Voit tout le laboratoire. Place et lève les retenues, consigne les résultats de laboratoire et les incidents, et consulte les rapports et la piste d’audit. Ne déplace ni ne modifie les unités.",
+      "INVENTORY": "Voit tout le laboratoire. Déplace, pèse et travaille sur toutes les unités, et gère les emplacements. Ne peut ni expédier, ni détruire, ni lever une retenue.",
+      "INSPECTOR": "Lecture seule, pour une inspection : voit tout le laboratoire, les rapports, la piste d’audit et tous les dossiers, sans rien modifier.",
+      "ADMIN": "Accès complet : membres, organisations, emplacements, expéditions, retenues et rapports. La vérification en deux étapes est obligatoire."
+    }
+  },
+  "link": {
+    "intro": "Transmettez ce lien à {name}. Il ne peut servir qu’une fois et expire le {expires}. Il n’est plus affiché ensuite, mais vous pouvez émettre un nouveau lien à tout moment.",
+    "fieldLabel": "Lien d’invitation",
+    "fieldHint": "Toute personne disposant de ce lien peut définir le mot de passe de ce compte.",
+    "copy": "Copier le lien",
+    "copied": "Copié",
+    "copiedAnnouncement": "Lien d’invitation copié dans le presse-papiers.",
+    "copyFailed": "Le lien n’a pas pu être copié automatiquement. Sélectionnez le texte du champ et copiez-le.",
+    "email": "L’envoyer par courriel à {email}",
+    "mailSubject": "Votre invitation à Accession Book",
+    "mailBody": "Bonjour {name},\n\nVous avez été invité(e) à Accession Book. Utilisez ce lien pour choisir votre mot de passe (valide jusqu’au {expires}) :\n\n{link}\n"
+  },
+  "actions": {
+    "button": "Actions",
+    "menu": "Actions pour {name}",
+    "reasonHint": "Au moins 10 caractères. Le motif est conservé dans la piste d’audit.",
+    "done": "Terminé",
+    "export": {
+      "menu": "Exporter les données personnelles"
+    },
+    "reissue": {
+      "menu": "Émettre un nouveau lien",
+      "title": "Émettre un nouveau lien pour {name} ?",
+      "body": "Le lien précédent cesse de fonctionner. Le nouveau lien n’est affiché qu’une fois.",
+      "confirm": "Émettre un nouveau lien",
+      "done": "Nouveau lien émis pour {name}",
+      "linkTitle": "Nouveau lien d’invitation",
+      "linkDescription": "Transmettez le lien ci-dessous. Le précédent ne fonctionne plus."
+    },
+    "revoke": {
+      "menu": "Révoquer l’invitation",
+      "title": "Révoquer l’invitation de {name} ?",
+      "body": "Le lien cesse de fonctionner et le compte en attente est supprimé. La révocation est consignée dans la piste d’audit.",
+      "confirm": "Révoquer l’invitation",
+      "done": "Invitation de {name} révoquée"
+    },
+    "deactivate": {
+      "menu": "Désactiver",
+      "title": "Désactiver {name} ?",
+      "body": "La personne est déconnectée partout et ne peut plus se connecter. Ses dossiers et son historique d’audit sont conservés, et vous pourrez la réactiver plus tard.",
+      "confirm": "Désactiver le membre",
+      "done": "{name} désactivé"
+    },
+    "reactivate": {
+      "menu": "Réactiver",
+      "title": "Réactiver {name} ?",
+      "body": "La personne peut de nouveau se connecter avec son mot de passe actuel.",
+      "confirm": "Réactiver le membre",
+      "done": "{name} réactivé"
+    },
+    "reset-mfa": {
+      "menu": "Réinitialiser la vérification en deux étapes",
+      "title": "Réinitialiser la vérification en deux étapes de {name} ?",
+      "body": "Son authentificateur et ses codes de récupération sont supprimés, et la personne est déconnectée. Elle configure un nouvel authentificateur à sa prochaine connexion.",
+      "confirm": "Réinitialiser la vérification",
+      "done": "Vérification en deux étapes réinitialisée pour {name}"
+    },
+    "pseudonymise": {
+      "menu": "Effacer les données personnelles",
+      "title": "Effacer les données personnelles de {name} ?",
+      "body": "L’adresse courriel, le mot de passe, la vérification en deux étapes, les sessions et le nom sont retirés du compte, qui devient un ancien membre numéroté. Les entrées d’audit et les dossiers réglementés conservent le nom tel qu’il a été écrit à l’époque. Cette action est irréversible.",
+      "typeLabel": "Saisissez {name} pour confirmer",
+      "confirm": "Effacer les données personnelles",
+      "done": "Données personnelles effacées pour {name}"
+    },
+    "role": {
+      "menu": "Changer le rôle",
+      "title": "Changer le rôle de {name}",
+      "body": "Le nouveau rôle s’applique dès sa prochaine connexion : ses sessions ouvertes se ferment maintenant.",
+      "label": "Nouveau rôle",
+      "confirm": "Changer le rôle",
+      "done": "Rôle de {name} changé",
+      "reason": "Motif"
+    }
+  },
+  "detail": {
+    "pageTitle": "Membre {id}",
+    "description": "{role}",
+    "profile": {
+      "title": "Profil",
+      "role": "Rôle",
+      "status": "Statut",
+      "erased": "Données personnelles effacées",
+      "email": "Adresse courriel",
+      "created": "Compte créé le",
+      "inviteExpires": "Expiration de l’invitation"
+    },
+    "experiments": {
+      "title": "{count, plural, one {# expérience} other {# expériences}}",
+      "caption": "Expériences auxquelles ce membre participe",
+      "columns": {
+        "code": "Code",
+        "name": "Expérience",
+        "role": "Rôle",
+        "status": "Statut",
+        "units": "Unités"
+      },
+      "emptyTitle": "Aucune expérience assignée",
+      "emptyBody": "Ajoutez ce membre depuis la page d’une expérience.",
+      "recent": "Les {shown} plus récentes sur {total}.",
+      "seeAll": "Voir toutes ses expériences"
+    },
+    "activity": {
+      "title": "Activité récente",
+      "description": "Les dernières actions consignées par ce membre, d’après la piste d’audit.",
+      "none": "Aucune activité n’a été consignée."
+    },
+    "assignTask": "Confier une tâche"
+  }
+}

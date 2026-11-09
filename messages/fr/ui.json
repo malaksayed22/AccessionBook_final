@@ -1,0 +1,77 @@
+{
+  "close": "Fermer",
+  "cancel": "Annuler",
+  "dismiss": "Masquer",
+  "loading": "Chargement…",
+  "required": "obligatoire",
+  "previous": "Précédent",
+  "next": "Suivant",
+  "tone": {
+    "neutral": "Remarque",
+    "info": "Information",
+    "success": "Succès",
+    "warning": "Avertissement",
+    "danger": "Erreur"
+  },
+  "breadcrumbs": {
+    "label": "Fil d’Ariane"
+  },
+  "sort": {
+    "ascending": "trier par ordre croissant",
+    "descending": "trier par ordre décroissant"
+  },
+  "table": {
+    "empty": "Aucun résultat.",
+    "region": "{caption} (tableau défilant)"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "range": "{from, number}–{to, number} sur {total, number}",
+    "pageOf": "Page {page, number} sur {pageCount, number}",
+    "page": "Page {page, number}"
+  },
+  "filters": {
+    "label": "Filtres",
+    "clearAll": "Tout effacer"
+  },
+  "toast": {
+    "viewport": "Notifications"
+  },
+  "locked": {
+    "done": "terminé",
+    "todo": "à faire"
+  },
+  "confirm": {
+    "reasonLabel": "Motif",
+    "reasonHint": "Au moins {count, number} caractères.",
+    "typeToConfirm": "Saisissez {phrase} pour confirmer",
+    "failed": "L’action n’a pas pu être effectuée. Réessayez."
+  },
+  "charts": {
+    "hint": "Utilisez les flèches gauche et droite pour consulter les valeurs.",
+    "table": "Afficher les données sous forme de tableau",
+    "period": "Période",
+    "category": "Catégorie",
+    "value": "Unités",
+    "share": "Part"
+  },
+  "tableTools": {
+    "columns": "Colonnes",
+    "columnsHidden": "Colonnes ({count} masquées)",
+    "columnsLabel": "Colonnes affichées",
+    "views": "Vues enregistrées",
+    "viewsLabel": "Vos vues enregistrées",
+    "noViews": "Aucune vue enregistrée.",
+    "save": "Enregistrer cette vue…",
+    "saveTitle": "Enregistrer cette vue",
+    "saveDescription": "Garde les filtres, le tri, les colonnes et le regroupement sous un nom. Vous seul voyez vos vues.",
+    "name": "Nom",
+    "nameHint": "Enregistrer sous un nom déjà utilisé remplace cette vue.",
+    "saveButton": "Enregistrer la vue",
+    "cancel": "Annuler",
+    "saved": "Vue « {name} » enregistrée",
+    "deleted": "Vue « {name} » supprimée",
+    "delete": "Supprimer « {name} »",
+    "deleteFailed": "La vue n’a pas pu être supprimée. Réessayez."
+  }
+}

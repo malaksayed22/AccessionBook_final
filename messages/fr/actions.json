@@ -1,0 +1,287 @@
+{
+  "launcher": {
+    "open": "Passer à l’action",
+    "title": "Passer à l’action",
+    "scope": {
+      "global": "Enregistrez une action pour l’ensemble du laboratoire.",
+      "experiment": "Expérience {code} : {name}",
+      "experimentUnknown": "Enregistrez une action pour cette expérience.",
+      "unit": "Enregistrez une action pour l’unité {name}."
+    },
+    "loadFailed": "Les renseignements nécessaires aux actions n’ont pas pu être chargés.",
+    "retry": "Réessayer",
+    "unitMissing": "Cette unité est introuvable, ou vous n’y avez pas accès.",
+    "readOnly": "Vous pouvez consulter cet enregistrement, mais pas le modifier. Seuls les administrateurs et les membres de son expérience peuvent agir sur lui.",
+    "emptyTitle": "Aucune action disponible ici",
+    "emptyBody": "Votre rôle ou l’état actuel de cet enregistrement ne permet aucune action. Rien n’a été modifié.",
+    "footer": "Chaque action est inscrite à la piste d’audit avec votre nom et l’heure.",
+    "back": "Toutes les actions",
+    "continue": "Continuer",
+    "previousStep": "Retour",
+    "stepLine": "Étape {current, number} de {total, number} : {title}"
+  },
+  "categories": {
+    "create": "Créer",
+    "lifecycle": "Signaler un changement",
+    "custody": "Garde",
+    "quality": "Qualité",
+    "records": "Registres"
+  },
+  "items": {
+    "new_experiment": {
+      "title": "Nouvelle expérience",
+      "description": "Démarrer une expérience et y enregistrer le premier matériel."
+    },
+    "new_sub_experiment": {
+      "title": "Sous-expérience",
+      "description": "Démarrer une expérience enfant à partir de cette unité."
+    },
+    "register_units": {
+      "title": "Enregistrer des unités",
+      "description": "Ajouter de nouveaux échantillons issus de votre laboratoire."
+    },
+    "receive_units": {
+      "title": "Recevoir des unités",
+      "description": "Consigner du matériel reçu d’une autre organisation."
+    },
+    "derive": {
+      "title": "Dériver de cette unité",
+      "description": "Prélever un clone ou une bouture, ou lancer une subculture. L’unité parente reste active."
+    },
+    "change_stage": {
+      "title": "Changer de stade",
+      "description": "Signaler que l’unité est passée à un nouveau stade, avec la date du changement."
+    },
+    "measure": {
+      "title": "Consigner une mesure",
+      "description": "Saisir de nouveaux poids ou un nouveau nombre de semences."
+    },
+    "move": {
+      "title": "Déplacer",
+      "description": "Transférer l’unité vers un autre emplacement, confirmé par son code-barres."
+    },
+    "ship": {
+      "title": "Expédier",
+      "description": "Créer une expédition sortante pour cette unité."
+    },
+    "place_hold": {
+      "title": "Placer en retenue",
+      "description": "Geler l’unité tant qu’une question de qualité reste ouverte."
+    },
+    "release_hold": {
+      "title": "Lever la retenue",
+      "description": "Lever la retenue après examen. Un motif est exigé."
+    },
+    "destroy": {
+      "title": "Détruire",
+      "description": "Consigner la destruction de cette unité, avec le motif."
+    },
+    "log_activity": {
+      "title": "Consigner une intervention",
+      "description": "Nutriments, traitements, dépistage ou relevés environnementaux."
+    },
+    "attach_file": {
+      "title": "Joindre un fichier",
+      "description": "Une photo, un protocole ou un certificat conservé avec l’unité."
+    }
+  },
+  "fields": {
+    "choose": "Choisir…",
+    "experiment": "Expérience",
+    "experimentOption": "{code} — {name}",
+    "locationOption": "{name} ({used, number} sur {capacity, number} occupés)",
+    "type": "Type",
+    "cultivar": "Cultivar",
+    "unitName": "Nom",
+    "quantity": "Quantité",
+    "quantityHint": "Entre 1 et {max, number}.",
+    "location": "Emplacement",
+    "initialStage": "Stade initial",
+    "seedCount": "Nombre de semences",
+    "wetWeight": "Poids humide (g)",
+    "dryWeight": "Poids sec (g)",
+    "sourceType": "Quelle est l’origine ?",
+    "sourceDescription": "Détails sur la source",
+    "provider": "Reçu de",
+    "receiptReference": "Référence du reçu ou du manifeste",
+    "notes": "Notes (facultatif)",
+    "effectiveDate": "Date de l’événement",
+    "plantCount": "Plantes par unité",
+    "plantCountHint": "Laissez vide pour une plante. Un nombre plus grand fait de chaque unité un groupe de plantes, compté comme un lot."
+  },
+  "issues": {
+    "required": "Ce champ est obligatoire.",
+    "invalid": "Saisissez une valeur valide.",
+    "tooShort": "Écrivez au moins {min, number} caractères.",
+    "rangeBetween": "Saisissez une valeur de {min, number} à {max, number}.",
+    "rangeMin": "Saisissez {min, number} ou plus.",
+    "rangeMax": "Utilisez au plus {max, number}.",
+    "mismatch": "Ce code ne correspond pas au code-barres de cette unité.",
+    "future": "La date ne peut pas être dans le futur.",
+    "unchanged": "Choisissez une valeur différente de la valeur actuelle.",
+    "atLeastOne": "Saisissez au moins une mesure."
+  },
+  "experiment": {
+    "body": "Les expériences se créent sur leur propre page, avec un formulaire guidé qui conserve votre brouillon. Rien n’est enregistré tant que vous n’avez pas terminé.",
+    "subBody": "Le formulaire de sous-expérience s’ouvre avec {name} déjà indiquée comme unité de départ.",
+    "open": "Ouvrir le formulaire de nouvelle expérience"
+  },
+  "register": {
+    "step1": "Matériel",
+    "step2": "Origine",
+    "submit": {
+      "register": "Enregistrer les unités",
+      "receive": "Recevoir les unités"
+    },
+    "missingLists": "Il faut au moins un cultivar et un emplacement actif avant d’enregistrer des unités. Ajoutez-les depuis les pages Cultivars et Emplacements.",
+    "nameHint": "Si la quantité dépasse 1, il s’agit du nom de base : NOM-1, NOM-2, etc.",
+    "sourceHint": "Indiquez d’où provient ce matériel (stock, unité plus ancienne, collection), d’au moins 10 caractères.",
+    "providerHint": "L’organisation d’où provient le matériel.",
+    "receiptHint": "Facultatif. Un numéro de manifeste ou une note sur la livraison.",
+    "review": "Avant l’envoi",
+    "reviewNames": "Noms"
+  },
+  "derive": {
+    "submit": "Créer les unités dérivées",
+    "parent": "Parent : {name}. Le parent n’est pas modifié et reste actif.",
+    "kindLabel": "Que prélevez-vous ?",
+    "kind": {
+      "clone": "Clone",
+      "cutting": "Bouture",
+      "subculture": "Subculture"
+    },
+    "experiment": "Expérience des nouvelles unités",
+    "name": "Nom (facultatif)",
+    "nameHint": "Laissez vide pour les nommer automatiquement à partir de {name}.",
+    "sameLocation": "Même emplacement que le parent",
+    "defaultStage": "Stade par défaut",
+    "note": "Note de protocole (facultatif)"
+  },
+  "move": {
+    "submit": "Confirmer le déplacement",
+    "currentLocation": "{name} se trouve actuellement à l’emplacement {location}.",
+    "noLocation": "Aucun emplacement n’est consigné pour {name}.",
+    "destination": "Destination",
+    "barcode": "Balayer le code-barres de l’unité",
+    "barcodeHint": "Balayez ou saisissez le code-barres pour confirmer que c’est la bonne unité. Pour cette unité, il se lit {name}.",
+    "note": "Note (facultatif)"
+  },
+  "stage": {
+    "submit": "Signaler le changement de stade",
+    "current": "{name} est actuellement au stade « {stage} ».",
+    "newStage": "Nouveau stade",
+    "dateHint": "Antidatez si le changement a eu lieu plus tôt : les durées de stade sont comptées à partir de cette date. Les dates futures sont refusées.",
+    "note": "Observation (facultatif)"
+  },
+  "measure": {
+    "submit": "Consigner la mesure",
+    "weightIntro": "Saisissez les poids mesurés pour {name}. Laissez un champ vide pour conserver sa dernière valeur.",
+    "countIntro": "Saisissez le nouveau nombre de semences de {name}.",
+    "dateHint": "La date de la mesure. Les dates futures sont refusées.",
+    "note": "Note (facultatif)"
+  },
+  "hold": {
+    "submit": "Placer en retenue",
+    "effect": "Tant que {name} est en retenue, elle ne peut être ni déplacée, ni dérivée, ni changée de stade, ni expédiée, ni détruite. Seul un administrateur peut la lever.",
+    "reason": "Motif",
+    "reasonHint": "Au moins {count, number} caractères. Ce motif fait partie du dossier qualité."
+  },
+  "release": {
+    "open": "Lever la retenue…",
+    "current": "Statut actuel de {name} : {kind}.",
+    "effect": "La levée de la retenue permet de nouveau de déplacer, dériver, expédier et détruire l’unité. Votre motif est versé à la piste d’audit.",
+    "confirmTitle": "Lever la retenue sur {name} ?",
+    "confirmBody": "Expliquez pourquoi il est sûr de lever cette retenue. Il se peut qu’on vous demande de confirmer votre mot de passe.",
+    "confirm": "Lever la retenue",
+    "reason": "Motif de la levée"
+  },
+  "destroy": {
+    "review": "Passer en revue la destruction…",
+    "warningTitle": "La destruction est définitive",
+    "warning": "{name} sortira de l’inventaire. L’enregistrement ne pourra ensuite ni être modifié ni être supprimé, et il figurera au registre des destructions.",
+    "date": "Date de la destruction",
+    "dateHint": "Les dates futures sont refusées.",
+    "confirmTitle": "Détruire {name} ?",
+    "confirmBody": "Cette opération crée un enregistrement de destruction permanent. Elle est irréversible. Il se peut qu’on vous demande de confirmer votre mot de passe.",
+    "confirm": "Détruire l’unité",
+    "reason": "Motif de la destruction",
+    "reasonHint": "Au moins {count, number} caractères. Les organismes de réglementation le liront."
+  },
+  "ship": {
+    "submitDraft": "Enregistrer l’expédition comme brouillon",
+    "submitNow": "Expédier maintenant",
+    "line": "Ligne d’expédition : {name}, à titre de {material}.",
+    "recipient": "Expédier à",
+    "recipientHint": "L’organisation destinataire. Ajoutez des organisations depuis la page Organisations.",
+    "weight": "Poids (g)",
+    "basis": "Base du poids",
+    "tracking": "Numéro de suivi (facultatif)",
+    "licence": "Numéro de licence du destinataire (facultatif)",
+    "licenceHint": "Si ce champ est vide, le numéro de licence de la fiche de l’organisation est utilisé.",
+    "dispatchNow": "Marquer comme en transit maintenant",
+    "dispatchNowHint": "Consigne l’expédition maintenant : la quantité de cette ligne sort du stock de l’unité, et le reste demeure en inventaire. Laissez décoché pour enregistrer un brouillon et l’expédier plus tard depuis l’expédition.",
+    "dispatchWarning": "La quantité de cette ligne sera prélevée sur {name} dès que vous confirmerez. Cette opération est irréversible."
+  },
+  "activity": {
+    "submit": "Consigner l’intervention",
+    "type": "Type d’intervention",
+    "title": "Titre",
+    "details": "Détails (facultatif)",
+    "product": "Produit ou espèce",
+    "productHint": "Obligatoire pour un pesticide ou un lâcher d’insectes utiles.",
+    "pcpNumber": "Numéro d’homologation LPA",
+    "pcpNumberHint": "Le numéro de la Loi sur les produits antiparasitaires inscrit sur l’étiquette.",
+    "amount": "Quantité utilisée",
+    "amountUnit": "Unité",
+    "amountUnitHint": "Par exemple mL, L, g ou insectes.",
+    "method": "Méthode (facultatif)"
+  },
+  "attach": {
+    "submit": "Joindre le fichier",
+    "category": "Catégorie",
+    "label": "Libellé",
+    "file": "Fichier",
+    "fileHint": "PDF, image, CSV ou texte, jusqu’à {megabytes, number} Mo. Le type est vérifié d’après le contenu du fichier.",
+    "tooLarge": "Ce fichier dépasse {megabytes, number} Mo."
+  },
+  "done": {
+    "new_experiment": "Expérience créée.",
+    "new_sub_experiment": "Sous-expérience créée.",
+    "register_units": "{count, plural, one {Unité {name} enregistrée.} other {# unités enregistrées, à commencer par {name}.}}",
+    "receive_units": "{count, plural, one {Unité {name} reçue.} other {# unités reçues, à commencer par {name}.}}",
+    "derive": "{count, plural, one {{kind, select, clone {Clone {name} créé à partir de {parent}.} cutting {Bouture {name} créée à partir de {parent}.} other {Subculture {name} créée à partir de {parent}.}}} other {# unités créées à partir de {parent}, à commencer par {name}.}}",
+    "change_stage": "Stade de {name} changé pour « {stage} ».",
+    "measure": "Mesure consignée pour {name}.",
+    "move": "L’unité {name} a été déplacée vers {location}.",
+    "ship": "{sent, select, yes {L’unité {name} a été expédiée ({reference}).} other {Expédition {reference} enregistrée comme brouillon pour {name}.}}",
+    "place_hold": "{kind} appliquée à {name}.",
+    "release_hold": "Retenue levée sur {name}.",
+    "destroy": "Destruction de {name} consignée.",
+    "log_activity": "Intervention « {title} » consignée pour {name}.",
+    "attach_file": "« {label} » joint à {name}.",
+    "view": "Voir",
+    "another": "Autre action",
+    "close": "Fermer"
+  },
+  "audit": {
+    "create": "Créé",
+    "derive": "Dérivé",
+    "derive_parent": "A produit une unité dérivée",
+    "stage_transition": "Changement de stade",
+    "transfer": "Transfert",
+    "activity": "Intervention",
+    "attachment": "Pièce jointe",
+    "destroy": "Détruit",
+    "update": "Modifié",
+    "measure": "Mesure",
+    "ship": "Expédié",
+    "receive": "Reçu",
+    "void": "Annulé",
+    "lineage": "Filiation",
+    "hold": "Retenue qualité",
+    "release": "Retenue levée",
+    "lab_test": "Analyse de laboratoire",
+    "incident_open": "Incident ouvert",
+    "incident_update": "Incident mis à jour"
+  }
+}

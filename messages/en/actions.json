@@ -1,0 +1,287 @@
+{
+  "launcher": {
+    "open": "Take action",
+    "title": "Take action",
+    "scope": {
+      "global": "Record something across the whole laboratory.",
+      "experiment": "Experiment {code}: {name}",
+      "experimentUnknown": "Record something for this experiment.",
+      "unit": "Record something for unit {name}."
+    },
+    "loadFailed": "The information needed for actions could not be loaded.",
+    "retry": "Try again",
+    "unitMissing": "This unit could not be found, or you do not have access to it.",
+    "readOnly": "You can view this record but not change it. Only administrators and members of its experiment can take action on it.",
+    "emptyTitle": "No actions available here",
+    "emptyBody": "Your role or the current status of this record does not allow any action. Nothing has been changed.",
+    "footer": "Every action is written to the audit trail with your name and the time.",
+    "back": "All actions",
+    "continue": "Continue",
+    "previousStep": "Back",
+    "stepLine": "Step {current, number} of {total, number}: {title}"
+  },
+  "categories": {
+    "create": "Create",
+    "lifecycle": "Report a change",
+    "custody": "Custody",
+    "quality": "Quality",
+    "records": "Records"
+  },
+  "items": {
+    "new_experiment": {
+      "title": "New experiment",
+      "description": "Start an experiment and register its first material."
+    },
+    "new_sub_experiment": {
+      "title": "Sub-experiment",
+      "description": "Start a child experiment from this unit."
+    },
+    "register_units": {
+      "title": "Register units",
+      "description": "Add new samples that originate in your laboratory."
+    },
+    "receive_units": {
+      "title": "Receive units",
+      "description": "Record material received from another organization."
+    },
+    "derive": {
+      "title": "Derive from this unit",
+      "description": "Take a clone or cutting, or start a subculture. The parent stays active."
+    },
+    "change_stage": {
+      "title": "Change stage",
+      "description": "Report that the unit entered a new stage, with the date it happened."
+    },
+    "measure": {
+      "title": "Record a measurement",
+      "description": "Enter new weights or a new seed count."
+    },
+    "move": {
+      "title": "Move",
+      "description": "Transfer the unit to another location, confirmed by its barcode."
+    },
+    "ship": {
+      "title": "Ship",
+      "description": "Create an outbound shipment for this unit."
+    },
+    "place_hold": {
+      "title": "Place a hold",
+      "description": "Freeze the unit while a quality question is open."
+    },
+    "release_hold": {
+      "title": "Release the hold",
+      "description": "Lift the hold after review. Needs a reason."
+    },
+    "destroy": {
+      "title": "Destroy",
+      "description": "Record the destruction of this unit, with the reason."
+    },
+    "log_activity": {
+      "title": "Log an activity",
+      "description": "Nutrients, treatments, scouting or environmental readings."
+    },
+    "attach_file": {
+      "title": "Attach a file",
+      "description": "A photo, protocol or certificate kept with the unit."
+    }
+  },
+  "fields": {
+    "choose": "Choose…",
+    "experiment": "Experiment",
+    "experimentOption": "{code} — {name}",
+    "locationOption": "{name} ({used, number} of {capacity, number} used)",
+    "type": "Type",
+    "cultivar": "Cultivar",
+    "unitName": "Name",
+    "quantity": "Quantity",
+    "quantityHint": "Between 1 and {max, number}.",
+    "location": "Location",
+    "initialStage": "Initial stage",
+    "seedCount": "Seed count",
+    "wetWeight": "Wet weight (g)",
+    "dryWeight": "Dry weight (g)",
+    "sourceType": "How did it originate?",
+    "sourceDescription": "Source details",
+    "provider": "Received from",
+    "receiptReference": "Receipt or manifest reference",
+    "notes": "Notes (optional)",
+    "effectiveDate": "Date it happened",
+    "plantCount": "Plants in each unit",
+    "plantCountHint": "Leave empty for one plant. A larger number makes each unit a plant group, counted as a batch."
+  },
+  "issues": {
+    "required": "This field is required.",
+    "invalid": "Enter a valid value.",
+    "tooShort": "Write at least {min, number} characters.",
+    "rangeBetween": "Enter a value from {min, number} to {max, number}.",
+    "rangeMin": "Enter {min, number} or more.",
+    "rangeMax": "Use at most {max, number}.",
+    "mismatch": "This does not match the barcode of this unit.",
+    "future": "The date cannot be in the future.",
+    "unchanged": "Choose something different from the current value.",
+    "atLeastOne": "Enter at least one measurement."
+  },
+  "experiment": {
+    "body": "Experiments are created on their own page, with a guided form that keeps your draft. Nothing is saved until you finish there.",
+    "subBody": "The sub-experiment form opens with {name} already filled in as its starting unit.",
+    "open": "Open the new experiment form"
+  },
+  "register": {
+    "step1": "Material",
+    "step2": "Origin",
+    "submit": {
+      "register": "Register units",
+      "receive": "Receive units"
+    },
+    "missingLists": "At least one cultivar and one active location must exist before units can be registered. Add them from the Cultivars and Locations pages.",
+    "nameHint": "With a quantity above 1 this is the base name: NAME-1, NAME-2 and so on.",
+    "sourceHint": "Say where this material comes from (stock, an older unit, a collection), at least 10 characters.",
+    "providerHint": "The organization the material came from.",
+    "receiptHint": "Optional. A manifest number or a note about the delivery.",
+    "review": "Before you send",
+    "reviewNames": "Names"
+  },
+  "derive": {
+    "submit": "Create derived units",
+    "parent": "Parent: {name}. The parent is not changed and stays active.",
+    "kindLabel": "What are you taking?",
+    "kind": {
+      "clone": "Clone",
+      "cutting": "Cutting",
+      "subculture": "Subculture"
+    },
+    "experiment": "Experiment for the new units",
+    "name": "Name (optional)",
+    "nameHint": "Leave empty to name them automatically from {name}.",
+    "sameLocation": "Same location as the parent",
+    "defaultStage": "Default stage",
+    "note": "Protocol note (optional)"
+  },
+  "move": {
+    "submit": "Confirm move",
+    "currentLocation": "{name} is currently in {location}.",
+    "noLocation": "{name} has no recorded location.",
+    "destination": "Destination",
+    "barcode": "Scan the unit barcode",
+    "barcodeHint": "Scan or type the barcode to confirm you are moving the right unit. For this unit it reads {name}.",
+    "note": "Note (optional)"
+  },
+  "stage": {
+    "submit": "Report stage change",
+    "current": "{name} is currently in the {stage} stage.",
+    "newStage": "New stage",
+    "dateHint": "Back-date this if the change happened earlier. Stage durations are counted from this date. Future dates are not accepted.",
+    "note": "Observation (optional)"
+  },
+  "measure": {
+    "submit": "Record measurement",
+    "weightIntro": "Enter the weights you measured for {name}. Leave a field empty to keep its last value.",
+    "countIntro": "Enter the new seed count for {name}.",
+    "dateHint": "The date of the measurement. Future dates are not accepted.",
+    "note": "Note (optional)"
+  },
+  "hold": {
+    "submit": "Place hold",
+    "effect": "While {name} is on hold it cannot be moved, derived from, changed in stage, shipped or destroyed. Only an administrator can release it.",
+    "reason": "Reason",
+    "reasonHint": "At least {count, number} characters. This is part of the quality record."
+  },
+  "release": {
+    "open": "Release hold…",
+    "current": "Current status of {name}: {kind}.",
+    "effect": "Releasing the hold lets the unit be moved, derived from, shipped and destroyed again. Your reason becomes part of the audit trail.",
+    "confirmTitle": "Release the hold on {name}?",
+    "confirmBody": "State why it is safe to release this unit. You may be asked to confirm your password.",
+    "confirm": "Release hold",
+    "reason": "Reason for release"
+  },
+  "destroy": {
+    "review": "Review destruction…",
+    "warningTitle": "Destruction is permanent",
+    "warning": "{name} will leave inventory. The record cannot be edited or removed afterwards, and it is listed in the destruction register.",
+    "date": "Date of destruction",
+    "dateHint": "Future dates are not accepted.",
+    "confirmTitle": "Destroy {name}?",
+    "confirmBody": "This writes a permanent destruction record. It cannot be undone. You may be asked to confirm your password.",
+    "confirm": "Destroy unit",
+    "reason": "Reason for destruction",
+    "reasonHint": "At least {count, number} characters. Regulators read this."
+  },
+  "ship": {
+    "submitDraft": "Save shipment as draft",
+    "submitNow": "Ship now",
+    "line": "Shipment line: {name} as {material}.",
+    "recipient": "Ship to",
+    "recipientHint": "The receiving organization. Add organizations from the Organizations page.",
+    "weight": "Weight (g)",
+    "basis": "Weight basis",
+    "tracking": "Tracking number (optional)",
+    "licence": "Recipient licence number (optional)",
+    "licenceHint": "Left empty, the licence number on the organization record is used.",
+    "dispatchNow": "Mark as in transit now",
+    "dispatchNowHint": "Records the shipment now: the quantity on this line leaves the unit's stock, and what is left stays in inventory. Leave unticked to save a draft and dispatch it later from the shipment.",
+    "dispatchWarning": "The quantity on this line is taken from {name} as soon as you confirm. This cannot be undone."
+  },
+  "activity": {
+    "submit": "Log activity",
+    "type": "Kind of activity",
+    "title": "Title",
+    "details": "Details (optional)",
+    "product": "Product or species",
+    "productHint": "Required for a pesticide or a release of beneficial insects.",
+    "pcpNumber": "PCP registration number",
+    "pcpNumberHint": "The Pest Control Products Act number on the label.",
+    "amount": "Amount used",
+    "amountUnit": "Unit",
+    "amountUnitHint": "For example mL, L, g or insects.",
+    "method": "Method (optional)"
+  },
+  "attach": {
+    "submit": "Attach file",
+    "category": "Category",
+    "label": "Label",
+    "file": "File",
+    "fileHint": "PDF, image, CSV or text, up to {megabytes, number} MB. The type is checked from the file contents.",
+    "tooLarge": "This file is larger than {megabytes, number} MB."
+  },
+  "done": {
+    "new_experiment": "Experiment created.",
+    "new_sub_experiment": "Sub-experiment created.",
+    "register_units": "{count, plural, one {Unit {name} registered.} other {# units registered, starting with {name}.}}",
+    "receive_units": "{count, plural, one {Unit {name} received.} other {# units received, starting with {name}.}}",
+    "derive": "{count, plural, one {{kind, select, clone {Clone {name} created from {parent}.} cutting {Cutting {name} created from {parent}.} other {Subculture {name} created from {parent}.}}} other {# units created from {parent}, starting with {name}.}}",
+    "change_stage": "Stage of {name} changed to {stage}.",
+    "measure": "Measurement recorded for {name}.",
+    "move": "Unit {name} moved to {location}.",
+    "ship": "{sent, select, yes {Unit {name} shipped on {reference}.} other {Draft shipment {reference} created for {name}.}}",
+    "place_hold": "{kind} placed on {name}.",
+    "release_hold": "Hold released on {name}.",
+    "destroy": "Destruction of {name} recorded.",
+    "log_activity": "Activity “{title}” logged for {name}.",
+    "attach_file": "“{label}” attached to {name}.",
+    "view": "View",
+    "another": "Another action",
+    "close": "Close"
+  },
+  "audit": {
+    "create": "Created",
+    "derive": "Derived",
+    "derive_parent": "Produced a derived unit",
+    "stage_transition": "Stage change",
+    "transfer": "Transfer",
+    "activity": "Activity",
+    "attachment": "Attachment",
+    "destroy": "Destroyed",
+    "update": "Updated",
+    "measure": "Measurement",
+    "ship": "Shipped",
+    "receive": "Received",
+    "void": "Voided",
+    "lineage": "Lineage",
+    "hold": "Quality hold",
+    "release": "Hold released",
+    "lab_test": "Lab test",
+    "incident_open": "Incident opened",
+    "incident_update": "Incident updated"
+  }
+}

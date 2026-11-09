@@ -1,0 +1,340 @@
+{
+  "pageTitle": "Reports",
+  "title": "Reports",
+  "description": "Regulatory returns and operational reports to read on screen, print or download as CSV.",
+  "back": "All reports",
+  "open": "Open report",
+  "categories": {
+    "regulatory": "Regulatory",
+    "inventory": "Inventory",
+    "compliance": "Chain of custody",
+    "operations": "Operations",
+    "audit": "Audit"
+  },
+  "catalog": {
+    "ctls-monthly": {
+      "title": "CTLS monthly report",
+      "description": "The unpackaged inventory for Health Canada’s monthly cannabis tracking report, laid out like the official form: seeds, vegetative and whole plants, fresh and dried cannabis, with every addition and reduction line."
+    },
+    "destruction-register": {
+      "title": "Destruction register",
+      "description": "Every destruction with the unit, experiment, cultivar, date and reason, ready for an inspector."
+    },
+    "inventory-snapshot": {
+      "title": "Inventory snapshot",
+      "description": "Every active unit right now, grouped by type, growth stage, location and cultivar, with weights and seed counts."
+    },
+    "state-at-date": {
+      "title": "Inventory state at a date",
+      "description": "What the laboratory held at the end of a chosen day, rebuilt from each event’s effective date."
+    },
+    "inventory-movement": {
+      "title": "Inventory movement ledger",
+      "description": "Additions (registrations, derivations, receipts) and reductions (destructions, shipments) over a period, with every other change."
+    },
+    "transfer-log": {
+      "title": "Chain of custody: location transfers",
+      "description": "Every move between locations with the operator, the time and whether the barcode was scanned."
+    },
+    "experiment-summary": {
+      "title": "Experiment summary",
+      "description": "For each experiment: active, destroyed and shipped units, by type, with the team and the timeline."
+    },
+    "stage-history": {
+      "title": "Stage transition history",
+      "description": "Every change of growth stage across all units, with who recorded it and any comment."
+    },
+    "activity-audit": {
+      "title": "Audit trail export",
+      "description": "The audit trail for a period with field-level changes, for sharing outside the application."
+    }
+  },
+  "locked": {
+    "title": "Reports are for administrators",
+    "body": "Reports show inventory quantities and the audit trail, so they stay with administrators. The dashboard and the compliance console show the live position to every member.",
+    "action": "Go to the dashboard"
+  },
+  "filters": {
+    "heading": "Report parameters",
+    "year": "Year",
+    "month": "Month",
+    "months": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    },
+    "licence": "Licence number",
+    "licencePlaceholder": "Research licence number",
+    "from": "From",
+    "to": "To",
+    "asOf": "As of (end of day)",
+    "experiment": "Experiment",
+    "allExperiments": "All experiments",
+    "unitType": "Unit type",
+    "allTypes": "All types",
+    "location": "Location",
+    "allLocations": "All locations",
+    "status": "Status",
+    "statusOptions": {
+      "all": "All",
+      "active": "Running",
+      "completed": "Completed"
+    },
+    "entity": "Record type",
+    "entityOptions": {
+      "all": "All",
+      "unit": "Units",
+      "experiment": "Experiments"
+    },
+    "action": "Action",
+    "actionOptions": {
+      "all": "All",
+      "create": "Created",
+      "derive": "Derived",
+      "stage_transition": "Stage changes",
+      "transfer": "Transfers",
+      "update": "Updates",
+      "destroy": "Destroyed"
+    },
+    "generate": "Generate report",
+    "reset": "Reset",
+    "zoneNote": "Dates are calendar days in the laboratory time zone ({zone})."
+  },
+  "invalid": {
+    "title": "Some parameters were not valid",
+    "body": "The report was not generated. Correct these and generate it again: {fields}.",
+    "fields": {
+      "year": "year",
+      "month": "month",
+      "from": "from",
+      "to": "to (it must not be before the start date)",
+      "asOf": "as-of date",
+      "licenseId": "licence number",
+      "experimentId": "experiment",
+      "locationId": "location",
+      "unitType": "unit type",
+      "status": "status",
+      "entityType": "record type",
+      "action": "action"
+    }
+  },
+  "export": {
+    "print": "Print or save as PDF",
+    "csv": "Download CSV",
+    "note": "CSV files keep English column names and ISO dates, as in regulatory templates, whichever language you read.",
+    "ctlsForm": "Download CTLS form"
+  },
+  "display": {
+    "brandReport": "{brand} report",
+    "period": "Period",
+    "licence": "Licence",
+    "generated": "Generated",
+    "keyFigures": "Key figures",
+    "noRecords": "No records for this period.",
+    "ctls": {
+      "heading": "Unpackaged inventory",
+      "flow": "Laid out like Health Canada’s reporting form. On every class, closing = opening + additions − reductions. Seeds and plants are counted; fresh and dried cannabis are in kilograms.",
+      "caption": "Unpackaged inventory by class and line",
+      "line": "Line",
+      "additions": "Additions",
+      "reductions": "Reductions",
+      "reconcilesRow": "Reconciles",
+      "notOnForm": "Not on the form for this class",
+      "classes": {
+        "seeds": "Seeds",
+        "vegetativePlants": "Vegetative cannabis plants",
+        "wholePlants": "Whole cannabis plants",
+        "freshCannabis": "Fresh cannabis",
+        "driedCannabis": "Dried cannabis"
+      },
+      "lines": {
+        "opening": "Opening inventory",
+        "produced": "Produced",
+        "receivedDomestic": "Received – domestic",
+        "receivedImported": "Received – imported",
+        "receivedReturned": "Received – returned",
+        "additionsOther": "Other additions",
+        "processed": "Processed",
+        "packaged": "Packaged and labelled",
+        "shippedTesters": "Shipped in Canada – to analytical testers",
+        "shippedResearchers": "Shipped in Canada – to researchers",
+        "shippedCultivators": "Shipped in Canada – to cultivators and processors",
+        "exported": "Exported",
+        "shippedReturned": "Shipped – returned",
+        "dryingLoss": "Drying or processing loss (kg)",
+        "destroyed": "Destroyed",
+        "lostStolen": "Lost or stolen",
+        "reductionsOther": "Other reductions",
+        "closing": "Closing inventory"
+      },
+      "reconciled": "Reconciled: on every class, closing = opening + additions − reductions.",
+      "notReconciled": "Not reconciled: on at least one class, closing differs from opening + additions − reductions. Investigate before filing.",
+      "checksHeading": "Check before filing",
+      "checks": {
+        "licenceIdMissing": "No licence number. Enter it above, or set LAB_LICENSE_ID for the laboratory.",
+        "recipientUnclassified": "Reported under “Other reductions” because the recipient has no licence class: {names}. Set the licence class on the organization.",
+        "countryMissing": "Counted as Canadian because no country is recorded: {names}.",
+        "unweighed": "Harvested with no weight, so in no class: {names}. Weigh them to report them as fresh or dried cannabis.",
+        "trimShipped": "{count, plural, one {# trim line} other {# trim lines}} shipped ({grams} g) {count, plural, one {is not an inventory unit and is} other {are not inventory units and are}} not on the form. Add the weight by hand if it applies."
+      },
+      "cultures": {
+        "heading": "Tissue cultures",
+        "body": "Health Canada’s form has no class for tissue cultures, so they are not in the table. Opening {opening}, added {added}, removed {removed}, closing {closing}."
+      },
+      "filing": "“Download CTLS form” gives columns A to JS of Health Canada’s reporting form: the reporting period and the unpackaged inventory, with zeros for the classes the laboratory does not hold. Paste its second row into the official form, then complete packaged inventory, sales and business statistics in CTLS. Value ($) columns are left blank: Accession Book keeps no book value.",
+      "notesHeading": "How the form is filled",
+      "notes": {
+        "zone": "Months are calendar months in the laboratory time zone ({zone}). Dates are the effective date of each event, not the date it was filed.",
+        "classes": "Seed lots are seeds. Plants that are not flowering are vegetative plants; flowering plants are whole plants. Harvested material is fresh cannabis at its wet weight until a dry weight is recorded, then dried cannabis at its dry weight.",
+        "transformations": "A plant that starts flowering is processed out of vegetative plants and produced into whole plants. A harvested plant is processed out of plants and produced into fresh cannabis. Drying processes fresh cannabis into dried cannabis; the moisture lost is the drying loss.",
+        "counterparties": "Receipts from, and shipments to, organizations outside Canada are imported or exported. Shipments within Canada go on the line for the recipient’s licence class.",
+        "remeasure": "A lower weight on re-weighing is a drying or processing loss and a higher one is an other addition. A seed recount is an other addition or reduction.",
+        "notRecorded": "Accession Book does not record packaged inventory, returns, losses and thefts, or book values: those lines are zero. Enter them in CTLS if they apply."
+      },
+      "more": "{count} more"
+    },
+    "sections": {
+      "destruction-detail": "Destruction detail",
+      "additions-detail": "Additions this month (source records)",
+      "destruction-records": "Destruction records",
+      "by-type": "Summary by material type",
+      "by-stage": "Summary by growth stage",
+      "by-location": "Summary by location",
+      "by-cultivar": "Summary by cultivar",
+      "unit-detail": "Unit detail",
+      "movement-ledger": "Movement ledger",
+      "event-summary": "Summary by event",
+      "transfer-records": "Transfer records",
+      "experiment-overview": "Experiment overview",
+      "stage-transitions": "Stage transitions",
+      "audit-log": "Audit log",
+      "form-movements": "How each event was reported"
+    },
+    "sectionDescriptions": {
+      "additions-detail": "Each unit that entered inventory during the period. Open a unit to see its live profile.",
+      "destruction-records": "The destruction date is when the material was destroyed; filed at is when the record was entered.",
+      "form-movements": "Every quantity on the form, event by event: the class and line it went on. Open a unit to see its history."
+    },
+    "columns": {
+      "date": "Date",
+      "dateTime": "Date and time",
+      "destructionDate": "Destruction date",
+      "unit": "Unit",
+      "type": "Type",
+      "materialType": "Material type",
+      "cultivar": "Cultivar",
+      "experiment": "Experiment",
+      "notes": "Notes",
+      "comment": "Comment",
+      "source": "Source",
+      "location": "Location",
+      "lastLocation": "Last location",
+      "stage": "Stage",
+      "stageState": "Stage or state",
+      "lastStage": "Last stage",
+      "weight": "Weight (g)",
+      "reason": "Reason for destruction",
+      "witness": "Witness",
+      "recordedBy": "Recorded by",
+      "filedAt": "Filed at",
+      "count": "Count",
+      "wet": "Wet weight (g)",
+      "dry": "Dry weight (g)",
+      "seeds": "Seeds",
+      "quantity": "Quantity or weight",
+      "direction": "Direction",
+      "action": "Action",
+      "detail": "Detail",
+      "user": "User",
+      "role": "Role",
+      "entity": "Record",
+      "summary": "Summary",
+      "changes": "Field changes",
+      "fromLocation": "From location",
+      "toLocation": "To location",
+      "fromStage": "From stage",
+      "toStage": "To stage",
+      "confirmed": "Barcode confirmed",
+      "operator": "Operator",
+      "ecode": "Code",
+      "name": "Name",
+      "status": "Status",
+      "start": "Start",
+      "end": "End",
+      "totalUnits": "Units",
+      "active": "Active",
+      "destroyed": "Destroyed",
+      "shipped": "Shipped",
+      "plants": "Plants",
+      "cultures": "Cultures",
+      "seedLots": "Seed lots",
+      "flowers": "Flowers",
+      "team": "Team",
+      "subExperiments": "Sub-experiments",
+      "events": "Events",
+      "class": "Class",
+      "line": "Line",
+      "measure": "Unit of measure",
+      "counterparty": "Organization"
+    },
+    "kpis": {
+      "activeAtClose": "Units in stock at close",
+      "newUnits": "New units",
+      "destructions": "Destructions",
+      "shipments": "Shipments",
+      "derivations": "Derivations",
+      "externalReceipts": "External receipts",
+      "reconciled": "Reconciled",
+      "totalDestructions": "Total destructions",
+      "plantsDestroyed": "Plants destroyed",
+      "culturesDestroyed": "Cultures destroyed",
+      "activeUnits": "Active units",
+      "locations": "Locations",
+      "cultivars": "Cultivars",
+      "experiments": "Experiments",
+      "totalEvents": "Total events",
+      "additions": "Additions",
+      "reductions": "Reductions",
+      "stageChanges": "Stage changes",
+      "totalTransfers": "Total transfers",
+      "barcodeConfirmed": "Barcode confirmed",
+      "unconfirmedScans": "Not confirmed by scan",
+      "totalUnits": "Total units",
+      "activeExperiments": "Running experiments",
+      "transitions": "Transitions",
+      "unitsAffected": "Units affected",
+      "toFlowering": "Moved to flowering",
+      "totalEntries": "Total entries",
+      "uniqueUsers": "People",
+      "unitEvents": "Unit events"
+    },
+    "tokens": {
+      "addition": "Addition",
+      "reduction": "Reduction",
+      "change": "Change",
+      "registered": "Registered",
+      "derived": "Derived",
+      "received": "Received",
+      "shipped": "Shipped",
+      "destroyed": "Destroyed",
+      "moved": "Moved",
+      "stageTransition": "Stage transition",
+      "measured": "Measured",
+      "yes": "Yes",
+      "no": "No",
+      "ongoing": "Ongoing",
+      "unassigned": "Unassigned",
+      "unknown": "Unknown",
+      "noStage": "No stage"
+    }
+  }
+}

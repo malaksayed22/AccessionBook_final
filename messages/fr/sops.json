@@ -1,0 +1,111 @@
+{
+  "pageTitle": "Procédures",
+  "title": "Procédures normalisées de fonctionnement",
+  "description": "Les procédures du laboratoire, version par version. Chacun signe la version en vigueur.",
+  "cards": {
+    "label": "Les procédures en bref",
+    "toSign": {
+      "label": "À signer",
+      "hint": "Versions en vigueur que vous n’avez pas signées"
+    },
+    "inEffect": {
+      "label": "En vigueur",
+      "hint": "Procédures avec une version approuvée"
+    },
+    "drafts": {
+      "label": "Brouillons",
+      "hint": "Nouvelles versions en attente d’approbation"
+    }
+  },
+  "caption": "Procédures",
+  "columns": {
+    "code": "Code",
+    "title": "Procédure",
+    "version": "En vigueur",
+    "draft": "Brouillon",
+    "signed": "Signée par",
+    "mine": "Vous"
+  },
+  "versionInEffect": "Version {version}",
+  "since": "depuis le {date}",
+  "notInEffect": "Pas encore en vigueur",
+  "draftVersion": "Version {version}",
+  "noDraft": "—",
+  "signedCount": "{signed} sur {staff}",
+  "mine": {
+    "signed": "Signée",
+    "toSign": "À signer",
+    "none": "—"
+  },
+  "emptyTitle": "Aucune procédure",
+  "emptyBody": "L’assurance qualité rédige ici les procédures du laboratoire; le personnel lit et signe chaque version en vigueur.",
+  "status": {
+    "DRAFT": "Brouillon",
+    "EFFECTIVE": "En vigueur",
+    "SUPERSEDED": "Remplacée"
+  },
+  "form": {
+    "open": "Nouvelle procédure",
+    "title": "Rédiger une procédure",
+    "description": "La version 1 est enregistrée comme brouillon. Elle entre en vigueur une fois approuvée.",
+    "code": "Code",
+    "codeHint": "Par exemple SOP-012.",
+    "name": "Titre",
+    "body": "Procédure",
+    "bodyHint": "Objet, portée, matériel et étapes, ou un résumé si vous joignez le document.",
+    "submit": "Enregistrer le brouillon",
+    "cancel": "Annuler",
+    "created": "{code} enregistrée comme brouillon"
+  },
+  "actions": {
+    "sign": "Signer la version {version}",
+    "newVersion": "Nouvelle version",
+    "editDraft": "Modifier le brouillon (version {version})",
+    "approve": "Approuver la version {version}",
+    "draftTitle": "Nouvelle version de {code}",
+    "draftDescription": "Le personnel suit la version en vigueur jusqu’à l’approbation de celle-ci.",
+    "changeNote": "Ce qui change",
+    "changeNoteHint": "Affiché dans l’historique et au personnel qui la signe.",
+    "body": "Procédure",
+    "saveDraft": "Enregistrer le brouillon",
+    "cancel": "Annuler",
+    "drafted": "Brouillon enregistré",
+    "approveTitle": "Approuver {code}, version {version}",
+    "approveBody": "Elle entre en vigueur maintenant et remplace la version en vigueur. Chaque membre devra la signer. Votre mot de passe vous sera demandé : approuver est une signature électronique.",
+    "approveConfirm": "Approuver et mettre en vigueur",
+    "approved": "La nouvelle version est en vigueur",
+    "signTitle": "Signer {code}, version {version}",
+    "signBody": "En signant, vous confirmez avoir lu et compris cette procédure, et son document s’il y en a un, et vous engagez à la suivre. Votre mot de passe vous sera demandé : c’est une signature électronique.",
+    "signConfirm": "Je l’ai lue et comprise",
+    "signed": "Signée. Merci.",
+    "attach": "Joindre le document",
+    "attachTitle": "Joindre le document de la version {version}",
+    "attachDescription": "Le document maîtrisé tel que le laboratoire le conserve. Il est figé avec la version une fois approuvée.",
+    "file": "Document",
+    "fileHint": "PDF ou Word, jusqu’à 10 Mo. Joindre de nouveau remplace le document du brouillon.",
+    "fileRequired": "Choisissez d’abord un fichier.",
+    "attachSubmit": "Joindre",
+    "attached": "Document joint"
+  },
+  "detail": {
+    "inEffect": "Version {version} en vigueur depuis le {date}, approuvée par {name}.",
+    "notInEffect": "Aucune version n’est encore en vigueur : le brouillon doit être approuvé.",
+    "toSign": "Veuillez lire la version {version} et la signer.",
+    "youSigned": "Vous avez signé la version {version} le {date}.",
+    "procedure": "Version {version}",
+    "draftProcedure": "Brouillon, version {version}",
+    "procedureNone": "Procédure",
+    "roster": "Signatures",
+    "rosterCount": "{signed} membres sur {staff} ont signé la version {version}.",
+    "notSigned": "Non signée",
+    "history": "Versions",
+    "version": "Version {version}",
+    "approvedBy": "Approuvée par {name} le {date}",
+    "draftedBy": "Rédigée par {name} le {date}",
+    "signatures": "{count, plural, one {# signature} other {# signatures}}",
+    "deviations": "Écarts",
+    "deviationsHint": "Incidents enregistrés comme des écarts à cette procédure.",
+    "noDeviations": "Aucun enregistré.",
+    "document": "{name} ({size})"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "list": {
+    "pageTitle": "Registre des destructions",
+    "title": "Registre des destructions",
+    "description": "{count, plural, one {# unité détruite correspond} other {# unités détruites correspondent}} aux filtres actuels. Chaque dossier indique la date, le motif, qui l’a enregistré et qui en a été témoin.",
+    "searchLabel": "Rechercher dans le registre",
+    "searchPlaceholder": "Unité, cultivar, expérience, motif ou personne",
+    "dateFrom": "Détruites du",
+    "dateTo": "Détruites au",
+    "typeLabel": "Type",
+    "exportCsv": "Exporter en CSV",
+    "exportHint": "L’exportation suit la période ci-dessus et liste toutes les destructions de cette période, quels que soient la recherche ou le type choisis.",
+    "caption": "Unités détruites",
+    "columns": {
+      "name": "Unité",
+      "type": "Type",
+      "cultivar": "Cultivar",
+      "experiment": "Expérience",
+      "date": "Détruite le",
+      "reason": "Motif",
+      "actor": "Enregistré par",
+      "location": "Dernier emplacement"
+    },
+    "filedAt": "Déposé le {date}",
+    "lastWeight": "Dernier poids : {grams}",
+    "emptyTitle": "Aucune unité n’a été détruite",
+    "emptyBody": "Les dossiers de destruction apparaissent ici dès qu’une unité est détruite, avec un motif.",
+    "noMatchTitle": "Aucune destruction ne correspond à ces filtres",
+    "noMatchBody": "Essayez une autre recherche ou une autre période, ou effacez les filtres pour tout voir.",
+    "clearFilters": "Effacer les filtres",
+    "waste": {
+      "title": "Déchets éliminés",
+      "description": "Résidus de taille, tiges et feuilles, racines et autres matières végétales éliminés des unités. Déclarés comme détruits dans le rapport CTLS.",
+      "limited": "Les {shown} plus récents sur {total} sont listés.",
+      "columns": {
+        "date": "Date",
+        "unit": "Unité d’origine",
+        "type": "Déchets",
+        "amount": "Quantité",
+        "method": "Méthode d’élimination",
+        "by": "Consigné par"
+      },
+      "wet": "{value} humide",
+      "dry": "{value} sec",
+      "emptyTitle": "Aucun déchet consigné",
+      "emptyBody": "Les déchets consignés sur une unité apparaissent ici."
+    }
+  }
+}

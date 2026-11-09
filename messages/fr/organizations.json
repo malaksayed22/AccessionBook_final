@@ -1,0 +1,174 @@
+{
+  "list": {
+    "pageTitle": "Organisations",
+    "title": "Organisations",
+    "description": "{count, plural, one {# organisation correspond} other {# organisations correspondent}} aux filtres actuels",
+    "register": "Enregistrer une organisation",
+    "searchLabel": "Rechercher des organisations",
+    "searchPlaceholder": "Nom, pays, adresse ou licence",
+    "countryLabel": "Pays",
+    "allCountries": "Tous les pays",
+    "relationLabel": "Relation",
+    "caption": "Organisations",
+    "columns": {
+      "code": "Code",
+      "name": "Organisation",
+      "relation": "Relation",
+      "country": "Pays",
+      "licence": "Licence",
+      "units": "Unités fournies",
+      "inbound": "Expéditions reçues",
+      "outbound": "Expéditions envoyées",
+      "labResults": "Résultats de laboratoire"
+    },
+    "emptyTitle": "Aucune organisation pour l’instant",
+    "emptyBody": "Enregistrez les fournisseurs, laboratoires et partenaires auxquels vous envoyez du matériel ou dont vous en recevez.",
+    "emptyBodyMember": "Un administrateur enregistre les fournisseurs, laboratoires et partenaires auxquels vous envoyez du matériel ou dont vous en recevez.",
+    "noMatchTitle": "Aucune organisation ne correspond à ces filtres",
+    "noMatchBody": "Essayez une autre recherche, ou effacez les filtres pour tout afficher.",
+    "clearFilters": "Effacer les filtres"
+  },
+  "relation": {
+    "supplier": "Fournisseur",
+    "recipient": "Destinataire",
+    "lab": "Laboratoire",
+    "supplierPlural": "Fournisseurs",
+    "recipientPlural": "Destinataires",
+    "labPlural": "Laboratoires",
+    "none": "Aucune activité pour l’instant"
+  },
+  "new": {
+    "pageTitle": "Enregistrer une organisation",
+    "title": "Enregistrer une organisation",
+    "description": "Ajoutez un fournisseur, un laboratoire ou un partenaire au registre. Les expéditions et les unités pourront alors y faire référence.",
+    "lockedTitle": "Seuls les administrateurs peuvent enregistrer des organisations",
+    "lockedBody": "Vous pouvez consulter toutes les organisations enregistrées. Demandez à un administrateur d’ajouter un nouveau fournisseur, laboratoire ou partenaire.",
+    "lockedAction": "Consulter les organisations"
+  },
+  "form": {
+    "name": "Nom de l’organisation",
+    "nameRequired": "Saisissez un nom d’au moins 2 caractères.",
+    "addressRequired": "Indiquez l’adresse de l’organisation.",
+    "address": "Adresse",
+    "country": "Pays",
+    "licence": "Numéro de licence",
+    "licenceHint": "Figure sur les documents d’expédition et sert au CTLS.",
+    "notes": "Notes",
+    "notesHint": "Personne-ressource, préférences d’expédition, notes de conformité.",
+    "cancel": "Annuler",
+    "create": "Enregistrer l’organisation",
+    "save": "Enregistrer les modifications",
+    "createdTitle": "{name} enregistrée",
+    "savedTitle": "{name} enregistrée",
+    "openExisting": "Ouvrir la fiche existante",
+    "editButton": "Modifier",
+    "editTitle": "Modifier {name}",
+    "editDescription": "Les modifications sont consignées dans la piste d’audit avec les valeurs précédentes.",
+    "files": "Documents",
+    "filesHint": "Facultatif. Une licence, une entente ou des documents du fournisseur. PDF, Word, Excel, PNG, JPEG, WebP, CSV ou texte, jusqu’à {size} chacun.",
+    "filesChosen": "Documents à joindre",
+    "removeFile": "Retirer {name}",
+    "fileTooLarge": "Un fichier dépasse {size} et ne sera pas joint.",
+    "createdFiles": "{count, plural, one {# document a été joint} other {# documents ont été joints}}.",
+    "filesFailed": "{count, plural, one {# document n’a pas pu être joint} other {# documents n’ont pas pu être joints}} ; ajoutez-le depuis la page de l’organisation.",
+    "licenceClass": "Catégorie de licence de Santé Canada",
+    "licenceClassHint": "Pour les destinataires canadiens : elle détermine la ligne du CTLS où vont leurs expéditions (laboratoires d’essais analytiques, chercheurs, ou cultivateurs et transformateurs).",
+    "licenceClassNone": "Non indiquée"
+  },
+  "detail": {
+    "pageTitle": "Organisation {id}",
+    "noDetails": "Profil de l’organisation",
+    "licenceLine": "Licence {licence}",
+    "stats": {
+      "unitsSupplied": "Unités fournies",
+      "unitsReceived": "Unités reçues",
+      "unitsShipped": "Unités expédiées",
+      "shipments": "Expéditions",
+      "chartTitle": "Unités par type",
+      "chartCenter": "unités échangées",
+      "noUnits": "Aucune unité n’a été reçue de cette organisation ni expédiée vers elle.",
+      "receivedLine": "{count, plural, one {# unité reçue} other {# unités reçues}}",
+      "shippedLine": "{count, plural, one {# envoi d’unités} other {# envois d’unités}}",
+      "shipmentsLine": "{count, plural, one {# expédition en tout} other {# expéditions en tout}}"
+    },
+    "profile": {
+      "title": "Coordonnées et conformité",
+      "licence": "Numéro de licence",
+      "country": "Pays",
+      "address": "Adresse",
+      "notes": "Notes et personnes-ressources",
+      "licenceClass": "Catégorie de licence"
+    },
+    "shipments": {
+      "inboundTitle": "Expéditions reçues de cette organisation",
+      "inboundEmptyTitle": "Rien de reçu pour l’instant",
+      "inboundEmptyBody": "Les réceptions en provenance de cette organisation apparaissent ici dès qu’elles sont consignées.",
+      "outboundTitle": "Expéditions envoyées à cette organisation",
+      "outboundEmptyTitle": "Rien d’envoyé pour l’instant",
+      "outboundEmptyBody": "Les expéditions vers cette organisation apparaissent ici dès qu’elles sont consignées.",
+      "columns": {
+        "reference": "Référence",
+        "status": "Statut",
+        "date": "Date",
+        "lines": "Lignes",
+        "recordedBy": "Consignée par"
+      }
+    },
+    "units": {
+      "title": "Unités échangées",
+      "columns": {
+        "name": "Unité",
+        "type": "Type",
+        "cultivar": "Cultivar",
+        "experiment": "Expérience",
+        "relation": "Relation"
+      },
+      "emptyTitle": "Aucune unité fournie",
+      "emptyBody": "Les unités enregistrées avec cette organisation comme fournisseur apparaissent ici.",
+      "relation": {
+        "supplied": "Fournie par elle",
+        "shipped": "Expédiée vers elle"
+      }
+    },
+    "tests": {
+      "title": "Analyses reçues",
+      "columns": {
+        "unit": "Unité",
+        "test": "Analyse",
+        "value": "Résultat",
+        "relation": "Raison de l’affichage",
+        "date": "Analysé le"
+      },
+      "relation": {
+        "performed": "Réalisée par ce laboratoire",
+        "supplied": "Sur du matériel qu’elle a fourni"
+      },
+      "emptyTitle": "Aucun résultat de laboratoire",
+      "emptyBody": "Les résultats réalisés par ce laboratoire, ou consignés sur des unités qu’elle a fournies, apparaissent ici."
+    },
+    "activity": {
+      "title": "Activité du profil",
+      "description": "Les dernières modifications de cette fiche, d’après la piste d’audit.",
+      "none": "Aucune modification n’a été consignée.",
+      "by": "par {name}"
+    }
+  },
+  "documents": {
+    "title": "Documents",
+    "description": "Licences, ententes et documents versés au dossier de cette organisation.",
+    "none": "Aucun document pour l’instant.",
+    "download": " (télécharger)",
+    "addedBy": "Ajouté par {name} le {date}",
+    "add": "Ajouter un document",
+    "addTitle": "Ajouter un document à {name}",
+    "addDescription": "Il est conservé de façon privée et peut être téléchargé par les membres connectés.",
+    "file": "Fichier",
+    "fileHint": "PDF, Word, Excel, PNG, JPEG, WebP, CSV ou texte brut, jusqu’à 10 Mo.",
+    "fileRequired": "Choisissez d’abord un fichier.",
+    "label": "Nom (facultatif)",
+    "labelHint": "Le nom du fichier est utilisé si ce champ est vide.",
+    "cancel": "Annuler",
+    "upload": "Ajouter le document",
+    "added": "Document ajouté"
+  }
+}

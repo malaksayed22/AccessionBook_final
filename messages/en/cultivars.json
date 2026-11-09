@@ -1,0 +1,188 @@
+{
+  "list": {
+    "pageTitle": "Cultivars",
+    "title": "Genetic library",
+    "description": "{count, plural, one {# cultivar} other {# cultivars}} matching the current filters",
+    "searchLabel": "Search cultivars",
+    "searchPlaceholder": "Name, code, common name, category or notes",
+    "sortLabel": "Sort by",
+    "sortOptions": {
+      "name_asc": "Name, A to Z",
+      "name_desc": "Name, Z to A",
+      "units_desc": "Most units",
+      "units_asc": "Fewest units",
+      "thc_desc": "Highest expected THC",
+      "thc_asc": "Lowest expected THC",
+      "updated_desc": "Recently updated",
+      "updated_asc": "Least recently updated"
+    },
+    "usageLabel": "Use",
+    "usageOptions": {
+      "used": "With units",
+      "unused": "Not used yet"
+    },
+    "viewLabel": "View",
+    "viewOptions": {
+      "cards": "Cards",
+      "table": "Table"
+    },
+    "caption": "Cultivars",
+    "columns": {
+      "name": "Cultivar",
+      "code": "Code",
+      "category": "Category",
+      "thc": "Expected THC",
+      "cbd": "Expected CBD",
+      "units": "Active units",
+      "experiments": "Experiments",
+      "hold": "Holds"
+    },
+    "emptyTitle": "No cultivars yet",
+    "emptyBody": "Add the genetics your laboratory works with. Every unit, test and shipment refers to one of them.",
+    "emptyBodyMember": "An administrator adds the genetics your laboratory works with. They will appear here.",
+    "noMatchTitle": "No cultivars match these filters",
+    "noMatchBody": "Try a different search, or clear the filters to see everything.",
+    "clearFilters": "Clear filters"
+  },
+  "card": {
+    "targetThc": "Expected THC",
+    "targetCbd": "Expected CBD",
+    "inInventory": "Active",
+    "inventoryOf": "{active, number} of {total, number}",
+    "experiments": "Experiments",
+    "onHold": "{count, plural, one {# unit on hold} other {# units on hold}}",
+    "noNotes": "No notes on file.",
+    "created": "Created",
+    "lastActivity": "Last activity",
+    "locations": "Locations",
+    "noLocations": "Not stored anywhere right now.",
+    "morePlaces": "+{count} more",
+    "noUnits": "No units of this cultivar yet.",
+    "bars": {
+      "statuses": "Unit status",
+      "types": "Unit types",
+      "stages": "Growth stage"
+    },
+    "showFewer": "Show fewer"
+  },
+  "detail": {
+    "pageTitle": "Cultivar {id}",
+    "noDetails": "Cultivar profile",
+    "viewUnits": "View units",
+    "stats": {
+      "inInventory": "Active units",
+      "registered": "{count, plural, one {# unit registered in total} other {# units registered in total}}",
+      "onHold": "Units on hold",
+      "experiments": "Experiments",
+      "locations": "Locations",
+      "chartTitle": "Units by status",
+      "chartCenter": "units",
+      "noUnits": "No unit of this cultivar is on record.",
+      "experimentsLine": "{count, plural, =0 {In no experiment} one {In # experiment} other {In # experiments}}",
+      "locationsLine": "{count, plural, =0 {In no location} one {In # location} other {In # locations}}"
+    },
+    "profile": {
+      "title": "Profile",
+      "targetThc": "Expected THC",
+      "targetCbd": "Expected CBD",
+      "category": "Category",
+      "updated": "Last updated",
+      "notes": "Notes",
+      "vegetativeDays": "Days in vegetative",
+      "floweringDays": "Days in flowering",
+      "expectedYield": "Expected yield",
+      "days": "{count, plural, one {# day} other {# days}}",
+      "perPlant": "{value} dry per plant",
+      "notSet": "Not set"
+    },
+    "units": {
+      "title": "Units of this cultivar",
+      "caption": "Units of {name}",
+      "columns": {
+        "name": "Unit",
+        "type": "Type",
+        "experiment": "Experiment",
+        "location": "Location",
+        "status": "Status"
+      },
+      "emptyTitle": "No units yet",
+      "emptyBody": "Units appear here once an experiment registers or receives this cultivar."
+    },
+    "incidents": {
+      "title": "Incidents on this genetics",
+      "total": "{count, plural, one {# incident on file} other {# incidents on file}}",
+      "columns": {
+        "title": "Incident",
+        "severity": "Severity",
+        "status": "Status",
+        "date": "Reported",
+        "unit": "Unit"
+      },
+      "emptyTitle": "No incidents",
+      "emptyBody": "No quality incident has been filed against this cultivar."
+    },
+    "tests": {
+      "title": "Recent tests on this genetics",
+      "columns": {
+        "unit": "Unit",
+        "test": "Test",
+        "value": "Result",
+        "date": "Tested",
+        "lab": "Lab"
+      },
+      "emptyTitle": "No lab tests",
+      "emptyBody": "No lab test has been recorded on a unit of this cultivar."
+    },
+    "latest": "Showing the latest {shown, number} of {total, number}."
+  },
+  "form": {
+    "createButton": "Add cultivar",
+    "editButton": "Edit",
+    "createTitle": "Add a cultivar",
+    "createDescription": "A cultivar joins the genetic library. Units, tests and shipments refer to it by name.",
+    "editTitle": "Edit {name}",
+    "editDescription": "Changes are recorded in the audit trail with the previous values.",
+    "name": "Name",
+    "nameRequired": "Enter a name of at least 2 characters.",
+    "code": "Code",
+    "codeHint": "Optional. Internal or licensed code.",
+    "category": "Category",
+    "categoryHint": "Optional. For example Indica dominant.",
+    "commonName": "Common name",
+    "targetThc": "Expected total THC (% of dried flower)",
+    "targetCbd": "Expected total CBD (% of dried flower)",
+    "percentHint": "Optional. The cultivar's usual value, from the breeder or a certificate of analysis, for dried flower. Each lot is tested and varies.",
+    "percentInvalid": "Enter a number from 0 to 100, or leave it empty.",
+    "comment": "Notes",
+    "cancel": "Cancel",
+    "save": "Save changes",
+    "create": "Add cultivar",
+    "savedTitle": "{name} saved",
+    "createdTitle": "{name} added to the library",
+    "vegetativeDays": "Days in vegetative",
+    "floweringDays": "Days in flowering",
+    "daysHint": "Typical, for projected dates.",
+    "expectedYield": "Expected yield (g dry per plant)",
+    "expectedYieldHint": "Typical dry yield of one plant."
+  },
+  "locationSummary": {
+    "open": "Open the summary of this location",
+    "description": "What is stored here now.",
+    "loading": "Loading…",
+    "close": "Close",
+    "viewUnits": "View the units here",
+    "retired": "This location is retired.",
+    "inside": "Units in inventory",
+    "capacity": "Capacity",
+    "noLimit": "No limit",
+    "used": "{occupancy} of {capacity} used",
+    "ofCultivar": "{name} here",
+    "noneOfCultivar": "None of this cultivar is stored here now.",
+    "everything": "Everything stored here",
+    "empty": "Nothing is stored here.",
+    "status": "Unit status",
+    "types": "Unit types",
+    "stages": "Growth stage",
+    "experiments": "Experiments with units here"
+  }
+}

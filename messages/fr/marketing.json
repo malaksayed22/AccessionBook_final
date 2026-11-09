@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "title": "Chaque lignée, au registre.",
+    "description": "Accession Book est le système de référence du matériel génétique : filiation, garde, retenues qualité, rappel et rapports prêts pour l’inspection, pour les laboratoires, les sélectionneurs et les producteurs autorisés."
+  },
+  "og": {
+    "tagline": "Chaque lignée, au registre."
+  },
+  "header": {
+    "home": "Accueil d’Accession Book",
+    "signIn": "Se connecter",
+    "openWorkspace": "Ouvrir l’espace de travail",
+    "navLabel": "Sections de cette page",
+    "platform": "Plateforme",
+    "industries": "Secteurs",
+    "lifecycle": "Cycle de vie",
+    "compliance": "Conformité",
+    "insight": "Rapports",
+    "menu": "Ouvrir le menu",
+    "menuTitle": "Menu",
+    "menuDescription": "Accédez à une section de la page, ou changez la langue et le thème.",
+    "preferences": "Langue et thème"
+  },
+  "hero": {
+    "kicker": "Traçabilité et conformité",
+    "titleLead": "Chaque lignée.",
+    "titleTail": "Au registre.",
+    "lead": "Accession Book est le système de référence du matériel génétique. La filiation, la garde, les retenues qualité et le rappel sont intégrés au modèle de données : une inspection devient un rapport que vous produisez, et non une semaine perdue.",
+    "primarySignedIn": "Poursuivre vers le tableau de bord",
+    "learnMore": "Voir comment ça fonctionne",
+    "trust": {
+      "returns": "Déclarations prêtes pour l’inspection",
+      "destruction": "Registre des destructions",
+      "audit": "Journal d’audit en ajout seulement",
+      "access": "Accès selon le rôle"
+    },
+    "scroll": "Défiler",
+    "callouts": {
+      "lineage": {
+        "label": "Filiation",
+        "body": "Chaque unité est reliée à son parent. Remontez d’un clone, d’un lot de semences ou d’une lignée cellulaire jusqu’à sa source en une seule requête."
+      },
+      "custody": {
+        "label": "Garde",
+        "body": "Transferts confirmés par balayage entre les salles : qui a déplacé quoi, et quand."
+      },
+      "audit": {
+        "label": "Audit",
+        "body": "Historique en ajout seulement. Chaque modification garde son auteur, son motif ainsi que ses valeurs avant et après."
+      }
+    },
+    "badge": "Génétique"
+  },
+  "demo": {
+    "label": "Illustration de l’interface d’Accession Book : une expérience de 25 unités suivies, dont une en retenue, et un fil d’activité récente. Les chiffres sont des exemples.",
+    "address": "accessionbook.com/overview",
+    "experimentCode": "EXP-2026-03",
+    "active": "Active",
+    "experimentName": "Essai de stabilité, lignée A",
+    "experimentMeta": "25 unités suivies · 4 membres · démarrée en janvier 2026",
+    "segments": {
+      "process": "En cours",
+      "conditioning": "Conditionnement",
+      "culture": "Culture"
+    },
+    "stats": {
+      "units": "Unités actives",
+      "rooms": "Salles",
+      "hold": "En retenue"
+    },
+    "feedTitle": "Activité récente",
+    "feed": {
+      "move": "SMP-1042 transférée à la chambre froide B",
+      "hold": "Retenue qualité placée sur SMP-1039",
+      "stage": "Changement de stade : de « en cours » à « conditionnement »",
+      "derive": "Lot dérivé enregistré à partir de EXP-2026-03",
+      "scan": "Balayage du code-barres confirmé à l’entreposage froid"
+    },
+    "ago": {
+      "minutes": "il y a {count, number} min",
+      "hours": "il y a {count, number} h"
+    },
+    "room": "Chambre froide B · 14 unités"
+  },
+  "platform": {
+    "kicker": "01 · Plateforme",
+    "title": "Trois exigences auxquelles un système de conformité doit répondre",
+    "intro": "La plupart des outils d’inventaire consignent ce que vous avez saisi. Voici les garanties qui tiennent le coup quand arrive un organisme de réglementation, un rappel ou une retenue qualité.",
+    "listLabel": "Garanties de la plateforme",
+    "pillars": {
+      "lineage": {
+        "title": "Une filiation qui résiste à la question",
+        "body": "Chaque unité est une chaîne d’états reliée à un vrai parent, et non une note dans un champ de commentaire. Demandez d’où vient un gramme : la réponse est une requête, pas un après-midi.",
+        "caption": "Un lot source. Trois unités dérivées. Le lien de parenté, c’est l’enregistrement.",
+        "scene": "Un lot source qui donne trois unités dérivées"
+      },
+      "holds": {
+        "title": "Des retenues qui retiennent vraiment",
+        "body": "Une retenue qualité gèle l’unité sur-le-champ. Elle ne peut être ni déplacée, ni divisée, ni détruite tant qu’une personne autorisée ne la libère pas, et la libération est signée.",
+        "caption": "Qui l’a placée, pourquoi, et qui l’a levée : tout est au dossier.",
+        "scene": "Une unité placée en retenue qualité, avec son motif et la personne qui l’a placée"
+      },
+      "recall": {
+        "title": "Un rappel en une seule passe",
+        "body": "Remontez jusqu’à la source et descendez jusqu’à chaque unité dérivée, puis obtenez dans le même résultat l’inventaire apparenté restant et les expéditions liées.",
+        "caption": "En amont jusqu’à la source, en aval jusqu’à ce qui reste en stock et à ce qui est déjà parti.",
+        "scene": "Un rappel d’une unité source vers le stock en main et une expédition"
+      }
+    },
+    "scenes": {
+      "sourceLot": "Lot source",
+      "culture": "Culture",
+      "split": "Division",
+      "source": "Source",
+      "shipped": "Expédiée",
+      "coldRoomB": "Chambre froide B",
+      "vault": "Chambre forte",
+      "inProcess": "En cours",
+      "held": "Retenue",
+      "blocked": "Déplacement, division et destruction bloqués",
+      "holdTitle": "Retenue qualité",
+      "holdKind": "Type",
+      "holdKindValue": "Retenue",
+      "holdBy": "Placée par",
+      "holdReason": "Motif",
+      "holdReasonValue": "Moisissure soupçonnée, en attente d’inspection"
+    }
+  },
+  "industries": {
+    "kicker": "02 · Secteurs",
+    "title": "Un seul noyau. Tout matériel réglementé.",
+    "intro": "L’enregistrement est le même quel que soit ce que vous suivez : une unité, son origine, les personnes qui l’ont manipulée, les résultats de ses analyses et sa destination. Ce qui change d’un secteur à l’autre, c’est le vocabulaire et la déclaration réglementaire; ils vivent donc dans un module posé sur le noyau.",
+    "coreTitle": "Noyau de la plateforme",
+    "coreNote": "Inclus dans tous les abonnements.",
+    "core": {
+      "history": "Unités avec historique complet des états",
+      "lineage": "Filiation parent-enfant des dérivations",
+      "custody": "Garde et transferts par code-barres",
+      "quality": "Résultats de qualité, retenues et incidents",
+      "recall": "Rappel en amont et en aval",
+      "audit": "Piste d’audit au niveau du champ",
+      "teams": "Projets, équipes et accès selon le rôle",
+      "reporting": "Rapports imprimables et en CSV"
+    },
+    "packsTitle": "Modules sectoriels",
+    "packsNote": "Le vocabulaire du cycle de vie et la déclaration réglementaire qui se superposent au noyau.",
+    "packsLabel": "Modules sectoriels",
+    "live": "Disponible",
+    "planned": "Prévu",
+    "packs": {
+      "cannabis": {
+        "name": "Cannabis, Canada",
+        "detail": "Cycle de culture, déclarations mensuelles d’inventaire du CTLS et registre des destructions, dans le vocabulaire de la réglementation canadienne sur le cannabis.",
+        "points": {
+          "one": "Cycle de culture pour chaque unité",
+          "two": "Déclaration mensuelle d’inventaire du CTLS",
+          "three": "Registre des destructions avec motifs"
+        }
+      },
+      "plants": {
+        "name": "Génétique végétale et agriculture",
+        "detail": "Multiplication, plants mères et lots de semences. Fonctionne dès aujourd’hui sur le noyau; aucune déclaration réglementaire n’est encore incluse.",
+        "points": {
+          "one": "Multiplication et plants mères",
+          "two": "Lots de semences liés au catalogue source",
+          "three": "Traçabilité de base, sans déclaration réglementaire incluse"
+        }
+      },
+      "biotech": {
+        "name": "Laboratoires pharmaceutiques et biotechnologiques",
+        "detail": "Enregistrements alignés sur les GxP, filiation des lignées cellulaires et signatures électroniques.",
+        "points": {
+          "one": "Enregistrements alignés sur les GxP",
+          "two": "Filiation des lignées cellulaires",
+          "three": "Signatures électroniques"
+        }
+      },
+      "food": {
+        "name": "Traçabilité alimentaire et chaîne d’approvisionnement",
+        "detail": "Généalogie des lots, attestation des fournisseurs et rappel d’un cran en amont et en aval.",
+        "points": {
+          "one": "Généalogie des lots",
+          "two": "Attestation des fournisseurs",
+          "three": "Rappel d’un cran en amont et en aval"
+        }
+      }
+    }
+  },
+  "lifecycle": {
+    "kicker": "04 · Cycle de vie",
+    "title": "De la source à la disposition, sur une seule chaîne",
+    "intro": "Le matériel entre une seule fois et garde la même identité jusqu’au bout. L’emballage, le transfert et la vente prolongent cette chaîne au lieu d’en commencer une nouvelle : croître ne veut donc jamais dire migrer vers un second système.",
+    "liveCount": "{count, plural, one {# étape disponible dès aujourd’hui} other {# étapes disponibles dès aujourd’hui}}",
+    "plannedCount": "{count, plural, one {# étape prévue à la feuille de route} other {# étapes prévues à la feuille de route}}",
+    "planned": "Prévu",
+    "phases": {
+      "catalogue": {
+        "label": "Catalogue source",
+        "detail": "Votre bibliothèque de référence de génétiques, de souches, de variétés ou de lignées cellulaires, liée à chaque unité que vous détenez."
+      },
+      "intake": {
+        "label": "Réception et dérivation",
+        "detail": "Enregistrez le matériel entrant, puis divisez-le, clonez-le ou faites-en une subculture en conservant intact le lien avec le parent."
+      },
+      "process": {
+        "label": "Suivi en cours de processus",
+        "detail": "Les changements de stade dans le temps, avec la durée de chaque stade et la personne qui les a signalés."
+      },
+      "custody": {
+        "label": "Garde et déplacements",
+        "detail": "Transferts entre salles confirmés par code-barres, avec l’historique complet des emplacements de chaque unité."
+      },
+      "testing": {
+        "label": "Analyses et qualité",
+        "detail": "Résultats de laboratoire au dossier de chaque unité, avec des retenues qualité qui gèlent les mouvements."
+      },
+      "disposition": {
+        "label": "Disposition",
+        "detail": "Registres de destruction et déclarations périodiques dans le format qu’attend votre organisme de réglementation."
+      },
+      "packaging": {
+        "label": "Emballage et lots",
+        "detail": "Transformation, formulation et constitution des lots finis, avec rapprochement des intrants et des extrants."
+      },
+      "sale": {
+        "label": "Transfert et vente",
+        "detail": "Répartition en gros et point de vente, dans le prolongement de la même chaîne."
+      }
+    },
+    "scrollHint": "Continuez à défiler pour suivre la chaîne"
+  },
+  "capabilities": {
+    "kicker": "05 · Système",
+    "title": "Ce que contient la boîte",
+    "items": {
+      "units": {
+        "title": "Unités suivies",
+        "body": "Tout matériel dénombrable ou pesable, avec l’historique complet des états de chaque unité."
+      },
+      "derivation": {
+        "title": "Chaînes de dérivation",
+        "body": "Divisions, clones et subcultures consignés comme des événements, jusqu’à la source."
+      },
+      "custody": {
+        "title": "Garde par code-barres",
+        "body": "Transferts de salle en salle confirmés par balayage, avec l’historique des emplacements de chaque unité."
+      },
+      "quality": {
+        "title": "Qualité et retenues",
+        "body": "Résultats de laboratoire au dossier, avec des retenues qualité qui gèlent les mouvements."
+      },
+      "reporting": {
+        "title": "Rapports réglementaires",
+        "body": "Déclarations périodiques, registres de destruction et exportations, imprimables et en CSV."
+      },
+      "audit": {
+        "title": "Piste d’audit au niveau du champ",
+        "body": "Qui a modifié quoi, et quand, avec les valeurs avant et après pour chaque écriture."
+      },
+      "inventory": {
+        "title": "Reddition de comptes de l’inventaire",
+        "body": "Solde d’ouverture, ajouts, réductions et solde de clôture pour chaque période."
+      },
+      "workspace": {
+        "title": "Votre propre espace de travail",
+        "body": "Vos utilisateurs, emplacements, catalogue et données, isolés de ceux des autres."
+      }
+    }
+  },
+  "compliance": {
+    "kicker": "Registres",
+    "title": "Conçu pour être",
+    "titleAccent": "inspecté.",
+    "p1": "Les enregistrements sont écrits une seule fois et jamais réécrits en douce. Les corrections s’ajoutent avec un auteur et un motif, les destructions sont consignées par un administrateur avec leur motif, et chaque rapport renvoie aux lignes sources dont il est tiré.",
+    "p2": "Rien n’est déduit pour faire balancer un chiffre. Si une valeur n’a jamais été saisie, le rapport le dit au lieu d’en inventer une.",
+    "ledgerLabel": "Exemples d’enregistrements de conformité",
+    "ledgerName": "registres",
+    "appendOnly": "Ajout seulement",
+    "lines": {
+      "inventory": {
+        "title": "Déclaration périodique d’inventaire",
+        "detail": "Ouverture, ajouts, réductions, clôture, par catégorie, à partir des lignes sources."
+      },
+      "destruction": {
+        "title": "Registre des destructions",
+        "detail": "Date, motif et auteur, écrits une seule fois et jamais réécrits en douce."
+      },
+      "custody": {
+        "title": "Chaîne de garde",
+        "detail": "Transfert confirmé par code-barres, avec la personne et l’horodatage du balayage."
+      },
+      "audit": {
+        "title": "Audit de l’activité des membres",
+        "detail": "Valeurs avant et après au niveau du champ pour chaque écriture, attribuées à une personne."
+      }
+    },
+    "codes": {
+      "inventory": "INV",
+      "destruction": "DST",
+      "custody": "GAR",
+      "audit": "AUD"
+    }
+  },
+  "cta": {
+    "title": "Commencez avec un espace de travail",
+    "titleAccent": "vide",
+    "body": "Votre organisation obtient ses propres utilisateurs, emplacements, catalogue et enregistrements. Apportez votre matériel : la chaîne démarre dès la première unité que vous enregistrez.",
+    "kicker": "Commencer",
+    "book": "Réserver"
+  },
+  "footer": {
+    "subtitle": "Plateforme de traçabilité et de conformité",
+    "copyright": "© {year} Accession Book. Tous droits réservés.",
+    "contactPrompt": "Vous préférez écrire ?",
+    "whatsapp": "WhatsApp",
+    "opensNewTab": "s’ouvre dans un nouvel onglet"
+  },
+  "marquee": {
+    "label": "Ce que couvre la plateforme"
+  },
+  "insight": {
+    "kicker": "02 · Rapports",
+    "title": "Voyez toute la chaîne sans ouvrir un tableur",
+    "intro": "Les chiffres de garde, d’étape, de qualité et d’audit proviennent des mêmes registres que les unités elles-mêmes : chaque nombre affiché remonte donc à ses lignes sources.",
+    "caption": "Chiffres illustratifs, pas des données de clients",
+    "range": {
+      "label": "Période",
+      "six": "6 mois",
+      "twelve": "12 mois"
+    },
+    "custody": {
+      "title": "Unités sous garde",
+      "unit": "Unités, fin de mois",
+      "summary": "Graphique en aires : les unités sous garde sont passées de {from} à {to} sur la période."
+    },
+    "stages": {
+      "title": "Inventaire par étape",
+      "unit": "Part des unités",
+      "total": "Unités",
+      "process": "En cours",
+      "conditioning": "Conditionnement",
+      "culture": "Culture",
+      "storage": "Entreposage au froid",
+      "summary": "Graphique en anneau : {top} est l’étape la plus importante, à {share} des unités."
+    },
+    "results": {
+      "title": "Retenues qualité",
+      "held": "Retenus",
+      "summary": "Barres empilées : le dernier mois, {free} unités étaient libres de circuler et {held} étaient retenues.",
+      "free": "Libres de circuler"
+    },
+    "kpis": {
+      "units": "Unités suivies",
+      "transfers": "Transferts de garde confirmés",
+      "events": "Événements d’audit consignés",
+      "holds": "Retenues qualité ouvertes"
+    }
+  },
+  "statement": {
+    "text": "La plupart des systèmes enregistrent ce que vous avez saisi. Accession Book enregistre ce qui s’est passé : qui a manipulé chaque unité, quels ont été ses résultats et où elle est allée, dans un ordre que personne ne peut réécrire discrètement."
+  },
+  "video": {
+    "titleAccent": "Aperçu"
+  },
+  "gallery": {
+    "label": "Photos de projets",
+    "items": {
+      "one": {
+        "tag": "Catégorie",
+        "title": "Titre de la photo",
+        "text": "Ajoutez ici une courte description de cette photo : ce qu’elle montre et pourquoi elle compte."
+      },
+      "two": {
+        "tag": "Catégorie",
+        "title": "Titre de la photo",
+        "text": "Ajoutez ici une courte description de cette photo : ce qu’elle montre et pourquoi elle compte."
+      },
+      "three": {
+        "tag": "Catégorie",
+        "title": "Titre de la photo",
+        "text": "Ajoutez ici une courte description de cette photo : ce qu’elle montre et pourquoi elle compte."
+      }
+    },
+    "title": "Notre travail,",
+    "titleAccent": "en images.",
+    "intro": "Ajoutez ici une courte introduction à cette section. Décrivez les photos ci-dessous et leur importance."
+  }
+}

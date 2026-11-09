@@ -1,0 +1,110 @@
+{
+  "pageTitle": "Tasks",
+  "title": "Tasks and calendar",
+  "description": "The lab's work by day: for the whole lab, an experiment or one unit.",
+  "cards": {
+    "label": "Your open tasks",
+    "overdue": {
+      "label": "Overdue",
+      "hint": "Yours, past their day"
+    },
+    "today": {
+      "label": "Due today",
+      "hint": "Yours, for today"
+    },
+    "open": {
+      "label": "Open",
+      "hint": "Every open task given to you"
+    },
+    "later": "Later",
+    "center": "open",
+    "none": "No open tasks are given to you."
+  },
+  "viewLabel": "Whose",
+  "views": {
+    "mine": "Mine",
+    "all": "Everyone's"
+  },
+  "statusLabel": "Status",
+  "statuses": {
+    "OPEN": "Open",
+    "DONE": "Done",
+    "CANCELLED": "Cancelled"
+  },
+  "allStatuses": "Any status",
+  "display": {
+    "label": "Show as",
+    "list": "List",
+    "calendar": "Calendar"
+  },
+  "columns": {
+    "due": "Due",
+    "task": "Task",
+    "about": "About",
+    "assignee": "Assigned to",
+    "status": "Status",
+    "actions": "Actions"
+  },
+  "caption": "Tasks",
+  "overdue": "Overdue",
+  "wholeLab": "Whole lab",
+  "nobody": "Nobody yet",
+  "emptyTitle": "No tasks here",
+  "emptyBody": "Plan the lab's work by day. A task can be for the whole lab, an experiment or one unit.",
+  "calendar": {
+    "label": "Tasks by day",
+    "previous": "Previous",
+    "next": "Next",
+    "today": "Today",
+    "more": "+{count} more"
+  },
+  "form": {
+    "open": "New task",
+    "title": "Plan a task",
+    "description": "Who does what, and on which day. The team of the experiment sees it.",
+    "what": "What is to be done",
+    "titleRequired": "Say what is to be done.",
+    "due": "Due on",
+    "assignee": "Assigned to",
+    "nobody": "Nobody yet",
+    "experiment": "Experiment",
+    "wholeLab": "Whole lab (no experiment)",
+    "onExperiment": "For experiment {code}.",
+    "onUnit": "For unit {name}.",
+    "details": "Details",
+    "detailsHint": "Optional: quantities, products, where.",
+    "submit": "Plan task",
+    "cancel": "Cancel",
+    "created": "“{title}” planned"
+  },
+  "actions": {
+    "menu": "Actions for {title}",
+    "done": "Done",
+    "doneToast": "“{title}” done",
+    "reopen": "Reopen",
+    "move": "Move to another day…",
+    "moveTitle": "Move “{title}”",
+    "moveDue": "New day",
+    "moveSubmit": "Move",
+    "assign": "Assign to…",
+    "assignTitle": "Assign “{title}”",
+    "assignee": "Assigned to",
+    "nobody": "Nobody yet",
+    "assignSubmit": "Assign",
+    "cancel": "Cancel task…",
+    "cancelTitle": "Cancel “{title}”",
+    "cancelBody": "It stays in the history as cancelled, with your reason.",
+    "cancelConfirm": "Cancel task",
+    "reasonHint": "Why it will not be done.",
+    "updated": "Task updated",
+    "failed": "The task could not be changed. Try again."
+  },
+  "panel": {
+    "title": "Tasks",
+    "description": "Open work planned on this experiment.",
+    "empty": "Nothing planned.",
+    "all": "All tasks",
+    "due": "Due {date}",
+    "overdue": "Overdue since {date}"
+  }
+}

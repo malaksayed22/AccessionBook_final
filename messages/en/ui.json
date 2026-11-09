@@ -1,0 +1,77 @@
+{
+  "close": "Close",
+  "cancel": "Cancel",
+  "dismiss": "Dismiss",
+  "loading": "Loading…",
+  "required": "required",
+  "previous": "Previous",
+  "next": "Next",
+  "tone": {
+    "neutral": "Note",
+    "info": "Information",
+    "success": "Success",
+    "warning": "Warning",
+    "danger": "Error"
+  },
+  "breadcrumbs": {
+    "label": "Breadcrumb"
+  },
+  "sort": {
+    "ascending": "sort ascending",
+    "descending": "sort descending"
+  },
+  "table": {
+    "empty": "No results.",
+    "region": "{caption} (scrollable table)"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "range": "{from, number}–{to, number} of {total, number}",
+    "pageOf": "Page {page, number} of {pageCount, number}",
+    "page": "Page {page, number}"
+  },
+  "filters": {
+    "label": "Filters",
+    "clearAll": "Clear all"
+  },
+  "toast": {
+    "viewport": "Notifications"
+  },
+  "locked": {
+    "done": "done",
+    "todo": "still to do"
+  },
+  "confirm": {
+    "reasonLabel": "Reason",
+    "reasonHint": "At least {count, number} characters.",
+    "typeToConfirm": "Type {phrase} to confirm",
+    "failed": "The action could not be completed. Try again."
+  },
+  "charts": {
+    "hint": "Use the left and right arrow keys to inspect values.",
+    "table": "Show data as a table",
+    "period": "Period",
+    "category": "Category",
+    "value": "Units",
+    "share": "Share"
+  },
+  "tableTools": {
+    "columns": "Columns",
+    "columnsHidden": "Columns ({count} hidden)",
+    "columnsLabel": "Show columns",
+    "views": "Saved views",
+    "viewsLabel": "Your saved views",
+    "noViews": "No saved views yet.",
+    "save": "Save this view…",
+    "saveTitle": "Save this view",
+    "saveDescription": "Keeps the filters, sort, columns and grouping under a name. Only you see your views.",
+    "name": "Name",
+    "nameHint": "Saving under a name you already use replaces that view.",
+    "saveButton": "Save view",
+    "cancel": "Cancel",
+    "saved": "View “{name}” saved",
+    "deleted": "View “{name}” deleted",
+    "delete": "Delete “{name}”",
+    "deleteFailed": "The view could not be deleted. Try again."
+  }
+}

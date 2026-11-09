@@ -1,0 +1,49 @@
+{
+  "list": {
+    "pageTitle": "Destruction register",
+    "title": "Destruction register",
+    "description": "{count, plural, one {# destroyed unit} other {# destroyed units}} matching the current filters. Each record shows the date, the reason and who recorded it.",
+    "searchLabel": "Search the register",
+    "searchPlaceholder": "Unit, cultivar, experiment, reason or person",
+    "dateFrom": "Destroyed from",
+    "dateTo": "Destroyed to",
+    "typeLabel": "Type",
+    "exportCsv": "Export CSV",
+    "exportHint": "The export follows the date range above and lists every destruction in it, whatever the search or type filter.",
+    "caption": "Destroyed units",
+    "columns": {
+      "name": "Unit",
+      "type": "Type",
+      "cultivar": "Cultivar",
+      "experiment": "Experiment",
+      "date": "Destroyed on",
+      "reason": "Reason",
+      "actor": "Recorded by",
+      "location": "Last location"
+    },
+    "filedAt": "Filed {date}",
+    "lastWeight": "Last weight {grams}",
+    "emptyTitle": "No units have been destroyed",
+    "emptyBody": "Destruction records appear here once a unit is destroyed, with a reason.",
+    "noMatchTitle": "No destruction matches these filters",
+    "noMatchBody": "Try a different search or date range, or clear the filters to see everything.",
+    "clearFilters": "Clear filters",
+    "waste": {
+      "title": "Waste disposed of",
+      "description": "Trim, stems and leaves, roots and other plant matter disposed of from units. Reported as destroyed on the CTLS return.",
+      "limited": "The newest {shown} of {total} are listed.",
+      "columns": {
+        "date": "Date",
+        "unit": "From unit",
+        "type": "Waste",
+        "amount": "Amount",
+        "method": "How it was disposed of",
+        "by": "Recorded by"
+      },
+      "wet": "{value} wet",
+      "dry": "{value} dry",
+      "emptyTitle": "No waste recorded",
+      "emptyBody": "Waste recorded on a unit appears here."
+    }
+  }
+}

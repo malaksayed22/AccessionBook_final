@@ -1,0 +1,30 @@
+{
+  "bell": {
+    "label": "Notifications",
+    "labelUnread": "Notifications, {count, plural, one {# unread} other {# unread}}",
+    "title": "Notifications",
+    "empty": "Nothing new. You will see changes and tasks given to you here.",
+    "markAll": "Mark all as read",
+    "viewAll": "See all notifications",
+    "loadFailed": "Notifications could not be loaded."
+  },
+  "page": {
+    "pageTitle": "Notifications",
+    "title": "Notifications",
+    "descriptionAdmin": "Every change recorded by the team, and tasks given to you.",
+    "descriptionMember": "Tasks given to you.",
+    "unreadOnly": "Unread only",
+    "all": "All",
+    "markAll": "Mark all as read",
+    "emptyTitle": "No notifications",
+    "emptyBody": "When someone records a change or gives you a task, it appears here.",
+    "emptyUnreadTitle": "You are all caught up",
+    "emptyUnreadBody": "Every notification has been read.",
+    "unread": "Unread"
+  },
+  "item": {
+    "taskAssigned": "{actor} gave you a task: {code} {title}",
+    "activity": "{actor} · {action} · {type} {label}",
+    "someone": "Someone"
+  }
+}

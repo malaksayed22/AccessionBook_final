@@ -1,0 +1,13 @@
+.next
+.next-e2e
+node_modules
+coverage
+playwright-report
+test-results
+test-results-*
+.local
+src/generated
+package-lock.json
+public
+prisma/migrations
+infra/venv

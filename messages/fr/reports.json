@@ -1,0 +1,340 @@
+{
+  "pageTitle": "Rapports",
+  "title": "Rapports",
+  "description": "Déclarations réglementaires et rapports opérationnels à lire à l’écran, à imprimer ou à télécharger en CSV.",
+  "back": "Tous les rapports",
+  "open": "Ouvrir le rapport",
+  "categories": {
+    "regulatory": "Réglementaire",
+    "inventory": "Inventaire",
+    "compliance": "Chaîne de possession",
+    "operations": "Opérations",
+    "audit": "Audit"
+  },
+  "catalog": {
+    "ctls-monthly": {
+      "title": "Rapport mensuel CTLS",
+      "description": "L’inventaire non emballé du rapport mensuel de suivi du cannabis de Santé Canada, présenté comme le formulaire officiel : graines, plantes végétatives et entières, cannabis frais et séché, avec chaque ligne d’ajout et de réduction."
+    },
+    "destruction-register": {
+      "title": "Registre des destructions",
+      "description": "Chaque destruction avec l’unité, l’expérience, le cultivar, la date et le motif, prête pour un inspecteur."
+    },
+    "inventory-snapshot": {
+      "title": "Aperçu de l’inventaire",
+      "description": "Toutes les unités actives en ce moment, regroupées par type, stade de croissance, emplacement et cultivar, avec les poids et les nombres de semences."
+    },
+    "state-at-date": {
+      "title": "État de l’inventaire à une date",
+      "description": "Ce que le laboratoire détenait à la fin d’une journée choisie, reconstitué à partir de la date d’effet de chaque événement."
+    },
+    "inventory-movement": {
+      "title": "Registre des mouvements d’inventaire",
+      "description": "Les ajouts (enregistrements, dérivations, réceptions) et les réductions (destructions, expéditions) sur une période, avec tous les autres changements."
+    },
+    "transfer-log": {
+      "title": "Chaîne de possession : déplacements",
+      "description": "Chaque déplacement entre emplacements avec l’opérateur, l’heure et la lecture ou non du code-barres."
+    },
+    "experiment-summary": {
+      "title": "Sommaire des expériences",
+      "description": "Pour chaque expérience : unités actives, détruites et expédiées, par type, avec l’équipe et le calendrier."
+    },
+    "stage-history": {
+      "title": "Historique des changements de stade",
+      "description": "Chaque changement de stade de croissance pour toutes les unités, avec la personne qui l’a consigné et son commentaire éventuel."
+    },
+    "activity-audit": {
+      "title": "Exportation du journal d’audit",
+      "description": "Le journal d’audit d’une période avec les changements champ par champ, à partager hors de l’application."
+    }
+  },
+  "locked": {
+    "title": "Les rapports sont réservés aux administrateurs",
+    "body": "Les rapports montrent les quantités en inventaire et le journal d’audit : ils restent donc réservés aux administrateurs. Le tableau de bord et la console de conformité présentent la situation actuelle à tous les membres.",
+    "action": "Aller au tableau de bord"
+  },
+  "filters": {
+    "heading": "Paramètres du rapport",
+    "year": "Année",
+    "month": "Mois",
+    "months": {
+      "1": "Janvier",
+      "2": "Février",
+      "3": "Mars",
+      "4": "Avril",
+      "5": "Mai",
+      "6": "Juin",
+      "7": "Juillet",
+      "8": "Août",
+      "9": "Septembre",
+      "10": "Octobre",
+      "11": "Novembre",
+      "12": "Décembre"
+    },
+    "licence": "Numéro de licence",
+    "licencePlaceholder": "Numéro de licence de recherche",
+    "from": "Du",
+    "to": "Au",
+    "asOf": "À la date du (fin de journée)",
+    "experiment": "Expérience",
+    "allExperiments": "Toutes les expériences",
+    "unitType": "Type d’unité",
+    "allTypes": "Tous les types",
+    "location": "Emplacement",
+    "allLocations": "Tous les emplacements",
+    "status": "Statut",
+    "statusOptions": {
+      "all": "Tous",
+      "active": "En cours",
+      "completed": "Terminées"
+    },
+    "entity": "Type d’enregistrement",
+    "entityOptions": {
+      "all": "Tous",
+      "unit": "Unités",
+      "experiment": "Expériences"
+    },
+    "action": "Action",
+    "actionOptions": {
+      "all": "Toutes",
+      "create": "Créations",
+      "derive": "Dérivations",
+      "stage_transition": "Changements de stade",
+      "transfer": "Déplacements",
+      "update": "Modifications",
+      "destroy": "Destructions"
+    },
+    "generate": "Générer le rapport",
+    "reset": "Réinitialiser",
+    "zoneNote": "Les dates sont des jours civils dans le fuseau horaire du laboratoire ({zone})."
+  },
+  "invalid": {
+    "title": "Certains paramètres n’étaient pas valides",
+    "body": "Le rapport n’a pas été généré. Corrigez ces paramètres puis générez-le de nouveau : {fields}.",
+    "fields": {
+      "year": "année",
+      "month": "mois",
+      "from": "du",
+      "to": "au (la date ne doit pas précéder la date de début)",
+      "asOf": "date de référence",
+      "licenseId": "numéro de licence",
+      "experimentId": "expérience",
+      "locationId": "emplacement",
+      "unitType": "type d’unité",
+      "status": "statut",
+      "entityType": "type d’enregistrement",
+      "action": "action"
+    }
+  },
+  "export": {
+    "print": "Imprimer ou enregistrer en PDF",
+    "csv": "Télécharger le CSV",
+    "note": "Les fichiers CSV conservent les noms de colonnes en anglais et les dates ISO, comme dans les gabarits réglementaires, quelle que soit la langue de lecture.",
+    "ctlsForm": "Télécharger le formulaire CTLS"
+  },
+  "display": {
+    "brandReport": "Rapport {brand}",
+    "period": "Période",
+    "licence": "Licence",
+    "generated": "Généré le",
+    "keyFigures": "Chiffres clés",
+    "noRecords": "Aucun enregistrement pour cette période.",
+    "ctls": {
+      "heading": "Inventaire non emballé",
+      "flow": "Présenté comme le formulaire de déclaration de Santé Canada. Pour chaque catégorie, clôture = ouverture + ajouts − réductions. Les graines et les plantes sont comptées ; le cannabis frais et séché est en kilogrammes.",
+      "caption": "Inventaire non emballé par catégorie et par ligne",
+      "line": "Ligne",
+      "additions": "Ajouts",
+      "reductions": "Réductions",
+      "reconcilesRow": "Équilibré",
+      "notOnForm": "Ligne absente du formulaire pour cette catégorie",
+      "classes": {
+        "seeds": "Graines",
+        "vegetativePlants": "Plantes de cannabis végétatives",
+        "wholePlants": "Plantes de cannabis entières",
+        "freshCannabis": "Cannabis frais",
+        "driedCannabis": "Cannabis séché"
+      },
+      "lines": {
+        "opening": "Inventaire d’ouverture",
+        "produced": "Produit",
+        "receivedDomestic": "Reçu – au pays",
+        "receivedImported": "Reçu – importé",
+        "receivedReturned": "Reçu – retourné",
+        "additionsOther": "Autres ajouts",
+        "processed": "Transformé",
+        "packaged": "Emballé et étiqueté",
+        "shippedTesters": "Expédié au Canada – aux laboratoires d’essais analytiques",
+        "shippedResearchers": "Expédié au Canada – aux chercheurs",
+        "shippedCultivators": "Expédié au Canada – aux cultivateurs et transformateurs",
+        "exported": "Exporté",
+        "shippedReturned": "Expédié – retourné",
+        "dryingLoss": "Perte due au séchage ou à la transformation (kg)",
+        "destroyed": "Détruit",
+        "lostStolen": "Perdu ou volé",
+        "reductionsOther": "Autres réductions",
+        "closing": "Inventaire de clôture"
+      },
+      "reconciled": "Équilibré : pour chaque catégorie, clôture = ouverture + ajouts − réductions.",
+      "notReconciled": "Non équilibré : pour au moins une catégorie, la clôture diffère de l’ouverture + ajouts − réductions. Examinez l’écart avant de déposer.",
+      "checksHeading": "À vérifier avant de déposer",
+      "checks": {
+        "licenceIdMissing": "Aucun numéro de licence. Saisissez-le ci-dessus ou définissez LAB_LICENSE_ID pour le laboratoire.",
+        "recipientUnclassified": "Déclaré sous « Autres réductions » parce que le destinataire n’a pas de catégorie de licence : {names}. Indiquez la catégorie de licence de l’organisation.",
+        "countryMissing": "Compté comme canadien parce qu’aucun pays n’est indiqué : {names}.",
+        "unweighed": "Récolté sans poids, donc dans aucune catégorie : {names}. Pesez-les pour les déclarer comme cannabis frais ou séché.",
+        "trimShipped": "{count, plural, one {# ligne de résidus de taille expédiée} other {# lignes de résidus de taille expédiées}} ({grams} g) {count, plural, one {n’est pas une unité d’inventaire et ne figure pas} other {ne sont pas des unités d’inventaire et ne figurent pas}} au formulaire. Ajoutez le poids à la main s’il y a lieu."
+      },
+      "cultures": {
+        "heading": "Cultures tissulaires",
+        "body": "Le formulaire de Santé Canada n’a pas de catégorie pour les cultures tissulaires : elles ne figurent pas au tableau. Ouverture {opening}, ajouts {added}, retraits {removed}, clôture {closing}."
+      },
+      "filing": "« Télécharger le formulaire CTLS » donne les colonnes A à JS du formulaire de déclaration de Santé Canada : la période de déclaration et l’inventaire non emballé, avec des zéros pour les catégories que le laboratoire ne détient pas. Collez sa deuxième ligne dans le formulaire officiel, puis remplissez l’inventaire emballé, les ventes et les statistiques d’entreprise dans le CTLS. Les colonnes de valeur ($) sont laissées vides : Accession Book ne tient pas de valeur comptable.",
+      "notesHeading": "Comment le formulaire est rempli",
+      "notes": {
+        "zone": "Les mois sont des mois civils dans le fuseau horaire du laboratoire ({zone}). Les dates sont les dates d’effet de chaque événement, et non celles de sa consignation.",
+        "classes": "Les lots de semences sont des graines. Les plantes qui ne sont pas en floraison sont des plantes végétatives ; les plantes en floraison sont des plantes entières. Le matériel récolté est du cannabis frais à son poids humide jusqu’à ce qu’un poids sec soit consigné, puis du cannabis séché à son poids sec.",
+        "transformations": "Une plante qui entre en floraison est transformée hors des plantes végétatives et produite dans les plantes entières. Une plante récoltée est transformée hors des plantes et produite en cannabis frais. Le séchage transforme le cannabis frais en cannabis séché ; l’humidité perdue est la perte due au séchage.",
+        "counterparties": "Les réceptions d’organisations situées hors du Canada et les expéditions vers celles-ci sont des importations ou des exportations. Les expéditions au Canada vont sur la ligne correspondant à la catégorie de licence du destinataire.",
+        "remeasure": "Un poids plus faible à la repesée est une perte due au séchage ou à la transformation, et un poids plus élevé un autre ajout. Un nouveau dénombrement de semences est un autre ajout ou une autre réduction.",
+        "notRecorded": "Accession Book ne consigne ni l’inventaire emballé, ni les retours, ni les pertes et vols, ni les valeurs comptables : ces lignes sont à zéro. Saisissez-les dans le CTLS s’il y a lieu."
+      },
+      "more": "{count} autres"
+    },
+    "sections": {
+      "destruction-detail": "Détail des destructions",
+      "additions-detail": "Ajouts du mois (registres sources)",
+      "destruction-records": "Registres de destruction",
+      "by-type": "Sommaire par type de matériel",
+      "by-stage": "Sommaire par stade de croissance",
+      "by-location": "Sommaire par emplacement",
+      "by-cultivar": "Sommaire par cultivar",
+      "unit-detail": "Détail des unités",
+      "movement-ledger": "Registre des mouvements",
+      "event-summary": "Sommaire par événement",
+      "transfer-records": "Registres de déplacement",
+      "experiment-overview": "Aperçu des expériences",
+      "stage-transitions": "Changements de stade",
+      "audit-log": "Journal d’audit",
+      "form-movements": "Comment chaque événement a été déclaré"
+    },
+    "sectionDescriptions": {
+      "additions-detail": "Chaque unité entrée en inventaire durant la période. Ouvrez une unité pour voir son profil à jour.",
+      "destruction-records": "La date de destruction est celle où le matériel a été détruit ; « consigné le » est la date où le registre a été saisi.",
+      "form-movements": "Chaque quantité du formulaire, événement par événement : la catégorie et la ligne où elle a été déclarée. Ouvrez une unité pour voir son historique."
+    },
+    "columns": {
+      "date": "Date",
+      "dateTime": "Date et heure",
+      "destructionDate": "Date de destruction",
+      "unit": "Unité",
+      "type": "Type",
+      "materialType": "Type de matériel",
+      "cultivar": "Cultivar",
+      "experiment": "Expérience",
+      "notes": "Notes",
+      "comment": "Commentaire",
+      "source": "Source",
+      "location": "Emplacement",
+      "lastLocation": "Dernier emplacement",
+      "stage": "Stade",
+      "stageState": "Stade ou état",
+      "lastStage": "Dernier stade",
+      "weight": "Poids (g)",
+      "reason": "Motif de la destruction",
+      "witness": "Témoin",
+      "recordedBy": "Consigné par",
+      "filedAt": "Consigné le",
+      "count": "Nombre",
+      "wet": "Poids humide (g)",
+      "dry": "Poids sec (g)",
+      "seeds": "Semences",
+      "quantity": "Quantité ou poids",
+      "direction": "Sens",
+      "action": "Action",
+      "detail": "Détail",
+      "user": "Utilisateur",
+      "role": "Rôle",
+      "entity": "Enregistrement",
+      "summary": "Résumé",
+      "changes": "Changements de champs",
+      "fromLocation": "Emplacement d’origine",
+      "toLocation": "Emplacement de destination",
+      "fromStage": "Stade d’origine",
+      "toStage": "Stade de destination",
+      "confirmed": "Code-barres lu",
+      "operator": "Opérateur",
+      "ecode": "Code",
+      "name": "Nom",
+      "status": "Statut",
+      "start": "Début",
+      "end": "Fin",
+      "totalUnits": "Unités",
+      "active": "Actives",
+      "destroyed": "Détruites",
+      "shipped": "Expédiées",
+      "plants": "Plantes",
+      "cultures": "Cultures",
+      "seedLots": "Lots de semences",
+      "flowers": "Fleurs",
+      "team": "Équipe",
+      "subExperiments": "Sous-expériences",
+      "events": "Événements",
+      "class": "Catégorie",
+      "line": "Ligne",
+      "measure": "Unité de mesure",
+      "counterparty": "Organisation"
+    },
+    "kpis": {
+      "activeAtClose": "Unités en stock à la clôture",
+      "newUnits": "Nouvelles unités",
+      "destructions": "Destructions",
+      "shipments": "Expéditions",
+      "derivations": "Dérivations",
+      "externalReceipts": "Réceptions externes",
+      "reconciled": "Équilibré",
+      "totalDestructions": "Total des destructions",
+      "plantsDestroyed": "Plantes détruites",
+      "culturesDestroyed": "Cultures détruites",
+      "activeUnits": "Unités actives",
+      "locations": "Emplacements",
+      "cultivars": "Cultivars",
+      "experiments": "Expériences",
+      "totalEvents": "Total des événements",
+      "additions": "Ajouts",
+      "reductions": "Réductions",
+      "stageChanges": "Changements de stade",
+      "totalTransfers": "Total des déplacements",
+      "barcodeConfirmed": "Code-barres lu",
+      "unconfirmedScans": "Sans lecture du code-barres",
+      "totalUnits": "Total des unités",
+      "activeExperiments": "Expériences en cours",
+      "transitions": "Changements",
+      "unitsAffected": "Unités touchées",
+      "toFlowering": "Passées en floraison",
+      "totalEntries": "Total des entrées",
+      "uniqueUsers": "Personnes",
+      "unitEvents": "Événements d’unités"
+    },
+    "tokens": {
+      "addition": "Ajout",
+      "reduction": "Réduction",
+      "change": "Changement",
+      "registered": "Enregistrée",
+      "derived": "Dérivée",
+      "received": "Reçue",
+      "shipped": "Expédiée",
+      "destroyed": "Détruite",
+      "moved": "Déplacée",
+      "stageTransition": "Changement de stade",
+      "measured": "Mesurée",
+      "yes": "Oui",
+      "no": "Non",
+      "ongoing": "En cours",
+      "unassigned": "Non affecté",
+      "unknown": "Inconnu",
+      "noStage": "Aucun stade"
+    }
+  }
+}

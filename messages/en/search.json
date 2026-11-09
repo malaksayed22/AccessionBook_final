@@ -1,0 +1,32 @@
+{
+  "pageTitle": "Search",
+  "title": "Search",
+  "description": "Find units, experiments and cultivars across the laboratory.",
+  "descriptionAdmin": "Find units, experiments, cultivars, organizations and members across the laboratory.",
+  "label": "Search the laboratory",
+  "placeholder": "Unit name, experiment code or cultivar",
+  "startTitle": "Search the laboratory",
+  "startBody": "Type at least {min} characters: part of a unit name, an experiment code or a cultivar name.",
+  "tip": "Tip: press Ctrl+K (⌘K on a Mac) on any page to jump straight to a record.",
+  "tooShortTitle": "Type a little more",
+  "tooShortBody": "Searches need at least {min} characters.",
+  "summary": "{count, plural, one {# result} other {# results}} for “{query}”",
+  "noResultsTitle": "No results for “{query}”",
+  "noResultsBody": "Check the spelling, or try part of a unit name, an experiment code or a cultivar name.",
+  "groups": {
+    "units": "Biological units",
+    "experiments": "Experiments",
+    "cultivars": "Cultivars",
+    "organizations": "Organizations",
+    "members": "Members"
+  },
+  "groupCount": "Showing {shown} of {total}",
+  "showAll": {
+    "units": "Show all {count, plural, one {# matching unit} other {# matching units}}",
+    "experiments": "Show all {count, plural, one {# matching experiment} other {# matching experiments}}",
+    "cultivars": "Show all {count, plural, one {# matching cultivar} other {# matching cultivars}}",
+    "organizations": "Show all {count, plural, one {# matching organization} other {# matching organizations}}",
+    "members": "Show all {count, plural, one {# matching member} other {# matching members}}"
+  },
+  "adminOnlyNote": "Organizations and members are searched for administrators only."
+}

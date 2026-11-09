@@ -1,0 +1,26 @@
+{
+  "pageTitle": "Settings",
+  "title": "Laboratory settings",
+  "description": "The licence on every record and CTLS return, how far back events may be dated, and how experiment codes start.",
+  "lockedTitle": "Administrators only",
+  "lockedBody": "Ask an administrator to change the laboratory's settings.",
+  "lockedAction": "Back to the dashboard",
+  "form": {
+    "licence": "Licence",
+    "licenceNumber": "Licence number",
+    "licenceNumberHint": "Printed on every record and the CTLS return.",
+    "licenceClass": "Licence class",
+    "licenceClassNone": "Not set",
+    "licenceHolder": "Licence holder",
+    "siteAddress": "Site address",
+    "records": "Records",
+    "backdateLimit": "How far back events may be dated (days)",
+    "backdateLimitHint": "Leave empty for no limit. A late entry older than this is refused.",
+    "backdateLimitInvalid": "A whole number of days, from 1 to 3650.",
+    "codePrefix": "Experiment code prefix",
+    "codePrefixHint": "New experiments get codes like {example}. Existing codes stay.",
+    "codePrefixInvalid": "Two to six letters.",
+    "save": "Save settings",
+    "saved": "Settings saved"
+  }
+}

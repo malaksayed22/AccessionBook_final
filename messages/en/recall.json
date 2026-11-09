@@ -1,0 +1,134 @@
+{
+  "page": {
+    "pageTitle": "Recall trace",
+    "title": "Recall trace",
+    "description": "Trace a unit upstream to its mother and downstream through everything derived from it, with where each unit is now, who holds it and which shipments carried it.",
+    "print": "Print summary",
+    "exportCsv": "Export CSV",
+    "searchLabel": "Find a unit to trace",
+    "searchPlaceholder": "Unit name or number",
+    "notFoundTitle": "That unit was not found",
+    "notFoundBody": "Check the number, or search by name.",
+    "startTitle": "Start with a unit",
+    "startBody": "Search for the unit involved in the recall. The trace lists its mother line, every unit derived from it, where they are, and which organizations received them.",
+    "noMatchTitle": "No unit matches",
+    "noMatchBody": "No unit name contains “{q}”. Try a shorter part of the name.",
+    "results": {
+      "title": "{count, plural, one {# unit found} other {# units found}}. Choose one to trace.",
+      "caption": "Units matching the search",
+      "unit": "Unit",
+      "type": "Type",
+      "cultivar": "Cultivar",
+      "status": "Status"
+    },
+    "relation": {
+      "self": "Origin of the trace",
+      "ancestor": "Upstream",
+      "descendant": "Downstream",
+      "same-cultivar": "Same cultivar"
+    },
+    "custody": {
+      "destroyed": "Destroyed",
+      "shippedTo": "Shipped to",
+      "shipped": "Shipped",
+      "at": "In {location}",
+      "partShippedTo": "Part shipped to"
+    },
+    "origin": {
+      "label": "Unit traced",
+      "heldTitle": "This unit is on hold",
+      "heldBody": "{origin}: {reason} (since {date})."
+    },
+    "counts": {
+      "upstream": "Upstream units",
+      "downstream": "Downstream units",
+      "inInventory": "Still active",
+      "onHold": "On hold now",
+      "shipped": "Shipped out, in part or in full",
+      "organizations": "Organizations that received units",
+      "shipmentsHint": "{count, plural, one {# shipment} other {# shipments}}",
+      "chartTitle": "Traced units by status",
+      "chartCenter": "units traced",
+      "upLine": "{count, plural, =0 {No unit upstream} one {# unit upstream} other {# units upstream}}",
+      "downLine": "{count, plural, =0 {No unit downstream} one {# unit downstream} other {# units downstream}}",
+      "orgLine": "{count, plural, =0 {No organization received units} one {# organization received units} other {# organizations received units}} ({shipments, plural, one {# shipment} other {# shipments}})"
+    },
+    "truncatedTitle": "The trace is incomplete",
+    "truncatedBody": "Only the first {count} derived units are listed. Trace one of the listed units to follow the rest.",
+    "lineage": {
+      "title": "Lineage",
+      "hint": "The family tree of the traced unit, read from left to right, forward in time: each fork is a unit that others were derived from, and every unit is a tip on the right. The traced unit and everything derived from it are highlighted.",
+      "caption": "Lineage of {name}: upstream, the unit itself and downstream",
+      "unit": "Unit",
+      "type": "Type",
+      "status": "Status",
+      "hold": "Hold",
+      "custody": "Where it is",
+      "source": "Cultivar and experiment",
+      "shipments": "Shipments",
+      "root": "Mother line",
+      "legend": {
+        "active": "Active",
+        "hold": "On hold",
+        "inactive": "Inactive",
+        "destroyed": "Destroyed",
+        "traced": "Traced unit",
+        "clade": "Traced unit and its descendants"
+      },
+      "treeTitle": "Lineage tree",
+      "rectangular": "Rectangular",
+      "circular": "Circular",
+      "generation": "{generation, plural, one {# generation down} other {# generations down}}",
+      "forward": "Forward in time",
+      "earliest": "Mother line",
+      "latest": "Latest units"
+    },
+    "organizations": {
+      "title": "Organizations that received units",
+      "caption": "Organizations that received units of this trace",
+      "name": "Organization",
+      "licence": "Licence",
+      "units": "Units",
+      "shipments": "Shipments",
+      "none": "No unit of this trace was shipped to an organization."
+    },
+    "shipments": {
+      "title": "Shipments in this trace",
+      "caption": "Shipments that carried units of this trace",
+      "reference": "Reference",
+      "direction": "Direction",
+      "status": "Status",
+      "organization": "Organization",
+      "units": "Units",
+      "none": "No shipment carried a unit of this trace."
+    },
+    "peers": {
+      "title": "Other inventory of the same cultivar ({count})",
+      "hint": "Active units of {cultivar} outside the lineage above. They may share a source with the traced unit.",
+      "caption": "Other active units of the same cultivar",
+      "more": "Showing {shown} of {total}."
+    }
+  },
+  "csv": {
+    "columns": {
+      "relation": "Relation",
+      "generation": "Generation",
+      "unit": "Unit",
+      "type": "Type",
+      "cultivar": "Cultivar",
+      "experiment": "Experiment",
+      "status": "Status",
+      "hold": "Hold",
+      "holdReason": "Hold reason",
+      "location": "Location",
+      "shippedTo": "Shipped to",
+      "shipments": "Shipments"
+    },
+    "relation": {
+      "self": "Origin",
+      "ancestor": "Upstream",
+      "descendant": "Downstream",
+      "same-cultivar": "Same cultivar"
+    }
+  }
+}

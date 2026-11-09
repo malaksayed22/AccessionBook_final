@@ -1,0 +1,194 @@
+{
+  "unitType": {
+    "PLANT": "Plant",
+    "SEEDLOT": "Seed lot",
+    "FLOWER": "Flower",
+    "CULTURE": "Culture"
+  },
+  "unitTypePlural": {
+    "PLANT": "Plants",
+    "SEEDLOT": "Seed lots",
+    "FLOWER": "Flowers",
+    "CULTURE": "Cultures"
+  },
+  "growthStage": {
+    "VEGETATIVE": "Vegetative",
+    "FLOWERING": "Flowering",
+    "HARVESTED": "Harvested",
+    "DRYING": "Drying",
+    "CURING": "Curing",
+    "STORAGE": "Storage",
+    "SEED": "Seed",
+    "CULTURE": "Culture"
+  },
+  "stateKind": {
+    "CREATED": "Created",
+    "RECEIVED": "Received",
+    "MOVED": "Moved",
+    "STAGE_CHANGED": "Stage changed",
+    "MEASURED": "Measured",
+    "SHIPPED_PART": "Shipped (part)",
+    "SHIPPED": "Shipped",
+    "DESTROYED": "Destroyed",
+    "SAMPLED": "Sampled",
+    "WASTED": "Waste disposed",
+    "REGROUPED": "Regrouped",
+    "MERGED": "Merged"
+  },
+  "holdKind": {
+    "HOLD": "Hold"
+  },
+  "holdOrigin": {
+    "MANUAL": "Placed manually",
+    "AUTO_INCIDENT": "Automatic: incident"
+  },
+  "shipmentDirection": {
+    "INBOUND": "Inbound",
+    "OUTBOUND": "Outbound"
+  },
+  "shipmentStatus": {
+    "DRAFT": "Draft",
+    "IN_TRANSIT": "In transit",
+    "DELIVERED": "Delivered",
+    "CANCELLED": "Cancelled"
+  },
+  "materialClass": {
+    "SEED": "Seed",
+    "CLONE": "Clone",
+    "PLANT": "Plant",
+    "CULTURE": "Culture",
+    "FLOWER": "Flower",
+    "TRIM": "Trim"
+  },
+  "measure": {
+    "COUNT": "Count",
+    "WEIGHT": "Weight"
+  },
+  "moisture": {
+    "WET": "Wet",
+    "DRY": "Dry"
+  },
+  "testPanel": {
+    "POTENCY": "Potency",
+    "TERPENES": "Terpenes",
+    "PESTICIDES": "Pesticides",
+    "HEAVY_METALS": "Heavy metals",
+    "MICROBIALS": "Microbials",
+    "MYCOTOXINS": "Mycotoxins",
+    "MOISTURE": "Moisture",
+    "FOREIGN": "Foreign matter",
+    "PATHOGENS": "Pathogens (viroids, viruses)",
+    "GENETICS": "Genetics (sex, identity)",
+    "OTHER": "Other"
+  },
+  "incidentSeverity": {
+    "CRITICAL": "Critical",
+    "MAJOR": "Major",
+    "MINOR": "Minor"
+  },
+  "incidentStatus": {
+    "OPEN": "Open",
+    "INVESTIGATING": "Investigating",
+    "CLOSED": "Closed"
+  },
+  "activityType": {
+    "NUTRIENT": "Nutrient",
+    "FERTIGATION": "Fertigation",
+    "FOLIAR": "Foliar application",
+    "PESTICIDE": "Pesticide",
+    "BENEFICIAL_INSECTS": "Beneficial insects",
+    "SCOUTING": "Scouting",
+    "PRUNING": "Pruning",
+    "FLUSH": "Flush",
+    "GROW_MEDIA": "Grow media",
+    "METRICS": "Metrics",
+    "POTENCY": "Potency",
+    "TREATMENT": "Treatment",
+    "ENVIRONMENT": "Environment"
+  },
+  "attachmentCategory": {
+    "PHOTO": "Photo",
+    "PROTOCOL": "Protocol",
+    "QC": "Quality control",
+    "COA": "Certificate of analysis",
+    "MANIFEST": "Manifest"
+  },
+  "sourceType": {
+    "SEED": "Seed",
+    "CUTTING": "Cutting",
+    "CLONE": "Clone",
+    "SUBCULTURE": "Subculture",
+    "RECEIVED": "Received",
+    "INTERNAL": "Internal",
+    "HARVEST": "Harvest",
+    "OTHER": "Other",
+    "SPLIT": "Split from a group"
+  },
+  "role": {
+    "ADMIN": "Administrator",
+    "REGULAR": "Lab member",
+    "QA": "Quality assurance",
+    "INVENTORY": "Inventory manager",
+    "INSPECTOR": "Inspector (read-only)"
+  },
+  "experimentRole": {
+    "LEAD": "Lead",
+    "MEMBER": "Member"
+  },
+  "experimentStatus": {
+    "active": "Running",
+    "completed": "Completed"
+  },
+  "unitStatus": {
+    "active": "Active",
+    "on-hold": "On hold",
+    "destroyed": "Destroyed",
+    "nothingLeft": "Inactive"
+  },
+  "memberStatus": {
+    "active": "Active",
+    "invited": "Invited",
+    "deactivated": "Deactivated"
+  },
+  "empty": "—",
+  "licenceClass": {
+    "CULTIVATION": "Cultivation",
+    "PROCESSING": "Processing",
+    "ANALYTICAL_TESTING": "Analytical testing",
+    "RESEARCH": "Research",
+    "MEDICAL_SALES": "Sale for medical purposes"
+  },
+  "sampleKind": {
+    "RELEASE": "Release",
+    "RETENTION": "Retention",
+    "INTERNAL_QA": "Internal QA"
+  },
+  "wasteType": {
+    "TRIM": "Trim",
+    "STEMS_LEAVES": "Stems and leaves",
+    "ROOTS": "Roots",
+    "PLANT_MATTER": "Plant matter",
+    "OTHER": "Other"
+  },
+  "locationKind": {
+    "ROOM": "Room",
+    "ROW": "Row",
+    "RACK": "Rack",
+    "SHELF": "Shelf",
+    "AREA": "Area"
+  },
+  "tissuePurpose": {
+    "PATHOGEN": "Pathogen screen",
+    "SEX": "Sex",
+    "IDENTITY": "Genetic identity",
+    "OTHER": "Other test"
+  },
+  "tissueKind": {
+    "LEAF": "Leaf",
+    "PETIOLE": "Petiole",
+    "ROOT": "Root",
+    "MERISTEM": "Meristem",
+    "MEDIUM": "Culture medium",
+    "OTHER": "Other tissue"
+  }
+}

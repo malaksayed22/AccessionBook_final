@@ -1,0 +1,27 @@
+{
+  "skipToContent": "Passer au contenu",
+  "loading": "Chargement…",
+  "optional": "facultatif",
+  "required": "obligatoire",
+  "yes": "Oui",
+  "no": "Non",
+  "none": "Aucun",
+  "all": "Tous",
+  "actions": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "back": "Retour",
+    "continue": "Continuer",
+    "confirm": "Confirmer",
+    "retry": "Réessayer",
+    "search": "Rechercher",
+    "clear": "Effacer",
+    "edit": "Modifier",
+    "create": "Créer"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "pageTitle": "Tâches",
+  "title": "Tâches et calendrier",
+  "description": "Le travail du laboratoire, jour par jour : pour tout le laboratoire, une expérience ou une unité.",
+  "cards": {
+    "label": "Vos tâches ouvertes",
+    "overdue": {
+      "label": "En retard",
+      "hint": "Les vôtres, dont le jour est passé"
+    },
+    "today": {
+      "label": "Pour aujourd’hui",
+      "hint": "Les vôtres, pour aujourd’hui"
+    },
+    "open": {
+      "label": "Ouvertes",
+      "hint": "Toutes les tâches ouvertes qui vous sont confiées"
+    },
+    "later": "Plus tard",
+    "center": "ouvertes",
+    "none": "Aucune tâche ouverte ne vous est confiée."
+  },
+  "viewLabel": "De qui",
+  "views": {
+    "mine": "Les miennes",
+    "all": "Tout le monde"
+  },
+  "statusLabel": "Statut",
+  "statuses": {
+    "OPEN": "Ouverte",
+    "DONE": "Faite",
+    "CANCELLED": "Annulée"
+  },
+  "allStatuses": "Tous les statuts",
+  "display": {
+    "label": "Afficher en",
+    "list": "Liste",
+    "calendar": "Calendrier"
+  },
+  "columns": {
+    "due": "Échéance",
+    "task": "Tâche",
+    "about": "Concerne",
+    "assignee": "Confiée à",
+    "status": "Statut",
+    "actions": "Actions"
+  },
+  "caption": "Tâches",
+  "overdue": "En retard",
+  "wholeLab": "Tout le laboratoire",
+  "nobody": "Personne encore",
+  "emptyTitle": "Aucune tâche ici",
+  "emptyBody": "Planifiez le travail du laboratoire jour par jour. Une tâche peut viser tout le laboratoire, une expérience ou une unité.",
+  "calendar": {
+    "label": "Tâches par jour",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "today": "Aujourd’hui",
+    "more": "+{count} autres"
+  },
+  "form": {
+    "open": "Nouvelle tâche",
+    "title": "Planifier une tâche",
+    "description": "Qui fait quoi, et quel jour. L’équipe de l’expérience la voit.",
+    "what": "Ce qui est à faire",
+    "titleRequired": "Indiquez ce qui est à faire.",
+    "due": "Pour le",
+    "assignee": "Confiée à",
+    "nobody": "Personne encore",
+    "experiment": "Expérience",
+    "wholeLab": "Tout le laboratoire (aucune expérience)",
+    "onExperiment": "Pour l’expérience {code}.",
+    "onUnit": "Pour l’unité {name}.",
+    "details": "Détails",
+    "detailsHint": "Facultatif : quantités, produits, lieu.",
+    "submit": "Planifier",
+    "cancel": "Annuler",
+    "created": "« {title} » planifiée"
+  },
+  "actions": {
+    "menu": "Actions pour {title}",
+    "done": "Faite",
+    "doneToast": "« {title} » faite",
+    "reopen": "Rouvrir",
+    "move": "Déplacer à un autre jour…",
+    "moveTitle": "Déplacer « {title} »",
+    "moveDue": "Nouveau jour",
+    "moveSubmit": "Déplacer",
+    "assign": "Confier à…",
+    "assignTitle": "Confier « {title} »",
+    "assignee": "Confiée à",
+    "nobody": "Personne encore",
+    "assignSubmit": "Confier",
+    "cancel": "Annuler la tâche…",
+    "cancelTitle": "Annuler « {title} »",
+    "cancelBody": "Elle reste dans l’historique comme annulée, avec votre raison.",
+    "cancelConfirm": "Annuler la tâche",
+    "reasonHint": "Pourquoi elle ne sera pas faite.",
+    "updated": "Tâche mise à jour",
+    "failed": "La tâche n’a pas pu être modifiée. Réessayez."
+  },
+  "panel": {
+    "title": "Tâches",
+    "description": "Le travail ouvert planifié sur cette expérience.",
+    "empty": "Rien de planifié.",
+    "all": "Toutes les tâches",
+    "due": "Pour le {date}",
+    "overdue": "En retard depuis le {date}"
+  }
+}

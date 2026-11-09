@@ -1,0 +1,111 @@
+{
+  "pageTitle": "Procedures",
+  "title": "Standard operating procedures",
+  "description": "The lab's procedures, version by version. Everyone signs the version in effect.",
+  "cards": {
+    "label": "Procedures at a glance",
+    "toSign": {
+      "label": "For you to sign",
+      "hint": "Versions in effect you have not signed"
+    },
+    "inEffect": {
+      "label": "In effect",
+      "hint": "Procedures with an approved version"
+    },
+    "drafts": {
+      "label": "Drafts",
+      "hint": "New versions waiting for approval"
+    }
+  },
+  "caption": "Procedures",
+  "columns": {
+    "code": "Code",
+    "title": "Procedure",
+    "version": "In effect",
+    "draft": "Draft",
+    "signed": "Signed",
+    "mine": "You"
+  },
+  "versionInEffect": "Version {version}",
+  "since": "since {date}",
+  "notInEffect": "Not yet in effect",
+  "draftVersion": "Version {version}",
+  "noDraft": "—",
+  "signedCount": "{signed} of {staff}",
+  "mine": {
+    "signed": "Signed",
+    "toSign": "To sign",
+    "none": "—"
+  },
+  "emptyTitle": "No procedures yet",
+  "emptyBody": "Quality assurance writes the lab's procedures here; staff read and sign each version in effect.",
+  "status": {
+    "DRAFT": "Draft",
+    "EFFECTIVE": "In effect",
+    "SUPERSEDED": "Superseded"
+  },
+  "form": {
+    "open": "New procedure",
+    "title": "Write a procedure",
+    "description": "Version 1 is saved as a draft. It takes effect once it is approved.",
+    "code": "Code",
+    "codeHint": "Such as SOP-012.",
+    "name": "Title",
+    "body": "Procedure",
+    "bodyHint": "Purpose, scope, materials and the steps, or a summary when you attach the document.",
+    "submit": "Save draft",
+    "cancel": "Cancel",
+    "created": "{code} saved as a draft"
+  },
+  "actions": {
+    "sign": "Sign version {version}",
+    "newVersion": "New version",
+    "editDraft": "Edit draft version {version}",
+    "approve": "Approve version {version}",
+    "draftTitle": "New version of {code}",
+    "draftDescription": "Staff keep following the version in effect until this one is approved.",
+    "changeNote": "What changed",
+    "changeNoteHint": "Shown in the history and to staff who sign it.",
+    "body": "Procedure",
+    "saveDraft": "Save draft",
+    "cancel": "Cancel",
+    "drafted": "Draft saved",
+    "approveTitle": "Approve {code} version {version}",
+    "approveBody": "It takes effect now and replaces the version in effect. Every member will need to sign it. You will be asked for your password: approving is an electronic signature.",
+    "approveConfirm": "Approve and put in effect",
+    "approved": "The new version is in effect",
+    "signTitle": "Sign {code} version {version}",
+    "signBody": "By signing, you confirm you have read and understood this procedure, and its document when there is one, and will follow it. You will be asked for your password: this is an electronic signature.",
+    "signConfirm": "I have read and understood it",
+    "signed": "Signed. Thank you.",
+    "attach": "Attach document",
+    "attachTitle": "Attach the document of version {version}",
+    "attachDescription": "The controlled document as the lab keeps it. It is frozen with the version once approved.",
+    "file": "Document",
+    "fileHint": "PDF or Word, up to 10 MB. Attaching again replaces the draft's document.",
+    "fileRequired": "Choose a file first.",
+    "attachSubmit": "Attach",
+    "attached": "Document attached"
+  },
+  "detail": {
+    "inEffect": "Version {version} in effect since {date}, approved by {name}.",
+    "notInEffect": "No version is in effect yet: the draft needs approval.",
+    "toSign": "Please read version {version} and sign it.",
+    "youSigned": "You signed version {version} on {date}.",
+    "procedure": "Version {version}",
+    "draftProcedure": "Draft version {version}",
+    "procedureNone": "Procedure",
+    "roster": "Sign-off",
+    "rosterCount": "{signed} of {staff} members have signed version {version}.",
+    "notSigned": "Not signed",
+    "history": "Versions",
+    "version": "Version {version}",
+    "approvedBy": "Approved by {name} on {date}",
+    "draftedBy": "Drafted by {name} on {date}",
+    "signatures": "{count, plural, one {# signature} other {# signatures}}",
+    "deviations": "Deviations",
+    "deviationsHint": "Incidents recorded as departures from this procedure.",
+    "noDeviations": "None recorded.",
+    "document": "{name} ({size})"
+  }
+}

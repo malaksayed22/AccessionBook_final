@@ -1,0 +1,94 @@
+{
+  "findings": {
+    "heading": "Findings and next steps",
+    "description": "Fix the records listed, then reload this page to check again.",
+    "noneOpen": "No open findings.",
+    "severity": {
+      "critical": "Critical",
+      "warning": "Warning",
+      "info": "Advisory"
+    },
+    "recordCount": "{count, plural, one {# record} other {# records}}",
+    "recordsHeading": "Records to fix",
+    "recordsShown": "Showing {shown} of {count}.",
+    "nextStepLabel": "Next step",
+    "regulationLabel": "Regulation",
+    "passingHeading": "Passing checks",
+    "passingSummary": "{count, plural, one {# check passes} other {# checks pass}}",
+    "passingNone": "No check passes yet.",
+    "items": {
+      "inventory-located": {
+        "title": "All inventory has a physical location",
+        "regulation": "Cannabis Regulations s.244: inventory records",
+        "description": "Every active unit must be traceable to the room it is stored in. A unit without a location cannot be reconciled during an inspection.",
+        "nextStep": "Open each unit and record where it is, using a location move."
+      },
+      "cultivar-attribution": {
+        "title": "All units are attributed to a cultivar",
+        "regulation": "Cannabis Regulations s.221: record contents",
+        "description": "The cultivar is part of the required description of the cannabis held under a licence.",
+        "nextStep": "Open each unit and choose its cultivar."
+      },
+      "provenance-recorded": {
+        "title": "All units declare a lawful source",
+        "regulation": "Cannabis Regulations s.222: source of cannabis",
+        "description": "Each unit must record how it entered the site: produced on site, received from a licence holder, or imported under permit.",
+        "nextStep": "Open each unit and record its source."
+      },
+      "destruction-documented": {
+        "title": "Every destruction records a reason",
+        "regulation": "Cannabis Regulations s.230: destruction records",
+        "description": "A destruction record must state the reason. A blank record is an inspection finding.",
+        "nextStep": "Contact your quality lead. A destruction record cannot be edited, so the gap must be explained in a documented note on the unit."
+      },
+      "destruction-filed-promptly": {
+        "title": "Destructions are filed promptly",
+        "regulation": "Cannabis Regulations s.230: destruction records",
+        "description": "Destruction records should be filed within {days} days of the destruction, not batched or back-filled long afterwards.",
+        "nextStep": "File destructions the same day. For the records listed, document why they were filed late."
+      },
+      "transfers-scanned": {
+        "title": "Location moves are confirmed by barcode scan",
+        "regulation": "Cannabis Regulations s.244: chain of custody",
+        "description": "A move confirmed by scanning the unit label gives a defensible chain of custody. An unconfirmed move relies on memory.",
+        "nextStep": "From now on, scan the unit label when moving it. The records listed cannot be changed."
+      },
+      "shipment-licence": {
+        "title": "Shipments record the other party’s licence number",
+        "regulation": "Cannabis Regulations s.224: transfer records",
+        "description": "Records of cannabis sent or received must identify the other licence holder, including the licence number.",
+        "nextStep": "Add the licence number to the organization, then to each shipment listed."
+      },
+      "shipments-reconciled": {
+        "title": "No shipment is left unreconciled",
+        "regulation": "Cannabis Regulations s.244: monthly reconciliation",
+        "description": "A shipment still in transit after {days} days has not been reconciled against a delivery confirmation.",
+        "nextStep": "Contact the receiving party, then record the delivery or cancel the shipment."
+      },
+      "harvest-weights": {
+        "title": "Harvested material has a recorded weight",
+        "regulation": "Cannabis Regulations s.244: quantity records",
+        "description": "Harvested cannabis must be quantified in grams, wet or dry, to appear on a CTLS monthly return.",
+        "nextStep": "Weigh each unit listed and record the weight as a measurement."
+      },
+      "experiment-attribution": {
+        "title": "Units belong to a research experiment",
+        "regulation": "Research licence: authorised activities",
+        "description": "Material held under a research licence should be attributable to the study it supports.",
+        "nextStep": "Assign each unit to its experiment when you next edit it."
+      },
+      "quality-holds": {
+        "title": "Quality holds are documented and resolved",
+        "regulation": "Good production practices: holds and nonconforming product",
+        "description": "A unit on hold needs a reason and an investigation. An unresolved hold freezes transfers, derivations and destruction.",
+        "nextStep": "Review each held unit in Holds & incidents and release it or keep the hold with a documented reason."
+      },
+      "open-incidents": {
+        "title": "Quality incidents are closed out",
+        "regulation": "Good production practices: complaints, deviations and corrective action",
+        "description": "Open nonconformances must be investigated and closed with a recorded resolution.",
+        "nextStep": "Open each incident, finish the investigation and close it with a resolution."
+      }
+    }
+  }
+}

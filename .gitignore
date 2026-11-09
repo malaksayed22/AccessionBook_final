@@ -1,0 +1,48 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+
+# build output
+/.next/
+/.next-e2e/
+/.next-build/
+/out/
+/build
+/coverage
+/playwright-report
+/test-results
+*.tsbuildinfo
+next-env.d.ts
+
+# generated
+/src/generated/
+
+# environment & secrets (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+
+# local data
+/uploads
+/.local
+*.db
+*.sqlite
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# logs
+npm-debug.log*
+*.log
+
+# vercel
+.vercel
+test-results-*/
+*.zip

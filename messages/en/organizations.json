@@ -1,0 +1,174 @@
+{
+  "list": {
+    "pageTitle": "Organizations",
+    "title": "Organizations",
+    "description": "{count, plural, one {# organization} other {# organizations}} matching the current filters",
+    "register": "Register organization",
+    "searchLabel": "Search organizations",
+    "searchPlaceholder": "Name, country, address or licence",
+    "countryLabel": "Country",
+    "allCountries": "All countries",
+    "relationLabel": "Relationship",
+    "caption": "Organizations",
+    "columns": {
+      "code": "Code",
+      "name": "Organization",
+      "relation": "Relationship",
+      "country": "Country",
+      "licence": "Licence",
+      "units": "Units supplied",
+      "inbound": "Shipments received",
+      "outbound": "Shipments sent",
+      "labResults": "Lab results"
+    },
+    "emptyTitle": "No organizations yet",
+    "emptyBody": "Register the suppliers, laboratories and partners you send material to or receive it from.",
+    "emptyBodyMember": "An administrator registers the suppliers, laboratories and partners you send material to or receive it from.",
+    "noMatchTitle": "No organizations match these filters",
+    "noMatchBody": "Try a different search, or clear the filters to see everything.",
+    "clearFilters": "Clear filters"
+  },
+  "relation": {
+    "supplier": "Supplier",
+    "recipient": "Recipient",
+    "lab": "Laboratory",
+    "supplierPlural": "Suppliers",
+    "recipientPlural": "Recipients",
+    "labPlural": "Laboratories",
+    "none": "No activity yet"
+  },
+  "new": {
+    "pageTitle": "Register organization",
+    "title": "Register organization",
+    "description": "Add a supplier, laboratory or partner to the registry. Shipments and units can then refer to it.",
+    "lockedTitle": "Only administrators can register organizations",
+    "lockedBody": "You can browse every registered organization. Ask an administrator to add a new supplier, laboratory or partner.",
+    "lockedAction": "Browse organizations"
+  },
+  "form": {
+    "name": "Organization name",
+    "nameRequired": "Enter a name of at least 2 characters.",
+    "addressRequired": "Enter the organization's address.",
+    "address": "Address",
+    "country": "Country",
+    "licence": "Licence number",
+    "licenceHint": "Shown on shipment paperwork and used for CTLS.",
+    "notes": "Notes",
+    "notesHint": "Contact person, shipping preferences, compliance notes.",
+    "cancel": "Cancel",
+    "create": "Register organization",
+    "save": "Save changes",
+    "createdTitle": "{name} registered",
+    "savedTitle": "{name} saved",
+    "openExisting": "Open the existing record",
+    "editButton": "Edit",
+    "editTitle": "Edit {name}",
+    "editDescription": "Changes are recorded in the audit trail with the previous values.",
+    "files": "Documents",
+    "filesHint": "Optional. A licence, an agreement or supplier paperwork. PDF, Word, Excel, PNG, JPEG, WebP, CSV or text, up to {size} each.",
+    "filesChosen": "Documents to attach",
+    "removeFile": "Remove {name}",
+    "fileTooLarge": "A file is larger than {size} and will not be attached.",
+    "createdFiles": "{count, plural, one {# document was} other {# documents were}} attached.",
+    "filesFailed": "{count, plural, one {# document} other {# documents}} could not be attached; add it from the organization page.",
+    "licenceClass": "Health Canada licence class",
+    "licenceClassHint": "For Canadian recipients: it decides the CTLS line their shipments go on (analytical testers, researchers, or cultivators and processors).",
+    "licenceClassNone": "Not set"
+  },
+  "detail": {
+    "pageTitle": "Organization {id}",
+    "noDetails": "Organization profile",
+    "licenceLine": "Licence {licence}",
+    "stats": {
+      "unitsSupplied": "Units supplied",
+      "unitsReceived": "Units received",
+      "unitsShipped": "Units shipped",
+      "shipments": "Shipments",
+      "chartTitle": "Units by type",
+      "chartCenter": "units exchanged",
+      "noUnits": "No unit has been received from or shipped to this organization.",
+      "receivedLine": "{count, plural, one {# unit received} other {# units received}}",
+      "shippedLine": "{count, plural, one {# shipment of units out} other {# shipments of units out}}",
+      "shipmentsLine": "{count, plural, one {# shipment in all} other {# shipments in all}}"
+    },
+    "profile": {
+      "title": "Contact and compliance",
+      "licence": "Licence number",
+      "country": "Country",
+      "address": "Address",
+      "notes": "Notes and contacts",
+      "licenceClass": "Licence class"
+    },
+    "shipments": {
+      "inboundTitle": "Shipments received from this organization",
+      "inboundEmptyTitle": "Nothing received yet",
+      "inboundEmptyBody": "Receipts from this organization appear here once they are recorded.",
+      "outboundTitle": "Shipments sent to this organization",
+      "outboundEmptyTitle": "Nothing sent yet",
+      "outboundEmptyBody": "Shipments to this organization appear here once they are recorded.",
+      "columns": {
+        "reference": "Reference",
+        "status": "Status",
+        "date": "Date",
+        "lines": "Lines",
+        "recordedBy": "Recorded by"
+      }
+    },
+    "units": {
+      "title": "Units exchanged",
+      "columns": {
+        "name": "Unit",
+        "type": "Type",
+        "cultivar": "Cultivar",
+        "experiment": "Experiment",
+        "relation": "Relation"
+      },
+      "emptyTitle": "No units supplied",
+      "emptyBody": "Units registered with this organization as their provider appear here.",
+      "relation": {
+        "supplied": "Supplied by them",
+        "shipped": "Shipped to them"
+      }
+    },
+    "tests": {
+      "title": "Tests received",
+      "columns": {
+        "unit": "Unit",
+        "test": "Test",
+        "value": "Result",
+        "relation": "Why it is listed",
+        "date": "Tested"
+      },
+      "relation": {
+        "performed": "Performed by this laboratory",
+        "supplied": "On material it supplied"
+      },
+      "emptyTitle": "No lab results",
+      "emptyBody": "Results performed by this laboratory, or recorded on units it supplied, appear here."
+    },
+    "activity": {
+      "title": "Profile activity",
+      "description": "The latest changes to this record, from the audit trail.",
+      "none": "No changes have been recorded.",
+      "by": "by {name}"
+    }
+  },
+  "documents": {
+    "title": "Documents",
+    "description": "Licences, agreements and paperwork filed with this organization.",
+    "none": "No documents yet.",
+    "download": " (download)",
+    "addedBy": "Added by {name} on {date}",
+    "add": "Add document",
+    "addTitle": "Add a document to {name}",
+    "addDescription": "It is stored privately and can be downloaded by signed-in members.",
+    "file": "File",
+    "fileHint": "PDF, Word, Excel, PNG, JPEG, WebP, CSV or plain text, up to 10 MB.",
+    "fileRequired": "Choose a file first.",
+    "label": "Name (optional)",
+    "labelHint": "The file name is used when this is empty.",
+    "cancel": "Cancel",
+    "upload": "Add document",
+    "added": "Document added"
+  }
+}

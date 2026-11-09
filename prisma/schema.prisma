@@ -1,0 +1,1117 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Domain model: see docs/domain-model.md
+
+// -----------------------------------------------------------------------------
+// Enums
+// -----------------------------------------------------------------------------
+
+enum PermissionLevel {
+  ADMIN
+  REGULAR
+  /// Quality assurance: sees the whole lab, places and releases holds, records lab results and incidents.
+  QA
+  /// Inventory manager: sees the whole lab, works on every unit and manages locations.
+  INVENTORY
+  /// Read-only (a Health Canada visit): sees the whole lab and the compliance reports, changes nothing.
+  INSPECTOR
+}
+
+enum ExperimentRole {
+  LEAD
+  MEMBER
+}
+
+enum UnitType {
+  PLANT
+  SEEDLOT
+  FLOWER
+  CULTURE
+}
+
+enum SourceType {
+  SEED
+  CUTTING
+  CLONE
+  SUBCULTURE
+  RECEIVED
+  INTERNAL
+  HARVEST
+  OTHER
+  /// Plants split off from another plant group.
+  SPLIT
+}
+
+enum GrowthStage {
+  VEGETATIVE
+  FLOWERING
+  HARVESTED
+  DRYING
+  CURING
+  STORAGE
+  SEED
+}
+
+/// What happened to a unit. SHIPPED and DESTROYED are terminal.
+enum UnitStateKind {
+  CREATED
+  RECEIVED
+  MOVED
+  STAGE_CHANGED
+  MEASURED
+  /// Part of the unit left on a shipment; what is left stays in inventory.
+  SHIPPED_PART
+  /// All that was left of the unit left on a shipment (nothing remains).
+  SHIPPED
+  DESTROYED
+  /// Part of the unit was taken as a sample, which became a unit of its own.
+  SAMPLED
+  /// Part of the unit was disposed of as waste (trim, stems and leaves, roots): destroyed.
+  WASTED
+  /// A plant group's count changed because plants moved to or from another group (split, merge).
+  REGROUPED
+  /// The whole plant group joined another group: nothing is left of it.
+  MERGED
+}
+
+/// What was disposed of as waste.
+enum WasteType {
+  TRIM
+  STEMS_LEAVES
+  ROOTS
+  PLANT_MATTER
+  OTHER
+}
+
+/// Why a sample was taken. A sample holds its lab results; there is no pass or fail.
+enum SampleKind {
+  /// For the release testing of the lot.
+  RELEASE
+  /// Kept in reserve, untested.
+  RETENTION
+  /// The laboratory's own quality checks.
+  INTERNAL_QA
+}
+
+enum HoldKind {
+  HOLD
+}
+
+enum HoldOrigin {
+  MANUAL
+  AUTO_INCIDENT
+}
+
+/// The Health Canada licence an organization holds. It decides the CTLS line a shipment to it is
+/// reported on (to analytical testers, to researchers, to cultivators and processors).
+enum LicenceClass {
+  CULTIVATION
+  PROCESSING
+  ANALYTICAL_TESTING
+  RESEARCH
+  MEDICAL_SALES
+}
+
+enum ShipmentDirection {
+  INBOUND
+  OUTBOUND
+}
+
+enum ShipmentStatus {
+  DRAFT
+  IN_TRANSIT
+  DELIVERED
+  CANCELLED
+}
+
+enum MaterialClass {
+  SEED
+  CLONE
+  PLANT
+  CULTURE
+  FLOWER
+  TRIM
+}
+
+/// Regulatory accounting basis: counts for propagative material, grams for harvested.
+enum Measure {
+  COUNT
+  WEIGHT
+}
+
+enum Moisture {
+  WET
+  DRY
+}
+
+enum TestPanel {
+  POTENCY
+  TERPENES
+  PESTICIDES
+  HEAVY_METALS
+  MICROBIALS
+  MYCOTOXINS
+  MOISTURE
+  FOREIGN
+  /// Viroids, viruses and other pathogens (hop latent viroid, for one).
+  PATHOGENS
+  /// Sex, genetic identity.
+  GENETICS
+  OTHER
+}
+
+enum IncidentSeverity {
+  CRITICAL
+  MAJOR
+  MINOR
+}
+
+enum IncidentStatus {
+  OPEN
+  INVESTIGATING
+  CLOSED
+}
+
+enum ActivityType {
+  NUTRIENT
+  FERTIGATION
+  FOLIAR
+  PESTICIDE
+  BENEFICIAL_INSECTS
+  SCOUTING
+  PRUNING
+  FLUSH
+  GROW_MEDIA
+  METRICS
+  POTENCY
+  TREATMENT
+  ENVIRONMENT
+}
+
+enum AttachmentCategory {
+  PHOTO
+  PROTOCOL
+  QC
+  COA
+  MANIFEST
+}
+
+// -----------------------------------------------------------------------------
+// People
+// -----------------------------------------------------------------------------
+
+model User {
+  id           Int             @id @default(autoincrement())
+  /// Short code made by the database (M-001).
+  code         String          @unique @default(dbgenerated("('M-'::text || lpad((nextval('\"User_code_seq\"'::regclass))::text, 3, '0'::text))"))
+  name         String          @unique
+  initials     String?
+  passwordHash String          @default("")
+  permissions  PermissionLevel @default(REGULAR)
+  email        String?
+  active       Boolean         @default(true)
+
+  /// SHA-256 of the one-time invite token. Set while an invite is pending
+  /// (active = false); cleared when the invitee sets a password.
+  inviteTokenHash String?   @unique
+  inviteExpiresAt DateTime? @db.Timestamptz(3)
+  invitedById     Int?
+  invitedAt       DateTime? @db.Timestamptz(3)
+
+  /**
+   * Argon2id hash lives in passwordHash; this records when it last changed.
+   */
+  passwordChangedAt DateTime? @db.Timestamptz(3)
+  lastLoginAt       DateTime? @db.Timestamptz(3)
+  /**
+   * TOTP secret, AES-256-GCM encrypted (never stored in clear).
+   */
+  mfaSecretEnc      String?
+  mfaEnabledAt      DateTime? @db.Timestamptz(3)
+  /**
+   * Last accepted TOTP time step: a code can be used once (replay protection).
+   */
+  mfaLastStep       Int?
+
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+
+  experiments           ExperimentMember[]
+  sessions              Session[]
+  recoveryCodes         MfaRecoveryCode[]
+  auditLogs             AuditLog[]
+  savedViews            SavedView[]
+  assignedTasks         Task[]                   @relation("TaskAssignee")
+  createdTasks          Task[]                   @relation("TaskCreatedBy")
+  completedTasks        Task[]                   @relation("TaskCompletedBy")
+  createdSops           Sop[]
+  writtenSopVersions    SopVersion[]             @relation("SopVersionCreatedBy")
+  approvedSopVersions   SopVersion[]             @relation("SopVersionApprovedBy")
+  sopSignoffs           SopSignoff[]
+  ownedCapa             CapaAction[]             @relation("CapaOwner")
+  raisedCapa            CapaAction[]             @relation("CapaCreatedBy")
+  completedCapa         CapaAction[]             @relation("CapaCompletedBy")
+  verifiedCapa          CapaAction[]             @relation("CapaVerifiedBy")
+  tissueSamples         TissueSample[]
+  recordedStates        UnitState[]              @relation("StateRecordedBy")
+  witnessedStates       UnitState[]              @relation("StateWitness")
+  placedHolds           UnitHold[]               @relation("HoldPlacedBy")
+  releasedHolds         UnitHold[]               @relation("HoldReleasedBy")
+  attachments           UnitAttachment[]
+  experimentDocuments   ExperimentAttachment[]
+  organizationDocuments OrganizationAttachment[]
+  activities            UnitActivity[]
+  shipments             Shipment[]
+  labTests              LabTest[]
+  incidents             QualityIncident[]
+  notifications         Notification[]
+}
+
+model Cultivar {
+  id                 Int      @id @default(autoincrement())
+  name               String   @unique
+  /// Short code made by the database (CV-001), or the one typed before codes were automatic.
+  code               String   @unique @default(dbgenerated("('CV-'::text || lpad((nextval('\"Cultivar_code_seq\"'::regclass))::text, 3, '0'::text))"))
+  commonName         String?
+  category           String?
+  targetThc          Float?
+  targetCbd          Float?
+  /// Typical days in the vegetative stage, then in flowering: projected harvest dates.
+  vegetativeDays     Int?
+  floweringDays      Int?
+  /// Expected dry yield per plant, in grams.
+  expectedYieldGrams Float?
+  comment            String?
+  createdAt          DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt          DateTime @updatedAt @db.Timestamptz(3)
+
+  units         BiologicalUnit[]
+  shipmentItems ShipmentItem[]
+  incidents     QualityIncident[]
+}
+
+model Experiment {
+  id                 Int       @id @default(autoincrement())
+  ecode              String    @unique
+  name               String
+  startDate          DateTime  @db.Timestamptz(3)
+  /// The day the experiment was completed; null while it is running.
+  endDate            DateTime? @db.Timestamptz(3)
+  /// Optional estimate of when it will be completed. Informational only.
+  estimatedEndDate   DateTime? @db.Timestamptz(3)
+  comment            String?
+  parentExperimentId Int?
+  sourceUnitId       Int?
+  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
+
+  parentExperiment Experiment?            @relation("SubExperiments", fields: [parentExperimentId], references: [id])
+  subExperiments   Experiment[]           @relation("SubExperiments")
+  sourceUnit       BiologicalUnit?        @relation("ExperimentSourceUnit", fields: [sourceUnitId], references: [id])
+  units            BiologicalUnit[]
+  members          ExperimentMember[]
+  incidents        QualityIncident[]
+  documents        ExperimentAttachment[]
+  tasks            Task[]
+
+  @@index([parentExperimentId])
+  @@index([sourceUnitId])
+}
+
+/// Atomic per-prefix counter behind experiment codes (EXP1, EXP2 …); replaces max+1 scans.
+model ExperimentCodeCounter {
+  prefix     String @id
+  lastNumber Int    @default(0)
+}
+
+/// A document that belongs to an experiment as a whole (protocol, approval, supplier paperwork).
+/// Stored privately like unit documents; voided with a reason, never deleted.
+model ExperimentAttachment {
+  id           Int       @id @default(autoincrement())
+  experimentId Int
+  userId       Int
+  label        String
+  fileName     String
+  filePath     String
+  mimeType     String?
+  sizeBytes    Int?
+  sha256       String?
+  createdAt    DateTime  @default(now()) @db.Timestamptz(3)
+  voidedAt     DateTime? @db.Timestamptz(3)
+  voidedById   Int?
+  voidReason   String?
+
+  experiment Experiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  user       User       @relation(fields: [userId], references: [id])
+
+  @@index([experimentId])
+  @@index([userId])
+}
+
+model ExperimentMember {
+  experimentId Int
+  userId       Int
+  role         ExperimentRole @default(MEMBER)
+
+  experiment Experiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([experimentId, userId])
+  @@index([userId])
+}
+
+/// The level of a location: a room holds rows, a row racks, a rack shelves.
+enum LocationKind {
+  ROOM
+  ROW
+  RACK
+  SHELF
+  AREA
+}
+
+/// What a location's capacity counts.
+enum CapacityMeasure {
+  UNITS
+  PLANTS
+  /// Grams of weighed material: the dry weight once recorded, else the wet weight.
+  WEIGHT
+}
+
+model Location {
+  id              Int             @id @default(autoincrement())
+  name            String          @unique
+  /// The room's short code, as on its door and labels (R-001).
+  code            String?         @unique
+  address         String?
+  /// The room's description.
+  comment         String?
+  /// The most it holds, in `capacityMeasure`: units, plants (every plant of a group) or grams.
+  capacity        Int?
+  capacityMeasure CapacityMeasure @default(UNITS)
+  /// Locations are rooms only since 2026-11-07; the older levels (rows, racks, shelves) are retired.
+  kind            LocationKind    @default(ROOM)
+  /// The location this one was inside, for the retired levels; rooms have none.
+  parentId        Int?
+  active          Boolean         @default(true)
+  createdAt       DateTime        @default(now()) @db.Timestamptz(3)
+  updatedAt       DateTime        @updatedAt @db.Timestamptz(3)
+
+  parent   Location?   @relation("LocationTree", fields: [parentId], references: [id])
+  children Location[]  @relation("LocationTree")
+  states   UnitState[]
+
+  @@index([parentId])
+}
+
+model Organization {
+  id            Int           @id @default(autoincrement())
+  /// Short code made by the database (ORG-001).
+  code          String        @unique @default(dbgenerated("('ORG-'::text || lpad((nextval('\"Organization_code_seq\"'::regclass))::text, 3, '0'::text))"))
+  name          String        @unique
+  address       String?
+  country       String?
+  comment       String?
+  licenceNumber String?
+  licenceClass  LicenceClass?
+  createdAt     DateTime      @default(now()) @db.Timestamptz(3)
+  updatedAt     DateTime      @updatedAt @db.Timestamptz(3)
+
+  states        UnitState[]
+  suppliedUnits BiologicalUnit[]
+  shipments     Shipment[]
+  documents     OrganizationAttachment[]
+}
+
+/// A document filed with an organization: its licence, an agreement, supplier or laboratory paperwork.
+model OrganizationAttachment {
+  id             Int      @id @default(autoincrement())
+  organizationId Int
+  userId         Int
+  label          String
+  fileName       String
+  filePath       String
+  mimeType       String?
+  sizeBytes      Int?
+  sha256         String?
+  createdAt      DateTime @default(now()) @db.Timestamptz(3)
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id])
+
+  @@index([organizationId])
+  @@index([userId])
+}
+
+// -----------------------------------------------------------------------------
+// Material: unit identity + immutable state events
+// -----------------------------------------------------------------------------
+
+model BiologicalUnit {
+  id                     Int         @id @default(autoincrement())
+  /// Short code made by the database (U-0001), shown beside the name.
+  code                   String      @unique @default(dbgenerated("('U-'::text || lpad((nextval('\"BiologicalUnit_code_seq\"'::regclass))::text, 4, '0'::text))"))
+  name                   String      @unique
+  type                   UnitType
+  cultivarId             Int?
+  experimentId           Int?
+  sex                    String?
+  comment                String?
+  sourceType             SourceType?
+  sourceDescription      String?
+  providerOrganizationId Int?
+  sourceParentUnitId     Int?
+  /// Set when the unit is a sample taken from its parent (`sourceParentUnitId`).
+  sampleKind             SampleKind?
+  /// Pointer to the newest UnitState, maintained in the transaction that writes it.
+  currentStateId         Int?        @unique
+  createdAt              DateTime    @default(now()) @db.Timestamptz(3)
+  updatedAt              DateTime    @updatedAt @db.Timestamptz(3)
+
+  cultivar             Cultivar?         @relation(fields: [cultivarId], references: [id])
+  experiment           Experiment?       @relation(fields: [experimentId], references: [id])
+  providerOrganization Organization?     @relation(fields: [providerOrganizationId], references: [id])
+  sourceParentUnit     BiologicalUnit?   @relation("UnitLineage", fields: [sourceParentUnitId], references: [id])
+  derivedUnits         BiologicalUnit[]  @relation("UnitLineage")
+  sourcedExperiments   Experiment[]      @relation("ExperimentSourceUnit")
+  currentState         UnitState?        @relation("CurrentState", fields: [currentStateId], references: [id])
+  states               UnitState[]       @relation("UnitStates")
+  holds                UnitHold[]
+  attachments          UnitAttachment[]
+  activities           UnitActivity[]
+  shipmentItems        ShipmentItem[]
+  labTests             LabTest[]
+  incidents            QualityIncident[]
+
+  tissueSamples TissueSample[]
+  tasks         Task[]
+
+  @@index([experimentId])
+  @@index([cultivarId])
+  @@index([sourceParentUnitId])
+  @@index([providerOrganizationId])
+}
+
+/// Immutable snapshot written for every event in a unit's life. The database rejects
+/// UPDATE and DELETE (see the integrity migration); history is only ever appended.
+model UnitState {
+  id           Int           @id @default(autoincrement())
+  unitId       Int
+  /// 1, 2, 3 … per unit, assigned under a row lock on the unit.
+  sequence     Int
+  kind         UnitStateKind
+  effectiveAt  DateTime      @db.Timestamptz(3)
+  recordedAt   DateTime      @default(now()) @db.Timestamptz(3)
+  recordedById Int
+
+  locationId      Int?
+  growthStage     GrowthStage?
+  humidWeight     Decimal?     @db.Decimal(12, 3)
+  dryWeight       Decimal?     @db.Decimal(12, 3)
+  seedCount       Int?
+  /// A plant unit holding several plants (a plant group): how many. Null means one plant.
+  plantCount      Int?
+  /// On SHIPPED / SHIPPED_PART: how much left on this shipment; on SAMPLED: how much was taken as the
+  /// sample; on WASTED: how much was disposed of (grams on the given basis, or a count). The weights and the seed count above are what is
+  /// left after it.
+  shippedWeight   Decimal?     @db.Decimal(12, 3)
+  shippedMoisture Moisture?
+  shippedCount    Int?
+  /// Counterparty for RECEIVED / SHIPPED.
+  organizationId  Int?
+  scanConfirmed   Boolean      @default(false)
+  /// Mandatory for DESTROYED; on WASTED, how the waste was disposed of.
+  reason          String?
+  /// On WASTED: what was disposed of.
+  wasteType       WasteType?
+  witnessId       Int?
+  comment         String?
+  /// On CREATED of a derived unit: the parent's state at the moment of derivation.
+  parentStateId   Int?
+
+  unit         BiologicalUnit  @relation("UnitStates", fields: [unitId], references: [id])
+  recordedBy   User            @relation("StateRecordedBy", fields: [recordedById], references: [id])
+  witness      User?           @relation("StateWitness", fields: [witnessId], references: [id])
+  location     Location?       @relation(fields: [locationId], references: [id])
+  organization Organization?   @relation(fields: [organizationId], references: [id])
+  parentState  UnitState?      @relation("DerivedFromState", fields: [parentStateId], references: [id])
+  childStates  UnitState[]     @relation("DerivedFromState")
+  currentOf    BiologicalUnit? @relation("CurrentState")
+  shipmentItem ShipmentItem?
+
+  @@unique([unitId, sequence])
+  @@index([unitId, effectiveAt])
+  @@index([kind, effectiveAt])
+  @@index([locationId])
+  @@index([organizationId])
+  @@index([recordedById])
+  @@index([parentStateId])
+}
+
+model UnitHold {
+  id           Int        @id @default(autoincrement())
+  unitId       Int
+  kind         HoldKind   @default(HOLD)
+  reason       String
+  origin       HoldOrigin @default(MANUAL)
+  placedById   Int
+  placedAt     DateTime   @default(now()) @db.Timestamptz(3)
+  releasedById Int?
+  releasedAt   DateTime?  @db.Timestamptz(3)
+  releaseNote  String?
+
+  unit       BiologicalUnit @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  placedBy   User           @relation("HoldPlacedBy", fields: [placedById], references: [id])
+  releasedBy User?          @relation("HoldReleasedBy", fields: [releasedById], references: [id])
+
+  @@index([unitId, releasedAt])
+  @@index([releasedAt])
+}
+
+// -----------------------------------------------------------------------------
+// Authentication
+// -----------------------------------------------------------------------------
+
+/// A signed-in browser. The cookie holds a random 256-bit token; only its SHA-256 is stored, so a
+/// database leak cannot be replayed. Sessions expire after idleness and after an absolute lifetime,
+/// and are revoked on sign-out, password change and deactivation.
+model Session {
+  id            Int       @id @default(autoincrement())
+  userId        Int
+  tokenHash     String    @unique
+  createdAt     DateTime  @default(now()) @db.Timestamptz(3)
+  lastSeenAt    DateTime  @default(now()) @db.Timestamptz(3)
+  expiresAt     DateTime  @db.Timestamptz(3)
+  ip            String?
+  userAgent     String?
+  /// True when the account has MFA: the session is unusable until the second factor is verified.
+  requiresMfa   Boolean   @default(false)
+  mfaVerifiedAt DateTime? @db.Timestamptz(3)
+  /// Last password/MFA confirmation, for sensitive actions.
+  reauthAt      DateTime? @db.Timestamptz(3)
+  revokedAt     DateTime? @db.Timestamptz(3)
+  revokedReason String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, revokedAt])
+  @@index([expiresAt])
+}
+
+/// One-time MFA recovery codes (only hashes are stored).
+model MfaRecoveryCode {
+  id        Int       @id @default(autoincrement())
+  userId    Int
+  codeHash  String
+  createdAt DateTime  @default(now()) @db.Timestamptz(3)
+  usedAt    DateTime? @db.Timestamptz(3)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, usedAt])
+}
+
+/// Fixed-window counters behind rate limiting and sign-in lockout.
+model RateLimitBucket {
+  key     String   @id
+  count   Int      @default(0)
+  resetAt DateTime @db.Timestamptz(3)
+
+  @@index([resetAt])
+}
+
+// -----------------------------------------------------------------------------
+// Audit trail
+// -----------------------------------------------------------------------------
+
+/// Append-only, hash-chained record of every action. The database itself rejects
+/// UPDATE, DELETE and TRUNCATE, and assigns `seq`, `prevHash` and `hash` in a
+/// trigger (see migration "integrity"), so application code cannot forge or
+/// rewrite history. Never write those three columns from the app.
+model AuditLog {
+  id          Int      @id @default(autoincrement())
+  /// Position in the hash chain, assigned by the database under a lock.
+  seq         Int      @unique @default(0)
+  /**
+   * Null for events with no authenticated actor (e.g. a failed sign-in).
+   */
+  userId      Int?
+  userName    String
+  userRole    String
+  entityType  String
+  entityId    Int
+  entityLabel String
+  action      String
+  summary     String
+  /// Structured before/after changes: [{ field, from, to }].
+  details     Json?
+  /// Why the change was made (mandatory for destruction, hold release, voiding).
+  reason      String?
+  requestId   String?
+  ip          String?
+  userAgent   String?
+  createdAt   DateTime @default(now()) @db.Timestamptz(3)
+  /// Hash of the previous row ("" for the first), set by the database.
+  prevHash    String   @default("")
+  /// SHA-256 over this row's content and prevHash, set by the database.
+  hash        String   @default("")
+
+  user          User?          @relation(fields: [userId], references: [id])
+  notifications Notification[]
+
+  @@index([entityType, entityId, createdAt])
+  @@index([userId, createdAt])
+  @@index([createdAt])
+}
+
+// -----------------------------------------------------------------------------
+// Unit documents and activity
+// -----------------------------------------------------------------------------
+
+model UnitAttachment {
+  id         Int                @id @default(autoincrement())
+  unitId     Int
+  userId     Int
+  label      String
+  fileName   String
+  filePath   String
+  mimeType   String?
+  /**
+   * Content-addressed integrity: size and SHA-256 of the stored bytes.
+   */
+  sizeBytes  Int?
+  sha256     String?
+  category   AttachmentCategory
+  createdAt  DateTime           @default(now()) @db.Timestamptz(3)
+  /// Regulated records are voided, never deleted.
+  voidedAt   DateTime?          @db.Timestamptz(3)
+  voidedById Int?
+  voidReason String?
+
+  unit BiologicalUnit @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  user User           @relation(fields: [userId], references: [id])
+
+  @@index([unitId])
+  @@index([userId])
+}
+
+model UnitActivity {
+  id      Int          @id @default(autoincrement())
+  unitId  Int
+  userId  Int
+  stateId Int?
+  type    ActivityType
+  title   String
+  details String?
+  date    DateTime     @default(now()) @db.Timestamptz(3)
+
+  /// What was applied or released: a product, nutrient or insect species.
+  product    String?
+  /// Health Canada Pest Control Products Act registration number (required for a pesticide).
+  pcpNumber  String?
+  /// How much, in `amountUnit` (for example 2.5 L, 40 g, 500 insects).
+  amount     Decimal? @db.Decimal(12, 3)
+  amountUnit String?
+  /// How it was applied: foliar spray, drench, release...
+  method     String?
+
+  unit BiologicalUnit @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  user User           @relation(fields: [userId], references: [id])
+
+  @@index([unitId, date])
+  @@index([userId])
+}
+
+// -----------------------------------------------------------------------------
+// Shipments (inventory events)
+// -----------------------------------------------------------------------------
+
+/// Inbound receipt or outbound shipment of biological material.
+/// Health Canada requires both sides of every transfer to be reconcilable.
+model Shipment {
+  id             Int               @id @default(autoincrement())
+  reference      String            @unique
+  direction      ShipmentDirection
+  status         ShipmentStatus    @default(DRAFT)
+  organizationId Int
+  userId         Int
+  shippedDate    DateTime?         @db.Timestamptz(3)
+  deliveredDate  DateTime?         @db.Timestamptz(3)
+  trackingNumber String?
+  licenceNumber  String?
+  comment        String?
+  createdAt      DateTime          @default(now()) @db.Timestamptz(3)
+  updatedAt      DateTime          @updatedAt @db.Timestamptz(3)
+  voidedAt       DateTime?         @db.Timestamptz(3)
+  voidedById     Int?
+  voidReason     String?
+
+  organization Organization   @relation(fields: [organizationId], references: [id])
+  user         User           @relation(fields: [userId], references: [id])
+  items        ShipmentItem[]
+
+  @@index([direction, status])
+  @@index([shippedDate])
+  @@index([organizationId])
+  @@index([userId])
+}
+
+/// A single material line on a shipment. Seeds and clones are reconciled by unit
+/// count; flower is reconciled by gram weight with an explicit wet/dry basis, per
+/// Health Canada CTLS rules. A line that references a unit becomes a SHIPPED
+/// UnitState when the shipment leaves (`stateId`).
+model ShipmentItem {
+  id           Int           @id @default(autoincrement())
+  shipmentId   Int
+  unitId       Int?
+  cultivarId   Int?
+  stateId      Int?          @unique
+  description  String
+  materialType MaterialClass
+  measure      Measure
+  unitCount    Int?
+  weightGrams  Decimal?      @db.Decimal(12, 3)
+  moisture     Moisture?
+  comment      String?
+  /// The line ships a part of its unit (an amount, or a part of another kind such as clones or
+  /// seeds), not all of it. False for every line written before the choice existed.
+  isPart       Boolean       @default(false)
+
+  shipment Shipment        @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+  unit     BiologicalUnit? @relation(fields: [unitId], references: [id])
+  cultivar Cultivar?       @relation(fields: [cultivarId], references: [id])
+  state    UnitState?      @relation(fields: [stateId], references: [id])
+
+  @@index([shipmentId])
+  @@index([unitId])
+  @@index([cultivarId])
+}
+
+// -----------------------------------------------------------------------------
+// Quality
+// -----------------------------------------------------------------------------
+
+/// A result reported for a unit: potency, contaminants, moisture and so on. It is a record of what
+/// the laboratory reported; it carries no pass/fail judgement.
+model LabTest {
+  id         Int       @id @default(autoincrement())
+  unitId     Int
+  userId     Int
+  panel      TestPanel
+  /// No longer collected: a result is a panel, an optional value and the wet and dry weights.
+  analyte    String?
+  value      Float?
+  uom        String?
+  /// Grams, as measured for the test.
+  wetWeight  Float?
+  dryWeight  Float?
+  labName    String?
+  testedAt   DateTime  @default(now()) @db.Timestamptz(3)
+  comment    String?
+  createdAt  DateTime  @default(now()) @db.Timestamptz(3)
+  voidedAt   DateTime? @db.Timestamptz(3)
+  voidedById Int?
+  voidReason String?
+
+  unit BiologicalUnit @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  user User           @relation(fields: [userId], references: [id])
+
+  tissueSampleId Int?
+  tissueSample   TissueSample? @relation(fields: [tissueSampleId], references: [id])
+
+  @@index([unitId, testedAt])
+  @@index([userId])
+  @@index([tissueSampleId])
+}
+
+/// GPP-style nonconformance: investigation, hold, close-out.
+model QualityIncident {
+  id           Int              @id @default(autoincrement())
+  /// Short code made by the database (INC-001).
+  code         String           @unique @default(dbgenerated("('INC-'::text || lpad((nextval('\"QualityIncident_code_seq\"'::regclass))::text, 3, '0'::text))"))
+  title        String
+  severity     IncidentSeverity
+  status       IncidentStatus   @default(OPEN)
+  unitId       Int?
+  cultivarId   Int?
+  experimentId Int?
+  userId       Int
+  description  String
+  resolution   String?
+  createdAt    DateTime         @default(now()) @db.Timestamptz(3)
+  closedAt     DateTime?        @db.Timestamptz(3)
+  voidedAt     DateTime?        @db.Timestamptz(3)
+  voidedById   Int?
+  voidReason   String?
+
+  unit       BiologicalUnit? @relation(fields: [unitId], references: [id], onDelete: SetNull)
+  cultivar   Cultivar?       @relation(fields: [cultivarId], references: [id], onDelete: SetNull)
+  experiment Experiment?     @relation(fields: [experimentId], references: [id], onDelete: SetNull)
+  user       User            @relation(fields: [userId], references: [id])
+
+  /// The procedure it departed from, when it is a deviation.
+  sopId       Int?
+  sop         Sop?         @relation(fields: [sopId], references: [id])
+  capaActions CapaAction[]
+
+  @@index([sopId])
+  @@index([status, severity])
+  @@index([unitId])
+  @@index([cultivarId])
+  @@index([experimentId])
+  @@index([userId])
+}
+
+/// The laboratory's own settings, one row (id 1). Administrators edit them.
+model LabSettings {
+  id                   Int           @id @default(1)
+  /// Health Canada licence number, holder and class: on records and the CTLS return.
+  licenceNumber        String?
+  licenceHolder        String?
+  licenceClass         LicenceClass?
+  siteAddress          String?
+  /// How many days back an event may be dated; null for no limit.
+  backdateLimitDays    Int?
+  /// The letters every new experiment code starts with (EXP1, EXP2…).
+  experimentCodePrefix String        @default("EXP")
+  updatedAt            DateTime      @updatedAt @db.Timestamptz(3)
+}
+
+/// A member's own arrangement of a list (filters, sort, hidden columns, grouping), saved under a
+/// name. Personal and not laboratory data: nobody else sees it and it is not audited.
+model SavedView {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  /// Which list it is a view of ("units").
+  list      String
+  name      String
+  /// The list's query string, without the page number.
+  query     String
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, list, name])
+}
+
+/// Whether a task is still to be done.
+enum TaskStatus {
+  OPEN
+  DONE
+  CANCELLED
+}
+
+/// Work planned for a laboratory day: for the whole lab, an experiment or one unit, assigned to one
+/// member or to nobody yet. Every change is in the audit trail.
+model Task {
+  id            Int        @id @default(autoincrement())
+  /// Short code made by the database (T-0001).
+  code          String     @unique @default(dbgenerated("('T-'::text || lpad((nextval('\"Task_code_seq\"'::regclass))::text, 4, '0'::text))"))
+  title         String
+  details       String?
+  /// The start of the laboratory day it is due.
+  dueDate       DateTime   @db.Timestamptz(3)
+  status        TaskStatus @default(OPEN)
+  experimentId  Int?
+  unitId        Int?
+  assigneeId    Int?
+  createdById   Int
+  /// When it was done or cancelled, and by whom.
+  completedAt   DateTime?  @db.Timestamptz(3)
+  completedById Int?
+  createdAt     DateTime   @default(now()) @db.Timestamptz(3)
+  updatedAt     DateTime   @updatedAt @db.Timestamptz(3)
+
+  experiment    Experiment?     @relation(fields: [experimentId], references: [id])
+  unit          BiologicalUnit? @relation(fields: [unitId], references: [id])
+  assignee      User?           @relation("TaskAssignee", fields: [assigneeId], references: [id])
+  createdBy     User            @relation("TaskCreatedBy", fields: [createdById], references: [id])
+  completedBy   User?           @relation("TaskCompletedBy", fields: [completedById], references: [id])
+  notifications Notification[]
+
+  @@index([dueDate])
+  @@index([assigneeId, status])
+  @@index([experimentId])
+  @@index([unitId])
+}
+
+/// Where a version of a procedure stands.
+enum SopVersionStatus {
+  /// Being written; not yet in effect.
+  DRAFT
+  /// The version staff follow and sign.
+  EFFECTIVE
+  /// Replaced by a later version.
+  SUPERSEDED
+}
+
+/// A standard operating procedure. Its text is in numbered versions, one in effect at a time.
+model Sop {
+  id          Int      @id @default(autoincrement())
+  /// The lab's reference, such as SOP-012.
+  code        String   @unique
+  title       String
+  createdById Int
+  createdAt   DateTime @default(now()) @db.Timestamptz(3)
+
+  createdBy  User              @relation(fields: [createdById], references: [id])
+  versions   SopVersion[]
+  deviations QualityIncident[]
+}
+
+model SopVersion {
+  id           Int              @id @default(autoincrement())
+  sopId        Int
+  version      Int
+  status       SopVersionStatus @default(DRAFT)
+  /// The procedure itself.
+  body         String
+  /// What changed from the version before.
+  changeNote   String?
+  createdById  Int
+  createdAt    DateTime         @default(now()) @db.Timestamptz(3)
+  /// When it was approved and took effect, and by whom.
+  approvedById Int?
+  approvedAt   DateTime?        @db.Timestamptz(3)
+  supersededAt DateTime?        @db.Timestamptz(3)
+  /// The controlled document of this version (PDF or Word), when one is attached.
+  fileName     String?
+  filePath     String?
+  fileMime     String?
+  fileSize     Int?
+  fileSha256   String?
+
+  sop        Sop          @relation(fields: [sopId], references: [id])
+  createdBy  User         @relation("SopVersionCreatedBy", fields: [createdById], references: [id])
+  approvedBy User?        @relation("SopVersionApprovedBy", fields: [approvedById], references: [id])
+  signoffs   SopSignoff[]
+
+  @@unique([sopId, version])
+  @@index([status])
+}
+
+/// A member's electronic signature that they have read and understood a version in effect.
+model SopSignoff {
+  id        Int      @id @default(autoincrement())
+  versionId Int
+  userId    Int
+  signedAt  DateTime @default(now()) @db.Timestamptz(3)
+
+  version SopVersion @relation(fields: [versionId], references: [id])
+  user    User       @relation(fields: [userId], references: [id])
+
+  @@unique([versionId, userId])
+  @@index([userId])
+}
+
+enum CapaKind {
+  /// Puts right what went wrong.
+  CORRECTIVE
+  /// Keeps it from happening again.
+  PREVENTIVE
+}
+
+enum CapaStatus {
+  OPEN
+  /// Recorded as done by its owner or quality assurance.
+  DONE
+  /// Checked by quality assurance that it worked.
+  VERIFIED
+}
+
+/// A corrective or preventive action on an incident or deviation: what is to be done, by whom and
+/// by when, what was done, and quality assurance's check that it worked.
+model CapaAction {
+  id               Int        @id @default(autoincrement())
+  /// Short code made by the database (CAPA-001).
+  code             String     @unique @default(dbgenerated("('CAPA-'::text || lpad((nextval('\"CapaAction_code_seq\"'::regclass))::text, 3, '0'::text))"))
+  incidentId       Int
+  kind             CapaKind
+  description      String
+  ownerId          Int?
+  /// The start of the laboratory day it is due.
+  dueDate          DateTime?  @db.Timestamptz(3)
+  status           CapaStatus @default(OPEN)
+  createdById      Int
+  createdAt        DateTime   @default(now()) @db.Timestamptz(3)
+  completedAt      DateTime?  @db.Timestamptz(3)
+  completedById    Int?
+  completionNote   String?
+  verifiedAt       DateTime?  @db.Timestamptz(3)
+  verifiedById     Int?
+  verificationNote String?
+
+  incident    QualityIncident @relation(fields: [incidentId], references: [id])
+  owner       User?           @relation("CapaOwner", fields: [ownerId], references: [id])
+  createdBy   User            @relation("CapaCreatedBy", fields: [createdById], references: [id])
+  completedBy User?           @relation("CapaCompletedBy", fields: [completedById], references: [id])
+  verifiedBy  User?           @relation("CapaVerifiedBy", fields: [verifiedById], references: [id])
+
+  @@index([incidentId])
+  @@index([ownerId, status])
+}
+
+/// What a tissue sample is taken for.
+enum TissuePurpose {
+  /// Viroid, virus or other pathogen screening (hop latent viroid, for one).
+  PATHOGEN
+  /// The sex of a seedling.
+  SEX
+  /// The cultivar's genetic identity.
+  IDENTITY
+  OTHER
+}
+
+/// A small piece of a plant or a culture (a leaf, a root, a meristem, culture medium) taken for a lab
+/// test. It is used up by the test, so it is not a unit of inventory and is not reported: it has a
+/// code and a label to send it to the lab, and the results recorded on it.
+model TissueSample {
+  id        Int           @id @default(autoincrement())
+  /// `<unit>-T-<n>`.
+  code      String        @unique
+  unitId    Int
+  purpose   TissuePurpose
+  /// LEAF, PETIOLE, ROOT, MERISTEM, MEDIUM or OTHER.
+  tissue    String
+  note      String?
+  takenAt   DateTime      @db.Timestamptz(3)
+  takenById Int
+  createdAt DateTime      @default(now()) @db.Timestamptz(3)
+
+  unit     BiologicalUnit @relation(fields: [unitId], references: [id])
+  takenBy  User           @relation(fields: [takenById], references: [id])
+  labTests LabTest[]
+
+  @@index([unitId])
+}
+
+/// One notice for one person: an administrator told of a change (an audit entry), or a member told
+/// a task was given to them. Activity notices are written by a database trigger on AuditLog.
+model Notification {
+  id         Int       @id @default(autoincrement())
+  userId     Int
+  /// "activity" or "task_assigned".
+  kind       String
+  auditLogId Int?
+  taskId     Int?
+  /// Who caused it, as recorded at the time.
+  actorName  String?
+  createdAt  DateTime  @default(now()) @db.Timestamptz(3)
+  readAt     DateTime? @db.Timestamptz(3)
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  auditLog AuditLog? @relation(fields: [auditLogId], references: [id], onUpdate: NoAction)
+  task     Task?     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt])
+  @@index([userId, createdAt])
+  @@index([auditLogId])
+  @@index([taskId])
+}

@@ -1,0 +1,95 @@
+{
+  "pageTitle": "Dashboard",
+  "title": "Dashboard",
+  "description": {
+    "admin": "Everything in the laboratory: inventory, experiments and members.",
+    "member": "The inventory and experiments you are part of."
+  },
+  "experiments": {
+    "heading": "Running experiments",
+    "description": {
+      "admin": "{count, plural, one {# experiment} other {# experiments}} in progress",
+      "member": "{count, plural, one {# experiment} other {# experiments}} you belong to, in progress"
+    },
+    "units": "{count, plural, one {# active unit} other {# active units}}",
+    "ends": "Ends {date}",
+    "noEnd": "No end date",
+    "viewAll": "All experiments",
+    "emptyTitle": "No experiments are running",
+    "emptyBody": {
+      "admin": "Start an experiment to begin registering units.",
+      "member": "You are not part of a running experiment yet. A lead or administrator can add you to one."
+    },
+    "emptyAction": "Start an experiment"
+  },
+  "recent": {
+    "heading": "Recent activity",
+    "auditDescription": "The latest entries in the audit trail.",
+    "eventsDescription": "The latest changes to units.",
+    "auditLink": "Open the audit trail",
+    "eventsLink": "View units",
+    "by": "by {name}",
+    "at": "at {location}",
+    "emptyTitle": "Nothing recorded yet",
+    "emptyBody": "Activity appears here as soon as someone registers or changes a unit.",
+    "attempt": "Not signed in"
+  },
+  "inventory": {
+    "heading": "Inventory snapshot",
+    "description": "{count, plural, one {# unit} other {# units}} active or on hold now. Bars are proportional to the number shown.",
+    "emptyTitle": "No active units",
+    "emptyBody": "Units appear here once an experiment registers or receives material.",
+    "emptyAction": "Start an experiment",
+    "byStatus": "Units by status",
+    "byType": "Units by type",
+    "byStage": "Units by stage",
+    "byLocation": "By location",
+    "share": "{percent} of inventory",
+    "noStage": "No stage recorded",
+    "noLocation": "No location recorded",
+    "otherLocations": "{locations, plural, one {# other location} other {# other locations}}",
+    "viewUnits": "View units",
+    "donutCenter": "{count, plural, one {unit} other {units}}",
+    "donutAria": "Inventory by type"
+  },
+  "hero": {
+    "lead": "The lab,",
+    "accent": "today."
+  },
+  "charts": {
+    "heading": "Overview",
+    "description": "The inventory and the lab in pictures. Every figure is also written out.",
+    "typesCenter": "{count, plural, one {type} other {types}}",
+    "location": {
+      "title": "Units by location",
+      "of": "Capacity {capacity}",
+      "full": "Full: capacity {capacity}"
+    },
+    "recordedCenter": "on record",
+    "stagesCenter": "{count, plural, one {stage} other {stages}}",
+    "locationsCenter": "{count, plural, one {location} other {locations}}"
+  },
+  "view": {
+    "admin": "Administrator view",
+    "member": "Member view"
+  },
+  "summary": {
+    "heading": "Inventory summary",
+    "description": {
+      "admin": "Units across the whole laboratory, by status and type.",
+      "member": "Units in the experiments you belong to, by status and type."
+    }
+  },
+  "members": {
+    "heading": "Members",
+    "description": "{count, plural, one {# active member} other {# active members}} and the work each is part of.",
+    "viewAll": "All members",
+    "empty": "No active members.",
+    "columns": {
+      "name": "Member",
+      "role": "Role",
+      "experiments": "Experiments",
+      "units": "Units"
+    }
+  }
+}

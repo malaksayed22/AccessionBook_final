@@ -1,0 +1,134 @@
+{
+  "page": {
+    "pageTitle": "Traçage de rappel",
+    "title": "Traçage de rappel",
+    "description": "Remontez une unité jusqu’à sa mère et descendez à travers tout ce qui en est dérivé, avec l’emplacement actuel de chaque unité, qui la détient et quelles expéditions l’ont transportée.",
+    "print": "Imprimer le sommaire",
+    "exportCsv": "Exporter en CSV",
+    "searchLabel": "Trouver une unité à tracer",
+    "searchPlaceholder": "Nom ou numéro de l’unité",
+    "notFoundTitle": "Cette unité est introuvable",
+    "notFoundBody": "Vérifiez le numéro, ou recherchez par nom.",
+    "startTitle": "Commencez par une unité",
+    "startBody": "Recherchez l’unité visée par le rappel. Le traçage liste sa lignée maternelle, chaque unité qui en est dérivée, où elles se trouvent et quelles organisations les ont reçues.",
+    "noMatchTitle": "Aucune unité ne correspond",
+    "noMatchBody": "Aucun nom d’unité ne contient « {q} ». Essayez une partie plus courte du nom.",
+    "results": {
+      "title": "{count, plural, one {# unité trouvée} other {# unités trouvées}}. Choisissez-en une à tracer.",
+      "caption": "Unités correspondant à la recherche",
+      "unit": "Unité",
+      "type": "Type",
+      "cultivar": "Cultivar",
+      "status": "Statut"
+    },
+    "relation": {
+      "self": "Origine du traçage",
+      "ancestor": "En amont",
+      "descendant": "En aval",
+      "same-cultivar": "Même cultivar"
+    },
+    "custody": {
+      "destroyed": "Détruite",
+      "shippedTo": "Expédiée à",
+      "shipped": "Expédiée",
+      "at": "À : {location}",
+      "partShippedTo": "Expédiée en partie à"
+    },
+    "origin": {
+      "label": "Unité tracée",
+      "heldTitle": "Cette unité est en retenue",
+      "heldBody": "{origin} : {reason} (depuis le {date})."
+    },
+    "counts": {
+      "upstream": "Unités en amont",
+      "downstream": "Unités en aval",
+      "inInventory": "Encore actives",
+      "onHold": "En retenue actuellement",
+      "shipped": "Expédiées, en partie ou en totalité",
+      "organizations": "Organisations ayant reçu des unités",
+      "shipmentsHint": "{count, plural, one {# expédition} other {# expéditions}}",
+      "chartTitle": "Unités tracées par statut",
+      "chartCenter": "unités tracées",
+      "upLine": "{count, plural, =0 {Aucune unité en amont} one {# unité en amont} other {# unités en amont}}",
+      "downLine": "{count, plural, =0 {Aucune unité en aval} one {# unité en aval} other {# unités en aval}}",
+      "orgLine": "{count, plural, =0 {Aucune organisation n’a reçu d’unités} one {# organisation a reçu des unités} other {# organisations ont reçu des unités}} ({shipments, plural, one {# expédition} other {# expéditions}})"
+    },
+    "truncatedTitle": "Le traçage est incomplet",
+    "truncatedBody": "Seules les {count} premières unités dérivées sont listées. Tracez l’une des unités listées pour suivre le reste.",
+    "lineage": {
+      "title": "Lignée",
+      "hint": "L’arbre généalogique de l’unité tracée, à lire de gauche à droite, en avançant dans le temps : chaque embranchement est une unité dont d’autres dérivent, et chaque unité est une extrémité à droite. L’unité tracée et tout ce qui en dérive sont mis en évidence.",
+      "caption": "Lignée de {name} : en amont, l’unité elle-même et en aval",
+      "unit": "Unité",
+      "type": "Type",
+      "status": "Statut",
+      "hold": "Retenue",
+      "custody": "Où elle se trouve",
+      "source": "Cultivar et expérience",
+      "shipments": "Expéditions",
+      "root": "Lignée mère",
+      "legend": {
+        "active": "Active",
+        "hold": "En retenue",
+        "inactive": "Inactive",
+        "destroyed": "Détruite",
+        "traced": "Unité tracée",
+        "clade": "Unité tracée et ses descendants"
+      },
+      "treeTitle": "Arbre de filiation",
+      "rectangular": "Rectangulaire",
+      "circular": "Circulaire",
+      "generation": "{generation, plural, one {# génération plus bas} other {# générations plus bas}}",
+      "forward": "Avancée dans le temps",
+      "earliest": "Lignée mère",
+      "latest": "Unités récentes"
+    },
+    "organizations": {
+      "title": "Organisations ayant reçu des unités",
+      "caption": "Organisations ayant reçu des unités de ce traçage",
+      "name": "Organisation",
+      "licence": "Licence",
+      "units": "Unités",
+      "shipments": "Expéditions",
+      "none": "Aucune unité de ce traçage n’a été expédiée à une organisation."
+    },
+    "shipments": {
+      "title": "Expéditions de ce traçage",
+      "caption": "Expéditions ayant transporté des unités de ce traçage",
+      "reference": "Référence",
+      "direction": "Sens",
+      "status": "Statut",
+      "organization": "Organisation",
+      "units": "Unités",
+      "none": "Aucune expédition n’a transporté d’unité de ce traçage."
+    },
+    "peers": {
+      "title": "Autre inventaire du même cultivar ({count})",
+      "hint": "Unités actives de {cultivar} hors de la lignée ci-dessus. Elles peuvent avoir une source commune avec l’unité tracée.",
+      "caption": "Autres unités actives du même cultivar",
+      "more": "{shown} affichées sur {total}."
+    }
+  },
+  "csv": {
+    "columns": {
+      "relation": "Relation",
+      "generation": "Génération",
+      "unit": "Unité",
+      "type": "Type",
+      "cultivar": "Cultivar",
+      "experiment": "Expérience",
+      "status": "Statut",
+      "hold": "Retenue",
+      "holdReason": "Motif de la retenue",
+      "location": "Emplacement",
+      "shippedTo": "Expédiée à",
+      "shipments": "Expéditions"
+    },
+    "relation": {
+      "self": "Origine",
+      "ancestor": "En amont",
+      "descendant": "En aval",
+      "same-cultivar": "Même cultivar"
+    }
+  }
+}

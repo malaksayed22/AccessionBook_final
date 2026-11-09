@@ -1,0 +1,94 @@
+{
+  "findings": {
+    "heading": "Constatations et prochaines étapes",
+    "description": "Corrigez les enregistrements listés, puis rechargez cette page pour vérifier de nouveau.",
+    "noneOpen": "Aucune constatation ouverte.",
+    "severity": {
+      "critical": "Critique",
+      "warning": "Avertissement",
+      "info": "Recommandation"
+    },
+    "recordCount": "{count, plural, one {# enregistrement} other {# enregistrements}}",
+    "recordsHeading": "Enregistrements à corriger",
+    "recordsShown": "{shown} affichés sur {count}.",
+    "nextStepLabel": "Prochaine étape",
+    "regulationLabel": "Règlement",
+    "passingHeading": "Vérifications satisfaites",
+    "passingSummary": "{count, plural, one {# vérification satisfaite} other {# vérifications satisfaites}}",
+    "passingNone": "Aucune vérification n’est satisfaite pour l’instant.",
+    "items": {
+      "inventory-located": {
+        "title": "Tout l’inventaire a un emplacement physique",
+        "regulation": "Règlement sur le cannabis, art. 244 : registres d’inventaire",
+        "description": "Chaque unité active doit pouvoir être rattachée à la pièce où elle est entreposée. Une unité sans emplacement ne peut pas être rapprochée lors d’une inspection.",
+        "nextStep": "Ouvrez chaque unité et consignez où elle se trouve, au moyen d’un déplacement."
+      },
+      "cultivar-attribution": {
+        "title": "Toutes les unités sont rattachées à un cultivar",
+        "regulation": "Règlement sur le cannabis, art. 221 : contenu des registres",
+        "description": "Le cultivar fait partie de la description exigée du cannabis détenu en vertu d’une licence.",
+        "nextStep": "Ouvrez chaque unité et choisissez son cultivar."
+      },
+      "provenance-recorded": {
+        "title": "Toutes les unités indiquent une source légale",
+        "regulation": "Règlement sur le cannabis, art. 222 : source du cannabis",
+        "description": "Chaque unité doit consigner comment elle est arrivée sur le site : produite sur place, reçue d’un titulaire de licence ou importée en vertu d’un permis.",
+        "nextStep": "Ouvrez chaque unité et consignez sa source."
+      },
+      "destruction-documented": {
+        "title": "Chaque destruction consigne un motif",
+        "regulation": "Règlement sur le cannabis, art. 230 : registres de destruction",
+        "description": "Un registre de destruction doit indiquer le motif. Un registre incomplet est une constatation d’inspection.",
+        "nextStep": "Communiquez avec votre responsable qualité. Un registre de destruction ne peut pas être modifié : l’écart doit être expliqué dans une note documentée sur l’unité."
+      },
+      "destruction-filed-promptly": {
+        "title": "Les destructions sont consignées sans délai",
+        "regulation": "Règlement sur le cannabis, art. 230 : registres de destruction",
+        "description": "Un registre de destruction devrait être consigné dans les {days} jours suivant la destruction, et non regroupé ou rempli longtemps après coup.",
+        "nextStep": "Consignez les destructions le jour même. Pour les registres listés, documentez pourquoi ils ont été consignés en retard."
+      },
+      "transfers-scanned": {
+        "title": "Les déplacements sont confirmés par lecture du code-barres",
+        "regulation": "Règlement sur le cannabis, art. 244 : chaîne de possession",
+        "description": "Un déplacement confirmé par la lecture de l’étiquette de l’unité offre une chaîne de possession défendable. Un déplacement non confirmé repose sur la mémoire.",
+        "nextStep": "Désormais, lisez l’étiquette de l’unité lors de chaque déplacement. Les registres listés ne peuvent pas être modifiés."
+      },
+      "shipment-licence": {
+        "title": "Les expéditions consignent le numéro de licence de l’autre partie",
+        "regulation": "Règlement sur le cannabis, art. 224 : registres de transfert",
+        "description": "Les registres du cannabis envoyé ou reçu doivent identifier l’autre titulaire de licence, y compris son numéro de licence.",
+        "nextStep": "Ajoutez le numéro de licence à l’organisation, puis à chaque expédition listée."
+      },
+      "shipments-reconciled": {
+        "title": "Aucune expédition n’est restée non rapprochée",
+        "regulation": "Règlement sur le cannabis, art. 244 : rapprochement mensuel",
+        "description": "Une expédition encore en transit après {days} jours n’a pas été rapprochée d’une confirmation de livraison.",
+        "nextStep": "Communiquez avec le destinataire, puis consignez la livraison ou annulez l’expédition."
+      },
+      "harvest-weights": {
+        "title": "Le matériel récolté a un poids consigné",
+        "regulation": "Règlement sur le cannabis, art. 244 : registres des quantités",
+        "description": "Le cannabis récolté doit être quantifié en grammes, humide ou sec, pour figurer sur une déclaration mensuelle CTLS.",
+        "nextStep": "Pesez chaque unité listée et consignez le poids sous forme de mesure."
+      },
+      "experiment-attribution": {
+        "title": "Les unités appartiennent à une expérience de recherche",
+        "regulation": "Licence de recherche : activités autorisées",
+        "description": "Le matériel détenu en vertu d’une licence de recherche devrait pouvoir être rattaché à l’étude qu’il soutient.",
+        "nextStep": "Affectez chaque unité à son expérience lors de sa prochaine modification."
+      },
+      "quality-holds": {
+        "title": "Les retenues qualité sont documentées et résolues",
+        "regulation": "Bonnes pratiques de production : retenues et produit non conforme",
+        "description": "Une unité en retenue exige un motif et une enquête. Une retenue non résolue bloque les transferts, les dérivations et la destruction.",
+        "nextStep": "Examinez chaque unité en retenue dans Retenues et incidents, puis libérez-la ou maintenez la retenue avec un motif documenté."
+      },
+      "open-incidents": {
+        "title": "Les incidents qualité sont clos",
+        "regulation": "Bonnes pratiques de production : plaintes, écarts et mesures correctives",
+        "description": "Une non-conformité ouverte doit faire l’objet d’une enquête et être close avec une résolution consignée.",
+        "nextStep": "Ouvrez chaque incident, terminez l’enquête et clôturez-le avec une résolution."
+      }
+    }
+  }
+}

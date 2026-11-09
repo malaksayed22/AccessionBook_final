@@ -1,0 +1,32 @@
+{
+  "pageTitle": "Recherche",
+  "title": "Recherche",
+  "description": "Trouvez des unités, des expériences et des cultivars dans tout le laboratoire.",
+  "descriptionAdmin": "Trouvez des unités, des expériences, des cultivars, des organisations et des membres dans tout le laboratoire.",
+  "label": "Rechercher dans le laboratoire",
+  "placeholder": "Nom d’unité, code d’expérience ou cultivar",
+  "startTitle": "Rechercher dans le laboratoire",
+  "startBody": "Saisissez au moins {min} caractères : une partie du nom d’une unité, un code d’expérience ou le nom d’un cultivar.",
+  "tip": "Astuce : appuyez sur Ctrl+K (⌘K sur un Mac) depuis n’importe quelle page pour accéder directement à un enregistrement.",
+  "tooShortTitle": "Saisissez un peu plus",
+  "tooShortBody": "Une recherche exige au moins {min} caractères.",
+  "summary": "{count, plural, one {# résultat} other {# résultats}} pour « {query} »",
+  "noResultsTitle": "Aucun résultat pour « {query} »",
+  "noResultsBody": "Vérifiez l’orthographe ou essayez une partie du nom d’une unité, un code d’expérience ou le nom d’un cultivar.",
+  "groups": {
+    "units": "Unités biologiques",
+    "experiments": "Expériences",
+    "cultivars": "Cultivars",
+    "organizations": "Organisations",
+    "members": "Membres"
+  },
+  "groupCount": "{shown} affichés sur {total}",
+  "showAll": {
+    "units": "Afficher {count, plural, one {l’unité correspondante} other {les # unités correspondantes}}",
+    "experiments": "Afficher {count, plural, one {l’expérience correspondante} other {les # expériences correspondantes}}",
+    "cultivars": "Afficher {count, plural, one {le cultivar correspondant} other {les # cultivars correspondants}}",
+    "organizations": "Afficher {count, plural, one {l’organisation correspondante} other {les # organisations correspondantes}}",
+    "members": "Afficher {count, plural, one {le membre correspondant} other {les # membres correspondants}}"
+  },
+  "adminOnlyNote": "Les organisations et les membres ne sont recherchés que pour les administrateurs."
+}

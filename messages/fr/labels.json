@@ -1,0 +1,18 @@
+{
+  "open": "Étiquettes PDF",
+  "openAll": "Étiquettes d’emplacements",
+  "title": "Imprimer des étiquettes",
+  "description": "Un PDF au format des étiquettes. Imprimez-le à la taille réelle (100 %), sans « ajuster à la page ».",
+  "stock": "Format d’étiquettes",
+  "skip": "Commencer à l’étiquette",
+  "skipHint": "Sur une feuille entamée : la première étiquette libre, en comptant de gauche à droite depuis le coin supérieur gauche. {perPage} étiquettes par feuille.",
+  "copies": "Copies",
+  "download": "Télécharger les étiquettes",
+  "templates": {
+    "avery-5160": "Avery 5160 · 2⅝ × 1 po · 30 par feuille",
+    "avery-5163": "Avery 5163 · 4 × 2 po · 10 par feuille",
+    "avery-5167": "Avery 5167 · 1¾ × ½ po · 80 par feuille (tubes)",
+    "zebra-4x2": "Rouleau Zebra · 4 × 2 po",
+    "zebra-2x1": "Rouleau Zebra · 2 × 1 po"
+  }
+}

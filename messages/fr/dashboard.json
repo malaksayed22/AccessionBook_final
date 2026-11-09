@@ -1,0 +1,95 @@
+{
+  "pageTitle": "Tableau de bord",
+  "title": "Tableau de bord",
+  "description": {
+    "admin": "Tout le laboratoire : inventaire, expériences et membres.",
+    "member": "L’inventaire et les expériences auxquelles vous participez."
+  },
+  "experiments": {
+    "heading": "Expériences en cours",
+    "description": {
+      "admin": "{count, plural, one {# expérience} other {# expériences}} en cours",
+      "member": "{count, plural, one {# expérience} other {# expériences}} en cours auxquelles vous appartenez"
+    },
+    "units": "{count, plural, one {# unité active} other {# unités actives}}",
+    "ends": "Se termine le {date}",
+    "noEnd": "Aucune date de fin",
+    "viewAll": "Toutes les expériences",
+    "emptyTitle": "Aucune expérience en cours",
+    "emptyBody": {
+      "admin": "Démarrez une expérience pour commencer à enregistrer des unités.",
+      "member": "Vous ne participez à aucune expérience en cours pour le moment. Un responsable ou un administrateur peut vous y ajouter."
+    },
+    "emptyAction": "Démarrer une expérience"
+  },
+  "recent": {
+    "heading": "Activité récente",
+    "auditDescription": "Les dernières entrées du journal d’audit.",
+    "eventsDescription": "Les derniers changements apportés aux unités.",
+    "auditLink": "Ouvrir le journal d’audit",
+    "eventsLink": "Voir les unités",
+    "by": "par {name}",
+    "at": "à {location}",
+    "emptyTitle": "Rien d’enregistré pour l’instant",
+    "emptyBody": "L’activité apparaît ici dès que quelqu’un enregistre ou modifie une unité.",
+    "attempt": "Non connecté"
+  },
+  "inventory": {
+    "heading": "Aperçu de l’inventaire",
+    "description": "{count, plural, one {# unité active ou en retenue} other {# unités actives ou en retenue}} actuellement. La longueur des barres est proportionnelle au nombre affiché.",
+    "emptyTitle": "Aucune unité active",
+    "emptyBody": "Les unités apparaissent ici dès qu’une expérience enregistre ou reçoit du matériel.",
+    "emptyAction": "Démarrer une expérience",
+    "byStatus": "Unités par statut",
+    "byType": "Unités par type",
+    "byStage": "Unités par stade",
+    "byLocation": "Par emplacement",
+    "share": "{percent} de l’inventaire",
+    "noStage": "Aucun stade consigné",
+    "noLocation": "Aucun emplacement consigné",
+    "otherLocations": "{locations, plural, one {# autre emplacement} other {# autres emplacements}}",
+    "viewUnits": "Voir les unités",
+    "donutCenter": "{count, plural, one {unité} other {unités}}",
+    "donutAria": "Inventaire par type"
+  },
+  "hero": {
+    "lead": "Le laboratoire,",
+    "accent": "aujourd’hui."
+  },
+  "charts": {
+    "heading": "Aperçu",
+    "description": "L’inventaire et le laboratoire en images. Chaque chiffre est aussi écrit en toutes lettres.",
+    "typesCenter": "{count, plural, one {type} other {types}}",
+    "location": {
+      "title": "Unités par emplacement",
+      "of": "Capacité {capacity}",
+      "full": "Plein : capacité {capacity}"
+    },
+    "recordedCenter": "au registre",
+    "stagesCenter": "{count, plural, one {stade} other {stades}}",
+    "locationsCenter": "{count, plural, one {emplacement} other {emplacements}}"
+  },
+  "view": {
+    "admin": "Vue administrateur",
+    "member": "Vue membre"
+  },
+  "summary": {
+    "heading": "Résumé de l’inventaire",
+    "description": {
+      "admin": "Les unités de l’ensemble du laboratoire, par statut et par type.",
+      "member": "Les unités des expériences auxquelles vous appartenez, par statut et par type."
+    }
+  },
+  "members": {
+    "heading": "Membres",
+    "description": "{count, plural, one {# membre actif} other {# membres actifs}} et le travail auquel chacun participe.",
+    "viewAll": "Tous les membres",
+    "empty": "Aucun membre actif.",
+    "columns": {
+      "name": "Membre",
+      "role": "Rôle",
+      "experiments": "Expériences",
+      "units": "Unités"
+    }
+  }
+}
