@@ -1,4 +1,5 @@
 import "server-only";
+import { randomBytes } from "node:crypto";
 import { z } from "zod";
 import { isValidTimeZone } from "@/lib/lab-time";
 
@@ -133,9 +134,28 @@ export function parseEnv(
   return result.data;
 }
 
+/**
+ * A Vercel deployment with no DATABASE_URL is a frontend-only preview: no account can exist, so
+ * nothing is stored and nothing is encrypted. It gets a placeholder database URL, its own public
+ * address and a throwaway encryption key so the pages render. Setting DATABASE_URL turns this off,
+ * and every requirement above applies again.
+ */
+function withFrontendOnlyDefaults(
+  source: Record<string, string | undefined>
+): Record<string, string | undefined> {
+  if (!source.VERCEL || source.DATABASE_URL) return source;
+  const host = source.VERCEL_PROJECT_PRODUCTION_URL ?? source.VERCEL_URL;
+  return {
+    ...source,
+    DATABASE_URL: "postgresql://preview:preview@localhost:5432/preview",
+    MFA_ENCRYPTION_KEY: source.MFA_ENCRYPTION_KEY || randomBytes(32).toString("base64"),
+    APP_URL: source.APP_URL || (host ? `https://${host}` : undefined),
+  };
+}
+
 let cached: Env | undefined;
 
 export function env(): Env {
-  cached ??= parseEnv(process.env, { building: isBuildPhase() });
+  cached ??= parseEnv(withFrontendOnlyDefaults(process.env), { building: isBuildPhase() });
   return cached;
 }
